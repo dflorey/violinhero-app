@@ -500,9 +500,15 @@
             <ol class="steps">
               <li><strong>Pick a piece</strong> at the bottom: step through the genres, the levels and the pieces there with the arrows either side of each readout.</li>
               <li><strong>Press Play</strong> (or <kbd>Space</kbd>). Violin and piano play the piece; press it again to pause.</li>
-              <li><strong>Press Record</strong> (or <kbd>R</kbd>) to play the violin part yourself: two bars of clicks, then the piano accompanies you, and what you play is drawn into the violin’s staff.</li>
+              <li><strong>Press Record</strong> (or <kbd>R</kbd>) to play the violin part yourself: two bars of clicks if the violin comes in straight away (none after a piano introduction), then the piano accompanies you, and what you play is drawn into the violin’s staff.</li>
               <li><strong>Practise a passage</strong>: Marker at its first bar, Marker again at its last: it repeats.</li>
             </ol>
+            <p class="note">
+              Prefer a plainer look? The switch at the top right of the name strip, between <strong>Vintage</strong> and
+              <strong>Modern</strong>, turns Violin Hero into a modern app filling the window: the same controls in the
+              same places, as sliders with their values written out, named buttons and lists. Your piece, your place and
+              your take stay as they are. It has a <a href="modern/">manual of its own</a>.
+            </p>
           </section>
 
           <section id="display">
@@ -547,11 +553,11 @@
             <h2><span class="n">03</span> Play, record, find your place</h2>
             <p>The row of keys under the blue plate:</p>
             <ul>
-              <li><strong>Play</strong> plays from where it stopped; pressed while playing, it pauses there. From the very beginning with the violin off, it counts you in with two bars of clicks first; if you have a take, it plays your take along instead. Double-click it to stop and go back to the beginning.</li>
+              <li><strong>Play</strong> plays from where it stopped; pressed while playing, it pauses there. From the very beginning with the violin off, it counts you in with two bars of clicks first (if the violin comes in during the first bar); if you have a take, it plays your take along instead. Double-click it to stop and go back to the beginning.</li>
               <li><strong>Back</strong> and <strong>Forward</strong>, the pair of keys beside Play: one bar back or on; double-click for the start or the end of the piece.</li>
-              <li><strong>Input</strong>, left of Record, sets your microphone’s gain; the meter beside it shows its level while you record: aim for green, the top yellow only on your loudest notes.</li>
+              <li><strong>Input</strong>, left of Record, sets your microphone’s gain; the meter beside it shows its level from the first time you touch the knob or press Record (the browser asks for the microphone then), so you can set it before recording, and keeps showing it from then on: aim for green, the top yellow only on your loudest notes.</li>
               <li><strong>Record</strong> switches the violin off (you play it), counts in two bars with clicks (in the time signature and tempo where it starts), then plays from there and listens to you. Press it again (or let the piece end) and your take is played back straight away: the piano from where you started, with your recording where you played it. The take is kept: with the violin off, Play plays it again.</li>
-              <li><strong>Clear</strong>, paired with Record, throws the take away and switches the violin back on if it was on before you recorded. Its light shows that a take is kept; press it twice (it blinks in between) to clear.</li>
+              <li><strong>Clear</strong>, paired with Record, throws the take away, stops and goes back to the beginning, and switches the violin back on if it was on before you recorded. Its light turns green once a take is kept; press it twice (it blinks red in between) to clear.</li>
               <li><strong>Marker</strong>: the first press marks the start of the bar you are in, the second the end of the bar you are in then, and Repeat switches on; the third clears the section. Its light blinks while only the start is marked and stays lit once the section is complete.</li>
               <li><strong>Repeat</strong> repeats the marked section, seamlessly, for as long as it is on. Double-click it to jump to the section’s start.</li>
             </ul>
@@ -593,16 +599,28 @@
             <h2><span class="n">05</span> Recording yourself</h2>
             <p>
               Record listens to your microphone (the browser asks the first time) and draws the pitch you play into the
-              violin’s staff as a line, at the height of the note written then, raised or lowered by how far off you are, and as thick as you played loud.
+              violin’s staff like a text marker, the notes showing through it, at the pitch you really played (in tune, on the note written; a
+              semitone sharp of an E, on the F), and as thick as you played loud.
               Its colour shows your intonation: <strong>green</strong> in tune, through <strong>yellow</strong> to
-              <strong>red</strong> at about a third of a semitone off. Notes a little early or late still count. The line
+              <strong>red</strong> at about a third of a semitone off. A vibrato shows as waves, drawn wider than
+              played so you can see them, and is coloured by the pitch it swings around, so a good vibrato stays
+              green. While you record, the head of the line glows, and long notes (over a second) earn a reward:
+              fireworks when you hold them in tune, hearts and sweets for a nice vibrato. Out of tune, or not
+              playing a note at all, you get skulls, poo, ghosts and thrown tomatoes, and those come quickly.
+              Come in late and a snail or a sleepy face turns up; too early, a rabbit hops off ahead. Hold a note
+              loud and long, and stars sprinkle over it.
+              Playing your take back shows them all again. Where a note is due but nothing is heard, a
+              wide <strong>light blue</strong> marker runs through it instead. Notes a little early or late still count. The line
               stays after you stop, until the next take; repeating a section, it is drawn afresh on each pass. It is
-              smoothed, and short dropouts while you play are bridged, so it has no gaps.
+              smoothed, and short dropouts while you play are bridged, so it has no gaps. Your take starts a second
+              before the violin’s first note, so a piano introduction isn’t recorded: <strong>● REC</strong> on the
+              display blinks until then and stays red while you are recorded. Violin Hero learns your setup’s delay from
+              each take (how late your notes arrive) and moves the line back by it, so after the first take the line
+              starts where the notes do.
             </p>
             <p class="note">
-              The piano coming from your speakers is kept out of the line: by the browser’s echo cancellation, by Violin
-              Hero’s own (it knows exactly what it plays and subtracts it), and by ignoring what sounds like a piano note
-              rather than the violin’s. For the cleanest line, use headphones.
+              Wear headphones while recording. The microphone hears everything in the room, so a piano coming from your
+              speakers would be drawn into the line too.
             </p>
           </section>
 
