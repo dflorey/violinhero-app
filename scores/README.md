@@ -8,6 +8,12 @@ unpacked by `npm run scores` (`scripts/make-scores.mjs`, which lists each file's
 Uploads of works still under copyright (modern pop and film music, Kreisler, recent hymns) are
 left out, even where marked CC0: the uploader's licence covers the engraving, not the music.
 
+One score is transcribed rather than taken from PDMX: `thais.musicxml`, Massenet's Méditation
+from Thaïs in Martin Marsick's arrangement for violin and piano (both died over 100 years ago),
+from the public-domain edition scanned on IMSLP (IMSLP04323). It was written bar by bar in a
+compact notation and generated as MusicXML, checked against the scan, so a wrong note is
+possible; the inner voices of bars 32–37 and the closing chords (bars 65–71) are the least sure.
+
 The pieces by genre, as `src/pieces.ts` lists them with their titles, composers and levels:
 
 - **Baroque**: Bach (Air on the G String, Arioso), Vivaldi (Largo cantabile, Summer), Purcell
@@ -16,7 +22,8 @@ The pieces by genre, as `src/pieces.ts` lists them with their titles, composers 
   (Sonatina Op. 137 No. 1), Mozart (Sonata KV 14)
 - **Romantic**: Bach / Gounod (Ave Maria), Saint-Saëns (Le Cygne), Tchaikovsky (Mélodie), Elgar
   (Salut d'Amour), Dvořák (Romance Op. 11), Schumann (The Happy Farmer), Mascagni (Intermezzo),
-  Drdla (Souvenir), Bohm (La Zingana), L. Boulanger (Nocturne), Rieding (Concerto in B minor,
+  Drdla (Souvenir), Bohm (La Zingana), L. Boulanger (Nocturne), Massenet (Méditation from
+  Thaïs, arr. Marsick), Rieding (Concerto in B minor,
   3rd mvt.), Dancla (Variations on a Theme by Pacini), Frank Bridge (Cradle Song), Ravel
   (Berceuse sur le nom de Fauré)
 - **Folk**: The Irish Washerwoman, Morrison's Jig, Drunken Sailor (traditional), Niel Gow's
