@@ -14,6 +14,10 @@ from the public-domain edition scanned on IMSLP (IMSLP04323). It was written bar
 compact notation and generated as MusicXML, checked against the scan, so a wrong note is
 possible; the inner voices of bars 32–37 and the closing chords (bars 65–71) are the least sure.
 
+One score was supplied as a MusicXML file: `czardas.musicxml`, Monti's Czardas (Monti died in
+1922) in Richard Czerwonky's edition, as engraved on musescore.com, unpacked by `npm run scores`
+from `sources/czardas-by-vittorio-monti.mxl` (not published itself).
+
 The pieces by genre, as `src/pieces.ts` lists them with their titles, composers and levels:
 
 - **Baroque**: Bach (Air on the G String, Arioso), Vivaldi (Largo cantabile, Summer), Purcell
@@ -23,7 +27,7 @@ The pieces by genre, as `src/pieces.ts` lists them with their titles, composers 
 - **Romantic**: Bach / Gounod (Ave Maria), Saint-Saëns (Le Cygne), Tchaikovsky (Mélodie), Elgar
   (Salut d'Amour), Dvořák (Romance Op. 11), Schumann (The Happy Farmer), Mascagni (Intermezzo),
   Drdla (Souvenir), Bohm (La Zingana), L. Boulanger (Nocturne), Massenet (Méditation from
-  Thaïs, arr. Marsick), Rieding (Concerto in B minor,
+  Thaïs, arr. Marsick), Monti (Czardas), Rieding (Concerto in B minor,
   3rd mvt.), Dancla (Variations on a Theme by Pacini), Frank Bridge (Cradle Song), Ravel
   (Berceuse sur le nom de Fauré)
 - **Folk**: The Irish Washerwoman, Morrison's Jig, Drunken Sailor (traditional), Niel Gow's

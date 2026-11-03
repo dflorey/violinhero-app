@@ -597,7 +597,7 @@
 </measure>
 <measure number="71">
 <direction placement="below"><direction-type><dynamics><ppp/></dynamics></direction-type><staff>1</staff><sound dynamics="20"/></direction>
-<note><pitch><step>D</step><octave>5</octave></pitch><duration>960</duration><voice>1</voice><type>whole</type><staff>1</staff><notations><fermata type="upright"/></notations></note>
+<note><pitch><step>D</step><octave>6</octave></pitch><duration>960</duration><voice>1</voice><type>whole</type><staff>1</staff><notations><fermata type="upright"/></notations></note>
 <barline location="right"><bar-style>light-heavy</bar-style></barline>
 </measure>
 </part>
