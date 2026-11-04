@@ -4281,11 +4281,12 @@ void main() {
       .m-transport {
         --m-key: var(--m-control);
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto auto;
+        /* Play as wide as the Piano switch below it, Navigation and Section the rest, halved */
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         grid-template-areas:
-          'input input take'
-          'play nav section'
-          'toggles toggles toggles';
+          'input input input input take take'
+          'play play nav nav section section'
+          'toggles toggles toggles toggles toggles toggles';
         align-items: end;
         align-content: start;
         gap: 0.7rem 0.5rem;
@@ -4306,7 +4307,14 @@ void main() {
       }
       .m-transport > .m-section {
         grid-area: section;
-        justify-self: end;
+      }
+      /* Take, Navigation and Section fill their cells, their buttons sharing them */
+      .m-transport > .m-field > .m-group {
+        display: flex;
+      }
+      .m-transport > .m-field > .m-group > .m-btn {
+        flex: 1;
+        min-width: 0;
       }
       /* Piano / Staves and Violin: the Navigation panel's third row, not Playback's */
       .m-transport > .m-toggles.m-phone-toggles {
