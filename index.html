@@ -4421,15 +4421,29 @@ void main() {
       .m-group .m-btn span {
         display: none;
       }
-      /* The transport in the column: Play and Navigation, then Take and Section, then Input across */
+      /*
+       * The transport in the column: Play and Navigation, then Take and Section, then Input across,
+       * in two equal columns, every group's buttons sharing its width, so the card is filled
+       */
       .m-transport {
         display: grid;
-        grid-template-columns: auto auto minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas:
-          'play nav nav'
-          'take section .'
-          'input input input';
+          'play nav'
+          'take section'
+          'input input';
         align-items: end;
+      }
+      .m-transport .m-group {
+        display: flex;
+      }
+      .m-transport .m-group > .m-btn {
+        flex: 1;
+        min-width: 0;
+      }
+      .m-transport .m-play-field .m-btn.play {
+        width: 100%;
+        min-width: 0;
       }
       .m-nav-group {
         grid-area: nav;
@@ -4491,9 +4505,15 @@ void main() {
       :host([fold='south']) .m-transport {
         margin: 0 0.4rem 0.6rem 0.8rem;
       }
-      /* Below the score the transport flows on one line again */
+      /* Below the score the transport flows on one line again, its groups growing to fill it */
       :host([fold='south']) .m-transport {
         display: flex;
+      }
+      :host([fold='south']) .m-transport > * {
+        flex: 1 1 auto;
+      }
+      :host([fold='south']) .m-transport > .m-input {
+        flex: 2 1 160px;
       }
       /*
        * In the column: the tempo with the piano's list beside it, then Click with the three
