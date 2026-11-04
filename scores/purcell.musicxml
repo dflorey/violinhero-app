@@ -1327,27 +1327,10 @@
           <step>A</step>
           <octave>4</octave>
           </pitch>
-        <duration>3</duration>
+        <duration>4</duration>
         <voice>1</voice>
-        <type>quarter</type>
-        <dot/>
+        <type>half</type>
         <stem>up</stem>
-        <notations>
-          <slur type="start" placement="below" number="1"/>
-          </notations>
-        </note>
-      <note default-x="78.74" default-y="-25.00">
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-          </pitch>
-        <duration>1</duration>
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem>up</stem>
-        <notations>
-          <slur type="stop" number="1"/>
-          </notations>
         </note>
       <note default-x="104.02" default-y="-25.00">
         <pitch>

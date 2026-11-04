@@ -548,6 +548,7 @@
         <h2><span class="n">03</span> Play, record, find your place</h2>
         <figure class="figure">
           <div class="row" aria-hidden="true">
+            <span class="btn play"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10-6.5z" /></svg>Play</span>
             <div class="field">
               <span class="label">Navigation</span>
               <div class="group">
@@ -555,7 +556,6 @@
                 <span class="btn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.8 6H19v12h-2.2zM4.5 6v12l6-6zM10.5 6v12l6-6z" /></svg>Forward</span>
               </div>
             </div>
-            <span class="btn play"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10-6.5z" /></svg>Play</span>
             <div class="field">
               <span class="label">Take</span>
               <div class="group">
@@ -578,12 +578,13 @@
           <figcaption>The transport row, with a take chosen (Clear green) and a section repeating (Marker and Repeat amber).</figcaption>
         </figure>
         <ul>
-          <li><strong>Back</strong> and <strong>Forward</strong> (Navigation): one bar back or on; double-click for the start or the end of the piece.</li>
           <li><strong>Play</strong> plays from where it stopped and becomes <strong>Pause</strong> while playing. From the very beginning with the violin off, it counts you in with two bars of clicks (if the violin comes in during the first bar); if you have a take, it plays your take along instead. Double-click it to stop and go back to the beginning.</li>
-          <li><strong>Record</strong> (Take) switches the violin off (you play it), counts you in if the violin starts straight away, then plays from where you are and listens to you. It turns red and becomes <strong>Stop</strong>; <strong>● Rec</strong> on the score blinks until your part begins. Press it again (or let the piece end) and your take is played back straight away: the piano from where you started, with your recording where you played it. The take is added to the Interpretation list as <strong>You</strong> with the date and time, and chosen: while it is chosen, whenever the violin is off it plays along, wherever you go in the piece. Each take you record is added beside the others; choose one again to bring back its tempo, its line on the score and the interpretation you played it to, and press ▶ beside it (or P) to hear it from where it began. They stay until you clear them or choose another piece (reloading the page loses them). Switching the violin on silences it; off again, it plays on where the piece is.</li>
+          <li><strong>Back</strong> and <strong>Forward</strong> (Navigation): one bar back or on; double-click for the start or the end of the piece.</li>
+          <li><strong>Record</strong> (Take) switches the violin off (you play it), counts you in if the violin starts straight away, then plays from where you are and listens to you. It turns red and becomes <strong>Stop</strong>; <strong>● Rec</strong> on the score blinks until your part begins. Press it again (or let the piece end) and your take is played back straight away: the piano from where you started, with your recording where you played it. The take is added to the Interpretation list as <strong>You</strong> with the date and time, and chosen: while it is chosen, whenever the violin is off it plays along, wherever you go in the piece. Each take you record is added beside the others; choose one again to bring back its tempo, its line on the score and the interpretation you played it to, and press P to hear it from where it began. Beside a take, × takes ▶’s place: press it twice (it blinks in between) to delete that take; the others stay. Switching between interpretations while the piece plays doesn’t stop it: it plays on from where it is with the one you chose. They stay until you clear them or choose another piece (reloading the page loses them). Switching the violin on silences it; off again, it plays on where the piece is. With a stereo microphone (or a pair) the take is recorded in stereo; with one microphone it is mono, even on an interface that puts it on one side only.</li>
           <li><strong>Clear</strong> turns green while a take is chosen. Press it, then again while it asks <strong>Sure?</strong>, to throw that take away (your other takes stay); playing stops, you go back to the beginning, and the violin comes back on if it was on before you recorded.</li>
           <li><strong>Marker</strong> (Section): the first press marks the start of the bar you are in (it blinks), the second the end of the bar you are in then, and Repeat switches on; the third clears the section.</li>
-          <li><strong>Repeat</strong> repeats the marked section, seamlessly, for as long as it is on. Double-click it to jump to the section’s start.</li>
+          <li><strong>Repeat</strong> repeats the marked section, seamlessly, for as long as it is on, and nothing of the bar after it is heard. Repeat signs inside the section are played as written; one that goes back to before the section goes to its start instead, so it never leaves the section. Double-click it to jump to the section’s start.</li>
+<li><strong>A loop</strong>: with a section marked, <strong>Record</strong> switches Repeat on, counts you in and records the section round and round until you press it again. It is listed as <strong>Loop</strong> with the date and time; choosing it marks its section again, switches Repeat on and puts the playhead at the section’s start, ready to play back. While it is chosen, the markers stay as they are.</li>
           <li><strong>Input</strong> sets your microphone’s gain. Its slider is also the level meter: your level lights its track from behind, green, then amber and red at the loudest, shining through the slider. It starts showing the first time you touch the slider or press Record (the browser asks for the microphone then) and keeps showing from then on, so you can set it before you record: aim for green, amber only on your loudest notes.</li>
         </ul>
         <p class="muted">On a phone the buttons show their icons alone; hold or hover for their names.</p>
