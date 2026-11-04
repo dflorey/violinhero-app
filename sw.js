@@ -3,7 +3,7 @@
 // network takes longer than NETWORK_TIMEOUT_MS. Its small files are answered from the cache
 // straight away and refreshed in the background. Bump CACHE to drop everything cached by an older
 // version.
-const CACHE = 'violinhero-v1';
+const CACHE = 'violinhero-v2';
 const SHELL = ['./', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 const NETWORK_TIMEOUT_MS = 3000;
 
