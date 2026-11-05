@@ -1782,6 +1782,11 @@
         </note>
       </measure>
     <measure number="38" width="378.01">
+      <direction placement="above">
+        <direction-type>
+          <words font-style="italic">rit.</words>
+          </direction-type>
+        </direction>
       <note default-x="15.80" default-y="-50.00">
         <pitch>
           <step>C</step>
