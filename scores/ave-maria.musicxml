@@ -1801,18 +1801,10 @@
       <direction placement="below">
         <direction-type>
           <dynamics default-x="6.58" default-y="-40.00" relative-x="566.05" relative-y="-35.19">
-            <ff/>
+            <f/>
             </dynamics>
           </direction-type>
-        <sound dynamics="124.44"/>
-        </direction>
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-55.41" relative-x="-25.94" relative-y="-31.29">
-            <mp/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="71.11"/>
+        <sound dynamics="106.67"/>
         </direction>
       <direction placement="below">
         <direction-type>
