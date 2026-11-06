@@ -4694,7 +4694,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Marketplace" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${n.name}>Violin Hero <span class="c-creator">Marketplace</span></span>
-            ${_0(ie().versionTitle("0.70","42d8bd5"))}
+            ${_0(ie().versionTitle("0.70","38e1c2d"))}
           </span>
         </a>
         <div class="m-header-end">
@@ -4704,8 +4704,8 @@ SPDX-License-Identifier: Apache-2.0
             @theme-change=${e=>{this.theme=e.detail,Sc({theme:e.detail}),this.applyTheme()}}
             @scheme-change=${e=>this.setScheme(e.detail)}
           ></theme-menu>
-          <language-menu></language-menu>
           ${v0("marketplace")}
+          <language-menu></language-menu>
           <account-menu .user=${this.user}></account-menu>
         </div>
       </div>

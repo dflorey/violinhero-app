@@ -4632,7 +4632,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Hall of Fame" in the theme colour (a name, in every language) -->
             <span class="m-name" aria-label=${n.name}>Violin Hero <span class="c-creator">Hall of Fame</span></span>
-            ${u0(he().versionTitle("0.70","42d8bd5"))}
+            ${u0(he().versionTitle("0.70","38e1c2d"))}
           </span>
         </a>
         <div class="m-header-end">
@@ -4642,8 +4642,8 @@ SPDX-License-Identifier: Apache-2.0
             @theme-change=${e=>{this.theme=e.detail,gc({theme:e.detail}),this.applyTheme()}}
             @scheme-change=${e=>this.setScheme(e.detail)}
           ></theme-menu>
-          <language-menu></language-menu>
           ${c0("halloffame")}
+          <language-menu></language-menu>
           <account-menu .user=${this.user}></account-menu>
         </div>
       </div>
