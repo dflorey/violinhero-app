@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Violin Hero</title>
+    <script>
+      // GitHub Pages serves this for any address it hasn't got. The pages besides the app live at
+      // /creator, /marketplace and /halloffame (no trailing slash, vite.config.ts's pageAtRoot()):
+      // an old link to their folder goes on there, its query (?pack=…) and hash kept.
+      (function () {
+        var match = /^(.*\/)(creator|marketplace|halloffame)\/(index\.html)?$/.exec(location.pathname);
+        if (match) location.replace(match[1] + match[2] + location.search + location.hash);
+      })();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color: #1f2328;
+        background: #eef0f2;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: #e8eaed;
+          background: #121417;
+        }
+      }
+      main {
+        text-align: center;
+        padding: 2rem;
+      }
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+      }
+      a {
+        color: #1c6ef2;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>This page isn’t here</h1>
+      <p><a href="/">Open Violin Hero</a></p>
+    </main>
+  </body>
+</html>
