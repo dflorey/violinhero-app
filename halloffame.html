@@ -2778,8 +2778,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Au[n]}</g>
   </g>`}function u0(n){return["app","halloffame","marketplace"].filter(t=>t!==n).map(t=>S`<a class="m-help m-place ${t}" href=${ho(t,n)} title=${Ba[t]} aria-label=${Ba[t]}>
         ${t==="app"?G`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Tu}</g></svg>`:G`<svg viewBox="0 0 24 24" aria-hidden="true">${Au[t]}</svg>`}
-      </a>`)}const h0=parseFloat("0.78")<1;function d0(n){return S`<span class="m-version-line">
-    <span class="m-version" title=${n}>v${"0.78"}</span>
+      </a>`)}const h0=parseFloat("0.79")<1;function d0(n){return S`<span class="m-version-line">
+    <span class="m-version" title=${n}>v${"0.79"}</span>
     ${h0?S`<span class="m-beta">Beta</span>`:""}
   </span>`}const f0=Tt`
     /*
@@ -2893,7 +2893,7 @@ SPDX-License-Identifier: Apache-2.0
         gap: 0.35rem;
       }
     }
-    /* The name with the build's version ("0.78") under it, left aligned */
+    /* The name with the build's version ("0.79") under it, left aligned */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -4135,6 +4135,67 @@ SPDX-License-Identifier: Apache-2.0
         letter-spacing: 0.04em;
         text-transform: uppercase;
       }
+      /* A creator's profile card (the creator page's own, the marketplace's creator page) */
+      .c-profile {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: start;
+        gap: 1.25rem;
+        padding: 1.5rem;
+        background:
+          radial-gradient(120% 140% at 0% 0%, var(--m-accent-soft), transparent 55%),
+          var(--m-surface);
+      }
+      .c-profile.skeleton {
+        min-height: 140px;
+        display: block;
+        background: linear-gradient(90deg, var(--m-surface), var(--m-bg), var(--m-surface));
+        background-size: 200% 100%;
+        animation: c-shimmer 1.4s linear infinite;
+      }
+      .c-profile-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        min-width: 0;
+      }
+      .c-profile-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      /* The about text, shown and edited alike */
+      .c-about {
+        line-height: 1.55;
+        overflow-wrap: anywhere;
+      }
+      .c-about > :first-child {
+        margin-top: 0;
+      }
+      .c-about > :last-child {
+        margin-bottom: 0;
+      }
+      .c-about p {
+        margin: 0 0 0.6em;
+      }
+      .c-about h3 {
+        margin: 0.9em 0 0.35em;
+        font-size: 1.05rem;
+      }
+      .c-about ul,
+      .c-about ol {
+        margin: 0 0 0.6em;
+        padding-left: 1.4em;
+      }
+      .c-about a {
+        color: var(--m-accent);
+      }
+      @media (max-width: 760px) {
+        .c-profile {
+          grid-template-columns: auto minmax(0, 1fr);
+        }
+      }
       .c-avatar {
         display: grid;
         place-items: center;
@@ -4696,7 +4757,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Hall of Fame" in the theme colour (a name, in every language) -->
             <span class="m-name" aria-label=${n.name}>Violin Hero <span class="c-creator">Hall of Fame</span></span>
-            ${d0(he().versionTitle("0.78","924d9c8"))}
+            ${d0(he().versionTitle("0.79","cdedf7e"))}
           </span>
         </a>
         <div class="m-header-end">
