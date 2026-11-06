@@ -3439,51 +3439,42 @@ SPDX-License-Identifier: Apache-2.0
       background: var(--m-bg);
     }
     /*
-     * The keys to the other places (navKeys()): round like the others, each in its place's colour,
-     * filled with it on hover; and each place's mark in its colour (the app's in the theme colour)
+     * Each place's mark in its colour (the app's in the theme colour); the keys to the other
+     * places (navKeys()) drawn as the help key: its edge, drop and grey, darker on hover
      */
     .m-header {
-      --place-app: var(--m-accent);
       --place-marketplace: #e8590c;
       --place-halloffame: #e0a800;
       --place-creator: #7048e8;
     }
     .m-nav {
-      --place: var(--place-app);
       display: grid;
       flex: none;
       place-items: center;
       width: 36px;
       height: 36px;
+      padding: 0;
+      border: 1px solid var(--m-key-edge);
       border-radius: 50%;
-      color: var(--place);
-      background: color-mix(in srgb, var(--place) 14%, var(--m-surface));
-      border: 1.5px solid color-mix(in srgb, var(--place) 55%, var(--m-surface));
       box-shadow: var(--m-key-shadow);
-      transition:
-        background 0.15s,
-        color 0.15s,
-        transform 0.15s;
+      color: var(--m-muted);
+      background: var(--m-surface);
+      text-decoration: none;
     }
-    .m-nav:hover,
-    .m-nav:focus-visible {
-      color: #fff;
-      background: var(--place);
-      transform: translateY(-1px);
+    .m-nav:hover {
+      color: var(--m-text);
+      background: var(--m-bg);
     }
     .m-nav:focus-visible {
-      outline: 2px solid var(--place);
+      outline: 2px solid var(--m-accent);
       outline-offset: 2px;
     }
-    .m-nav.marketplace,
     .m-logo.marketplace {
       --place: var(--place-marketplace);
     }
-    .m-nav.halloffame,
     .m-logo.halloffame {
       --place: var(--place-halloffame);
     }
-    .m-nav.creator,
     .m-logo.creator {
       --place: var(--place-creator);
     }
@@ -3504,11 +3495,6 @@ SPDX-License-Identifier: Apache-2.0
     .m-logo.halloffame,
     .m-logo.creator {
       color: var(--place);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .m-nav {
-        transition: none;
-      }
     }
     /* The marketplace key: a round key like help's, a bag drawn in it */
     .m-market svg {
@@ -4645,7 +4631,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Creator" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${n.name}>Violin Hero <span class="c-creator">Creator</span></span>
-            <span class="m-version" title=${fe().versionTitle("0.70","7c31f8b")}>v${"0.70"}</span>
+            <span class="m-version" title=${fe().versionTitle("0.70","ddc6256")}>v${"0.70"}</span>
           </span>
         </a>
         <div class="m-header-end">
