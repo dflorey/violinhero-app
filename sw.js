@@ -27,6 +27,34 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// The installed app asks for everything it needs offline (every score, the violin's samples, its
+// piano's): each file not cached yet is fetched and kept, a few at a time. Offline, the fetch
+// handler below then answers from the cache.
+const PRECACHE_AT_ONCE = 6;
+self.addEventListener('message', (event) => {
+  const { data } = event;
+  if (!data || data.type !== 'precache' || !Array.isArray(data.urls)) return;
+  const urls = data.urls.filter((url) => typeof url === 'string' && new URL(url).origin === self.location.origin);
+  event.waitUntil(
+    caches.open(CACHE).then(async (cache) => {
+      let next = 0;
+      const worker = async () => {
+        while (next < urls.length) {
+          const url = urls[next++];
+          try {
+            if (await cache.match(url, { ignoreSearch: true })) continue;
+            const response = await fetch(url, { cache: 'no-cache' });
+            if (response.ok) await cache.put(url, response);
+          } catch {
+            // Offline or gone: asked for again at the next start
+          }
+        }
+      };
+      await Promise.all(Array.from({ length: PRECACHE_AT_ONCE }, worker));
+    })
+  );
+});
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
