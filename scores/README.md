@@ -18,6 +18,11 @@ One score was supplied as a MusicXML file: `czardas.musicxml`, Monti's Czardas (
 1922) in Richard Czerwonky's edition, as engraved on musescore.com, unpacked by `npm run scores`
 from `sources/czardas-by-vittorio-monti.mxl` (not published itself).
 
+Three more were supplied as MusicXML files from musescore.com, unpacked the same way from
+`sources/`: `twinkle.musicxml` (the traditional tune), `canon-in-d.musicxml` (Pachelbel) and
+`humoresque.musicxml` (Dvořák's Humoresque, Op. 101 No. 7, in Fabian Rehfeld's arrangement for
+violin and piano after the 1894 Simrock print).
+
 The pieces by genre, as `src/pieces.ts` lists them with their titles, composers and levels:
 
 - **Baroque**: Bach (Air on the G String, Arioso), Vivaldi (Largo cantabile, Summer), Purcell
