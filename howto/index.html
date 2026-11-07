@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="How to use Violin Hero." />
+    <meta name="description" content="How to use Violin Hero: get started in a few minutes, then discover real interpretations, YouTube play-along, vibrato hearts and more." />
     <meta name="theme-color" content="#eef1f5" />
     <title>How to use · Violin Hero</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23ff2a14'/%3E%3C/svg%3E" />
     <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png" />
     <!--
-      Violin Hero's manual, deployed beside the app at howto/. Self-contained like the app: no
-      fonts, images or scripts from elsewhere; the illustrations are inline SVG and HTML in the
-      app's look. Written by hand (not part of the Vite build): keep it in step with the README.
+      Violin Hero's manual, deployed beside the app at howto/. Written by hand (not part of the
+      Vite build): keep it in step with the README. Nothing from other sites: the screenshots are
+      WebP files in img/ (taken from the app in headless Edge), the small illustrations inline
+      SVG and HTML in the app's look. Part one gets a player going; part two shows off the
+      features worth discovering, briefly, without scoring rules or other internals.
     -->
     <style>
       :root {
@@ -25,6 +27,9 @@
         --red: #e03131;
         --green: #2f9e44;
         --amber: #b8650a;
+        --pink: #e64980;
+        --purple: #7048e8;
+        --gold: #f2b01e;
         --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
         color-scheme: light;
       }
@@ -38,6 +43,9 @@
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
+        }
+        .heart {
+          animation: none !important;
         }
       }
       body {
@@ -61,7 +69,7 @@
       .top {
         position: sticky;
         top: 0;
-        z-index: 1;
+        z-index: 2;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -100,18 +108,15 @@
       }
 
       main {
-        max-width: 860px;
+        max-width: 900px;
         margin: 0 auto;
         padding: 2rem max(1.25rem, env(safe-area-inset-right)) 1rem max(1.25rem, env(safe-area-inset-left));
       }
-      .intro {
-        padding: 0.5rem 0 1.2rem;
-      }
       h1 {
         margin: 0 0 0.5rem;
-        font-size: clamp(1.8rem, 5vw, 2.4rem);
-        line-height: 1.15;
-        letter-spacing: -0.02em;
+        font-size: clamp(1.9rem, 5.5vw, 2.7rem);
+        line-height: 1.12;
+        letter-spacing: -0.025em;
       }
       .lead {
         margin: 0 0 1.2rem;
@@ -145,38 +150,96 @@
         filter: brightness(0.97);
       }
 
-      /* Contents: pills that wrap */
-      nav ol {
+      /* The hero: the app itself, tilted a little */
+      .hero {
+        margin: 1.8rem 0 0.4rem;
+      }
+      .hero img {
+        border-radius: 14px;
+        box-shadow: 0 18px 50px rgba(29, 36, 51, 0.18), 0 2px 6px rgba(29, 36, 51, 0.08);
+      }
+
+      /* Contents: two parts, pills that wrap */
+      .toc {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+        gap: 0.8rem;
+        margin: 1.6rem 0 1.4rem;
+      }
+      .toc div {
+        padding: 0.9rem 1rem 1rem;
+        background: var(--surface);
+        border-radius: 14px;
+        box-shadow: 0 1px 2px rgba(29, 36, 51, 0.06);
+      }
+      .toc strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .toc ol {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        margin: 1.5rem 0 0;
+        gap: 0.4rem;
+        margin: 0;
         padding: 0;
         list-style: none;
-        counter-reset: toc;
       }
-      nav li {
+      .toc li {
         margin: 0;
-        counter-increment: toc;
       }
-      nav a {
+      .toc a {
         display: inline-block;
-        padding: 0.35rem 0.85rem;
-        font-size: 0.88rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.86rem;
         font-weight: 600;
         text-decoration: none;
         color: var(--text);
-        background: var(--surface);
-        border: 1px solid var(--line);
+        background: var(--bg);
         border-radius: 999px;
       }
-      nav a::before {
-        content: counter(toc) '  ';
+      .toc a span {
         color: var(--accent);
-        white-space: pre;
       }
-      nav a:hover {
+      .toc a:hover {
         background: var(--accent-soft);
+      }
+
+      /* A part's banner */
+      .part {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        margin: 2.4rem 0 1rem;
+        scroll-margin-top: 72px;
+      }
+      .part .badge {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        color: #fff;
+        background: var(--accent);
+      }
+      .part.advanced .badge {
+        background: linear-gradient(135deg, var(--pink), var(--purple));
+      }
+      .part .badge svg {
+        width: 26px;
+        height: 26px;
+      }
+      .part h2 {
+        margin: 0;
+        font-size: 1.6rem;
+      }
+      .part p {
+        margin: 0;
+        color: var(--muted);
       }
 
       /* Each section a white card */
@@ -188,28 +251,26 @@
         box-shadow: 0 1px 2px rgba(29, 36, 51, 0.06);
         scroll-margin-top: 72px;
       }
-      section.intro {
-        padding: 0.5rem 0 1.4rem;
-        background: none;
-        box-shadow: none;
-      }
-      h2 {
+      h3 {
         display: flex;
         align-items: baseline;
         gap: 0.6rem;
-        margin: 0 0 0.9rem;
-        font-size: 1.35rem;
+        margin: 0 0 0.8rem;
+        font-size: 1.3rem;
         letter-spacing: -0.01em;
       }
-      h2 .n {
+      h3 .n {
         font-size: 0.95rem;
         font-weight: 700;
         color: var(--accent);
         font-variant-numeric: tabular-nums;
       }
-      h3 {
-        margin: 1.2rem 0 0.35rem;
-        font-size: 1.05rem;
+      .advanced-card h3 .n {
+        color: var(--pink);
+      }
+      h4 {
+        margin: 1.1rem 0 0.3rem;
+        font-size: 1.02rem;
       }
       p {
         margin: 0 0 0.9rem;
@@ -250,6 +311,57 @@
         border-left-color: var(--amber);
         background: #fff4e6;
       }
+      .ink-green {
+        color: var(--green);
+      }
+      .ink-red {
+        color: var(--red);
+      }
+      .ink-pink {
+        color: var(--pink);
+      }
+      .ink-purple {
+        color: var(--purple);
+      }
+
+      /* Screenshots */
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      .shot {
+        margin: 0.4rem 0 1.2rem;
+      }
+      .shot a {
+        display: block;
+      }
+      .shot img {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(29, 36, 51, 0.1);
+      }
+      .shot figcaption,
+      .figure figcaption {
+        margin-top: 0.6rem;
+        font-size: 0.86rem;
+        color: var(--muted);
+      }
+      /* Text beside a picture (a phone, the tuner), stacked when narrow */
+      .side {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 1.4rem;
+        align-items: start;
+        margin-bottom: 0.4rem;
+      }
+      .side.phone {
+        grid-template-columns: minmax(0, 1fr) min(240px, 40%);
+      }
+      .side .shot {
+        margin-top: 0.2rem;
+      }
 
       /* Illustrations: the app's own controls, drawn small */
       .figure {
@@ -257,11 +369,6 @@
         padding: 1rem;
         background: var(--bg);
         border-radius: 14px;
-      }
-      .figure figcaption {
-        margin-top: 0.6rem;
-        font-size: 0.85rem;
-        color: var(--muted);
       }
       /* Wraps as the app's own row does where it is narrower than the controls */
       .row {
@@ -372,6 +479,96 @@
         box-shadow: 0 1px 3px rgba(29, 36, 51, 0.25);
       }
 
+      /* The line's colours, as a legend */
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.2rem;
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+        font-size: 0.92rem;
+      }
+      .legend li {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin: 0;
+      }
+      .swatch {
+        width: 34px;
+        height: 10px;
+        border-radius: 5px;
+      }
+
+      /* Vibrato, slides and trills: drawn on a staff, as the app draws them */
+      .staff-art {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 190px;
+      }
+      .heart {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: sway 1.3s ease-in-out infinite;
+      }
+      @keyframes sway {
+        0%,
+        100% {
+          transform: translateY(-3px) rotate(-4deg);
+        }
+        50% {
+          transform: translateY(3px) rotate(4deg);
+        }
+      }
+      .trio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+        gap: 0.8rem;
+        margin: 0 0 1rem;
+      }
+      .trio div {
+        padding: 0.8rem 0.9rem;
+        background: var(--bg);
+        border-radius: 12px;
+        font-size: 0.94rem;
+      }
+      .trio strong {
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      /* Feature tiles: the extras at a glance */
+      .tiles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        gap: 0.8rem;
+        margin: 0 0 1rem;
+      }
+      .tiles div {
+        padding: 0.9rem 1rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      .tiles strong {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-bottom: 0.25rem;
+      }
+      .tiles svg {
+        flex: none;
+        width: 20px;
+        height: 20px;
+        color: var(--accent);
+      }
+      .tiles p {
+        margin: 0;
+        font-size: 0.93rem;
+        color: var(--muted);
+      }
+
       /* Keyboard shortcuts */
       .shortcuts {
         display: grid;
@@ -396,7 +593,7 @@
       }
 
       footer {
-        max-width: 860px;
+        max-width: 900px;
         margin: 0 auto;
         padding: 1rem 1.25rem max(2rem, env(safe-area-inset-bottom));
         font-size: 0.85rem;
@@ -421,6 +618,14 @@
         .tag {
           display: none;
         }
+        .side,
+        .side.phone {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .side.phone .shot {
+          max-width: 260px;
+          margin-inline: auto;
+        }
         .shortcuts div {
           grid-template-columns: 6.2rem minmax(0, 1fr);
         }
@@ -432,13 +637,14 @@
         .top {
           position: static;
         }
-        nav,
+        .toc,
         .actions {
           display: none;
         }
         section {
           box-shadow: none;
           border: 1px solid var(--line);
+          break-inside: avoid;
         }
       }
     </style>
@@ -460,31 +666,84 @@
     </header>
 
     <main>
-      <section class="intro">
-        <h1>How to use Violin Hero</h1>
-        <p class="lead">
-          Pieces for violin and piano, with the score scrolling past. Listen to them, then switch the violin off and
-          play its part yourself, with the piano accompanying you.
-        </p>
-        <div class="actions">
-          <a class="button primary" href="../">▶ Open Violin Hero</a>
+      <h1>Play the violin part.<br />The piano plays the rest.</h1>
+      <p class="lead">
+        Violin Hero plays pieces for violin and piano while the score scrolls past. Listen first, then switch the violin
+        off and play its part yourself: the app listens, draws your playing into the score and tells you how it went.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="../">▶ Open Violin Hero</a>
+        <a class="button" href="#extras">What else it can do</a>
+      </div>
+
+      <figure class="hero">
+        <img src="img/overview.webp" width="2160" height="1080" alt="Violin Hero with the Ave Maria open: the violin's staff with a recorded take drawn into it in green, arrows marking notes played flat, the controls on the right." />
+      </figure>
+
+      <div class="toc">
+        <div>
+          <strong>Get started</strong>
+          <ol>
+            <li><a href="#tune"><span>1</span> Tune up</a></li>
+            <li><a href="#play"><span>2</span> Pick a piece and play</a></li>
+            <li><a href="#record"><span>3</span> Record yourself</a></li>
+            <li><a href="#scorecard"><span>4</span> Your score</a></li>
+            <li><a href="#phone"><span>5</span> On a phone</a></li>
+          </ol>
+        </div>
+        <div>
+          <strong>Going further</strong>
+          <ol>
+            <li><a href="#interpretations"><span>6</span> Real interpretations</a></li>
+            <li><a href="#youtube"><span>7</span> Play along with YouTube</a></li>
+            <li><a href="#vibrato"><span>8</span> Vibrato, slides and trills</a></li>
+            <li><a href="#passages"><span>9</span> Practise a passage</a></li>
+            <li><a href="#markup"><span>10</span> Make the score yours</a></li>
+            <li><a href="#community"><span>11</span> Share and compete</a></li>
+            <li><a href="#packs"><span>12</span> More music</a></li>
+            <li><a href="#keys"><span>13</span> Keys</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ——— Part one ——— -->
+      <div class="part" id="start">
+        <span class="badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10-6.5z" /></svg>
+        </span>
+        <div>
+          <h2>Get started</h2>
+          <p>Five minutes from opening the app to your first scored take.</p>
+        </div>
+      </div>
+
+      <section id="tune">
+        <h3><span class="n">01</span> Tune up</h3>
+        <div class="side">
+          <div>
+            <p>
+              Every start begins with a short tune-up. Allow the microphone, play your <strong>A</strong> string, then
+              <strong>D</strong>, <strong>G</strong> and <strong>E</strong>. The line rises towards the middle as you get
+              closer and turns <span class="ink-green">green</span> once the string is in tune.
+            </p>
+            <p>
+              Prefer to tune by ear? The tone key plays the string's pitch. Already in tune? <strong>My violin is already
+              in tune</strong> skips ahead. While you tune, the app also sets the microphone's level for recording.
+            </p>
+          </div>
+          <figure class="shot">
+            <a href="img/tuner.webp"><img src="img/tuner.webp" width="1920" height="1290" loading="lazy" alt="The tuner: a graph of the A string's pitch rising towards the green in-tune band, the strings G, D, A and E below." /></a>
+          </figure>
         </div>
       </section>
 
-      <section id="start">
-        <h2><span class="n">01</span> Get started</h2>
-        <ol>
-          <li><strong>Tune up.</strong> On your first visit the app tunes your violin with you and sets the microphone's level for recording.</li>
-          <li><strong>Pick a piece</strong> in <strong>Repertoire</strong> (open a panel with its triangle; drag a panel by its icon to move it), under <strong>Level</strong>, <strong>Genre</strong> and <strong>Piece</strong>. More pieces unlock as you practise. The <strong>Score</strong> key beside it opens the violin part as a PDF to print, with your marks (signed in).</li>
-          <li><strong>Press Play</strong> to hear it. The blue line on the score marks the note you hear; drag the score to move around.</li>
-          <li><strong>Put on wired headphones</strong>, so the microphone hears only your violin.</li>
-          <li><strong>Press Record</strong> and play the violin part, with the piano playing along (and a count-in if the violin starts right away).</li>
-          <li><strong>Press Record again</strong> (or play to the end). Your take plays back, and a full take gets a score.</li>
-        </ol>
-      </section>
-
-      <section id="transport">
-        <h2><span class="n">02</span> The controls</h2>
+      <section id="play">
+        <h3><span class="n">02</span> Pick a piece and play</h3>
+        <p>
+          Choose a piece in <strong>Repertoire</strong> by <strong>Level</strong> (Beginner to Expert),
+          <strong>Genre</strong> and <strong>Piece</strong>. Press <strong>Play</strong>: the piano and violin play
+          while the blue line follows the music. Drag the score to move around in it.
+        </p>
         <figure class="figure">
           <div class="row" aria-hidden="true">
             <div class="field">
@@ -517,59 +776,268 @@
               <div class="gain"><div class="track"><div class="level"></div></div><div class="tint"></div><div class="thumb"></div></div>
             </div>
           </div>
+          <figcaption>The transport card: playing, moving, recording, repeating a section, and the microphone's level.</figcaption>
         </figure>
         <ul>
-          <li><strong>Play</strong> starts and pauses. <strong>Back</strong> and <strong>Forward</strong> move one bar.</li>
-          <li><strong>Record</strong> records you playing the violin part; <strong>Clear</strong> deletes the take that is chosen; <strong>Share</strong> sends it as a link.</li>
-          <li><strong>Marker</strong>: press it at the first bar of a passage and again at its last, and the passage repeats until you switch <strong>Repeat</strong> off.</li>
-          <li><strong>Input</strong> sets your microphone level. Aim for green while you play.</li>
-          <li><strong>Tempo</strong> slows the piece down or speeds it up. <strong>Click</strong> adds a metronome.</li>
-          <li><strong>Piano</strong> and <strong>Violin</strong> switch each part on or off; <strong>Staves</strong> hides the piano’s staves so the violin’s is larger.</li>
-          <li><strong>Interpretation</strong> lets you hear real recordings of the piece and play along with them; your own takes are listed there too.</li>
+          <li><strong>Play</strong> starts and pauses; <strong>Back</strong> and <strong>Forward</strong> move one bar (press twice for the start or the end).</li>
+          <li><strong>Settings</strong> holds the <strong>Tempo</strong>, a <strong>Click</strong> to play with, the piano's sound, and switches for the <strong>Piano</strong>, its <strong>Staves</strong> and the <strong>Violin</strong>.</li>
+          <li><strong>Input</strong> sets the microphone's level: aim for green while you play.</li>
+          <li>The panels fold away with their triangle and move by their handle, so you keep what you use at hand.</li>
         </ul>
-        <p class="muted">On a phone the controls are on three tabs at the bottom: Transport, Settings and Repertoire.</p>
+        <p class="muted">
+          The first pieces are the starter pack's. More of them open as you practise, and even more come with content
+          packs (see <a href="#packs">More music</a>).
+        </p>
       </section>
 
-      <section id="practice">
-        <h2><span class="n">03</span> Your recordings</h2>
+      <section id="record">
+        <h3><span class="n">03</span> Record yourself</h3>
         <p>
-          While you play, a line is drawn into the violin’s staff where your pitch is: <strong>green</strong> in tune,
-          <strong>yellow</strong> to <strong>red</strong> the further off. Wrong and missed notes are circled, and little
-          rewards pop up for good notes.
+          Put on <strong>wired headphones</strong> and press <strong>Record</strong>. The violin falls silent, a count-in
+          clicks if the violin starts straight away, and the piano accompanies you. While you play, a line is drawn into the
+          violin's staff, right where your pitch is:
         </p>
+        <ul class="legend">
+          <li><span class="swatch" style="background: #69db7c"></span> in tune</li>
+          <li><span class="swatch" style="background: linear-gradient(90deg, #ffe066, #ffa94d)"></span> a little off</li>
+          <li><span class="swatch" style="background: #ff6b6b"></span> clearly off</li>
+          <li><span class="swatch" style="background: #a5d8ff"></span> a note not heard</li>
+        </ul>
+        <figure class="shot">
+          <a href="img/line.webp"><img src="img/line.webp" width="1340" height="320" loading="lazy" alt="A take drawn into the staff: green where in tune, yellow and red where off, and arrow stickers saying 12, 14 and 13 cents flat over three notes." /></a>
+          <figcaption>Arrows show which way a note was off and by how many cents; a clock shows an entry early or late; wrong and missed notes get circled.</figcaption>
+        </figure>
         <p>
-          Record a piece from start to end and you get a <strong>score</strong> for intonation, timing, sound and more,
-          with a tip on what to practise next.
-        </p>
-        <p>
-          <strong>Sign in</strong> (the round key at the top right) to keep your takes and progress, share takes and
-          appear in the <strong>top scores</strong>. Everything else works without an account.
+          Press <strong>Record</strong> again to stop, or play to the end. Your take plays back with the piano straight
+          away, and its line stays on the score. Every take is listed under <strong>Interpretation</strong>, so you can
+          listen to it again later.
         </p>
         <p class="note warn">
-          Use wired headphones while recording. With speakers the microphone hears the piano too, and Bluetooth
-          headphones lag behind.
+          Wired headphones, please. Through speakers the microphone hears the piano as well, and Bluetooth headphones lag
+          behind.
         </p>
       </section>
 
-      <section id="score">
-        <h2><span class="n">04</span> Notes on the score</h2>
+      <section id="scorecard">
+        <h3><span class="n">04</span> Your score</h3>
         <p>
-          Click notes in the violin part to add fingerings, bowings, staccato, accents or tenuto; on one note also a
-          dynamic or a fermata, between two (Shift-click the second, or click a slur) a slur, &lt; &gt; or rit. The violin plays them,
-          and <strong>↺ Edited</strong> above the score takes them all off again.
+          Play a piece from start to end and you get a score card: points for intonation, timing, missed and wrong notes,
+          and, as the levels rise, for dynamics, trills and your sound. It says what went well and gives you one tip for
+          next time.
+        </p>
+        <figure class="shot">
+          <a href="img/report.webp"><img src="img/report.webp" width="2160" height="1080" loading="lazy" alt="A score card over the score: 375 of 400 points, five stars, “Outstanding!”, bars for intonation, timing, missed and wrong notes, and the piece's top scores." /></a>
+        </figure>
+        <p>
+          <strong>Sign in</strong> (the round key at the top right) to keep your takes and progress on every device. A full
+          take at 100 % tempo can then be <strong>published</strong> to the piece's top scores and the Hall of Fame. Everything
+          else works without an account.
         </p>
       </section>
 
-      <section id="keyboard">
-        <h2><span class="n">05</span> Keys</h2>
+      <section id="phone">
+        <h3><span class="n">05</span> On a phone</h3>
+        <div class="side phone">
+          <div>
+            <p>
+              On a phone the score fills the top of the screen and the controls sit in three tabs at the bottom:
+              <strong>Transport</strong>, <strong>Settings</strong> and <strong>Repertoire</strong>. Swipe between them or tap
+              a tab.
+            </p>
+            <p>
+              Turn the phone sideways for a wider score, with the controls in a column beside it.
+            </p>
+            <p>
+              <strong>Install it:</strong> Violin Hero works as an app. On an iPhone or iPad use Safari's Share →
+              <em>Add to Home Screen</em>; on Android or a computer, the install key in the address bar. Installed, it keeps
+              every score and the samples, so it works offline too.
+            </p>
+          </div>
+          <figure class="shot">
+            <a href="img/phone.webp"><img src="img/phone.webp" width="780" height="1688" loading="lazy" alt="Violin Hero on a phone: the score at the top, the transport keys below, and the tabs Transport, Settings and Repertoire at the bottom." /></a>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ——— Part two ——— -->
+      <div class="part advanced" id="extras">
+        <span class="badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z" /></svg>
+        </span>
+        <div>
+          <h2>Going further</h2>
+          <p>The features that make practising feel like performing.</p>
+        </div>
+      </div>
+
+      <section id="interpretations" class="advanced-card">
+        <h3><span class="n">06</span> Real interpretations</h3>
+        <p>
+          Great violinists don't play like a metronome. For many pieces, <strong>Interpretation</strong> in Repertoire offers
+          recordings by famous performers, from Fritz Kreisler to today's stars. Choose one and Violin Hero lines its own
+          piano up with that performance, bar by bar: the piano breathes, slows and pushes on exactly where they did. Play
+          and record with their phrasing instead of a strict tempo.
+        </p>
+        <figure class="shot">
+          <a href="img/interpretation.webp"><img src="img/interpretation.webp" width="2160" height="1290" loading="lazy" alt="The Méditation from Thaïs with “Timing Fritz Kreisler” shown, and below the score a graph of Kreisler's tempo in green against the default in grey." /></a>
+          <figcaption>The graph key beside the list shows the performer's tempo (green) against the plain score's (grey), so you can see where they take their time.</figcaption>
+        </figure>
+        <p>
+          Press <strong>▶</strong> beside the list (or <kbd>I</kbd>) to hear the recording itself while the score follows it.
+          Your own takes are in the same list, after the recordings.
+        </p>
+      </section>
+
+      <section id="youtube" class="advanced-card">
+        <h3><span class="n">07</span> Play along with YouTube</h3>
+        <p>
+          Some interpretations are YouTube videos. Press <strong>▶</strong> and the video opens in a small window while the
+          score scrolls along in perfect sync, the blue line following the performer's every rubato. Drag the window
+          anywhere; seek in the score or in the video and the other follows.
+        </p>
+        <figure class="shot">
+          <a href="img/youtube.webp"><img src="img/youtube.webp" width="2160" height="1290" loading="lazy" alt="Fritz Kreisler playing the Méditation in a YouTube window at the bottom left, the score scrolling in sync above it and the tempo graph beside." /></a>
+          <figcaption>Fritz Kreisler plays, the score follows. Switch the Piano or Violin on to hear Violin Hero play along with him.</figcaption>
+        </figure>
+      </section>
+
+      <section id="vibrato" class="advanced-card">
+        <h3><span class="n">08</span> Vibrato, slides and trills</h3>
+        <p>
+          Violin Hero hears more than right and wrong notes. From the Intermediate level on, a little
+          <span class="ink-pink">heart</span> pops up over long notes just before they come: the place for a vibrato. When
+          the app hears one, your line lights up pink and waves along with it, and the wider and steadier your vibrato,
+          the bigger the celebration.
+        </p>
+        <figure class="figure">
+          <svg class="staff-art" viewBox="0 12 720 132" role="img" aria-label="A held note with a heart above it and the recorded line waving in pink through it.">
+            <g stroke="#1d2433" stroke-width="1.4" opacity="0.85">
+              <line x1="20" y1="70" x2="700" y2="70" />
+              <line x1="20" y1="84" x2="700" y2="84" />
+              <line x1="20" y1="98" x2="700" y2="98" />
+              <line x1="20" y1="112" x2="700" y2="112" />
+              <line x1="20" y1="126" x2="700" y2="126" />
+              <line x1="250" y1="70" x2="250" y2="126" />
+              <line x1="700" y1="70" x2="700" y2="126" />
+            </g>
+            <!-- A quarter, then the whole note held with vibrato -->
+            <g fill="#1d2433">
+              <ellipse cx="120" cy="105" rx="8.5" ry="6.5" transform="rotate(-20 120 105)" />
+              <rect x="127" y="56" width="1.8" height="49" />
+              <ellipse cx="190" cy="98" rx="8.5" ry="6.5" transform="rotate(-20 190 98)" />
+              <rect x="197" y="49" width="1.8" height="49" />
+            </g>
+            <ellipse cx="300" cy="91" rx="11" ry="7" fill="none" stroke="#1d2433" stroke-width="3.2" transform="rotate(-25 300 91)" />
+            <!-- The line: green on the first notes, then the pink vibrato wave -->
+            <path d="M100 106 C130 106 150 105 165 100 S180 98 205 98" fill="none" stroke="#69db7c" stroke-width="7" stroke-linecap="round" opacity="0.85" />
+            <path d="M262 91 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#e64980" stroke-width="12" stroke-linecap="round" opacity="0.22" />
+            <path d="M262 91 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#e64980" stroke-width="5" stroke-linecap="round" />
+            <!-- The heart over the note -->
+            <path class="heart" d="M300 32 c-6 -8 -20 -6 -20 5 c0 9 12 15 20 22 c8 -7 20 -13 20 -22 c0 -11 -14 -13 -20 -5z" fill="#e64980" />
+            <text x="512" y="40" fill="#e64980" font-family="system-ui, sans-serif" font-size="20" font-weight="800" text-anchor="middle">It sings!</text>
+          </svg>
+          <figcaption>A heart before a long note; your vibrato drawn as a pink wave.</figcaption>
+        </figure>
+        <div class="trio">
+          <div>
+            <strong class="ink-pink">Slides</strong>
+            A glide or a scoop into a note is drawn in pink. In Romantic and salon pieces a tasteful slide earns bonus
+            points; in Classical and Baroque music it costs a few.
+          </div>
+          <div>
+            <strong class="ink-purple">Trills</strong>
+            A trill you play is drawn in purple, and the score card tells you how fast and how even it was.
+          </div>
+          <div>
+            <strong>Dynamics</strong>
+            Play the <em>p</em> softly and the <em>f</em> out: from the Easy level on, the score card checks that your
+            playing follows the markings.
+          </div>
+        </div>
+      </section>
+
+      <section id="passages" class="advanced-card">
+        <h3><span class="n">09</span> Practise a passage</h3>
+        <ul>
+          <li><strong>Marker</strong>: press it in the first bar of a tricky passage and again in its last. The passage is marked on the score and repeats until you switch <strong>Repeat</strong> off. Drag the marks' ends to change it.</li>
+          <li><strong>Record a loop</strong>: with a passage marked, Record plays it round and round and records every pass, so you can hear yourself improve.</li>
+          <li><strong>Tempo</strong> slows a piece down (the piano still sounds natural) until you have it, then bring it back up. Only takes at 100 % can go into the Hall of Fame.</li>
+          <li><strong>Click</strong> adds a metronome on every beat, and <strong>Humanize</strong> lets the piano play like a person rather than a machine.</li>
+        </ul>
+      </section>
+
+      <section id="markup" class="advanced-card">
+        <h3><span class="n">10</span> Make the score yours</h3>
+        <p>
+          Click a note to give it a fingering, a bowing, staccato, an accent or a tenuto; on one note also a dynamic or a
+          fermata; select two (Shift-click, or a long press on touch) for a slur, a crescendo, a diminuendo or a rit. The
+          violin plays your marks, and <strong>↺ Edited</strong> takes them all off again.
+        </p>
+        <figure class="shot">
+          <a href="img/page.webp"><img src="img/page.webp" width="1920" height="1290" loading="lazy" alt="The page view of the Ave Maria: the whole violin part on a page with the recorded take drawn in, and the toolbar for fingerings, bowings, articulations and dynamics under a selected note." /></a>
+          <figcaption>The page view: the whole violin part, your take drawn in, and the toolbar beside the note you picked.</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Page view</strong>: the round key at the top right of the score shows the violin part as a page that scrolls with the music, in three sizes. You can record right there.</li>
+          <li><strong>Print</strong>: the <strong>Score</strong> key beside the piece makes a PDF of the violin part with your marks (signed in).</li>
+          <li><strong>Share your markings</strong>: with no take chosen, <strong>Share</strong> sends a link to your marked-up score. A teacher's fingerings arrive as a version of the piece of their own.</li>
+        </ul>
+      </section>
+
+      <section id="community" class="advanced-card">
+        <h3><span class="n">11</span> Share and compete</h3>
+        <div class="tiles">
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 12a2.5 2.5 0 1 0 0 .01M18 6a2.5 2.5 0 1 0 0 .01M18 18a2.5 2.5 0 1 0 0 .01M8.2 10.9l7.6-3.8M8.2 13.1l7.6 3.8" /></svg>Share a take</strong>
+            <p>Share sends a link: whoever opens it hears your recording with the piano and sees your line on the score.</p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3M12 14v4M8 20h8" /></svg>Hall of Fame</strong>
+            <p>Publish a full take at 100 % from its score card to climb the piece's board and the <a href="../halloffame">Hall of Fame</a>: top players, best intonation, best timing, most practice.</p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM2.5 20c.6-3.5 3.3-5.5 6.5-5.5s5.9 2 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 6.6M18.5 14.8c1.7.8 2.8 2.5 3 5.2" /></svg>Practising now</strong>
+            <p>Under the score you see how many other players are practising the same piece right now.</p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg>Invite a violinist</strong>
+            <p>In the account menu: send your link to a friend. When they start practising, you earn karma, and the Hall of Fame lists the best inviters.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="packs" class="advanced-card">
+        <h3><span class="n">12</span> More music</h3>
+        <p>
+          The bag key in the header opens the <a href="../marketplace">Marketplace</a>: content packs of pieces with their
+          scores, levels, genres and interpretations. Add a pack and its pieces appear in your Repertoire, all open at once.
+          The <strong>Popular violin pieces</strong> pack brings 25 favourites, from the Méditation to Monti's Czardas.
+        </p>
+        <figure class="shot">
+          <a href="img/marketplace.webp"><img src="img/marketplace.webp" width="1920" height="1350" loading="lazy" alt="The Marketplace page of the Popular violin pieces pack: its cover picture, levels and genres, and its pieces listed below." /></a>
+        </figure>
+        <p>
+          When a pack gets a new version, Violin Hero asks whether to update or keep yours. Teachers and musicians can make
+          packs of their own on the <a href="../creator">Creator</a> page, for everyone or just for their students.
+        </p>
+        <p class="muted">
+          Also in the header: light or dark and five colour schemes (the sun key), English or German (the flag), and this
+          manual (the <strong>?</strong>).
+        </p>
+      </section>
+
+      <section id="keys" class="advanced-card">
+        <h3><span class="n">13</span> Keys</h3>
         <dl class="shortcuts">
           <div><dt><kbd>P</kbd></dt><dd>Play / pause</dd></div>
           <div><dt><kbd>R</kbd></dt><dd>Record</dd></div>
+          <div><dt><kbd>I</kbd></dt><dd>Listen to the interpretation or take</dd></div>
           <div><dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>One bar back / on</dd></div>
-            <div><dt><kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd></dt><dd>Start / end of the line</dd></div>
-            <div><dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>The line above / below (full screen)</dd></div>
-            <div><dt><kbd>Shift</kbd> <kbd>←</kbd> <kbd>→</kbd></dt><dd>Mark a section</dd></div>
+          <div><dt><kbd>Alt</kbd> <kbd>←</kbd> <kbd>→</kbd></dt><dd>Start / end of the line</dd></div>
+          <div><dt><kbd>↑</kbd> <kbd>↓</kbd></dt><dd>The line above / below (page view)</dd></div>
+          <div><dt><kbd>Shift</kbd> <kbd>←</kbd> <kbd>→</kbd></dt><dd>Mark a passage</dd></div>
           <div><dt><kbd>M</kbd></dt><dd>Marker</dd></div>
+          <div><dt><kbd>L</kbd></dt><dd>Repeat on / off</dd></div>
           <div><dt><kbd>V</kbd></dt><dd>Violin on / off</dd></div>
           <div><dt><kbd>[</kbd> <kbd>]</kbd></dt><dd>Previous / next piece</dd></div>
           <div><dt><kbd>?</kbd></dt><dd>This page</dd></div>
@@ -577,20 +1045,22 @@
       </section>
 
       <section id="credits">
-        <h2><span class="n">06</span> Credits</h2>
+        <h3>Credits</h3>
         <p class="muted">
           The grand is the <a href="https://archive.org/details/SalamanderGrandPianoV3">Salamander Grand Piano</a> by
           Alexander Holm (<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>). The uprights and the
           violin come from <a href="https://github.com/sgossner/VSCO-2-CE">VSCO 2 Community Edition</a> by Versilian
           Studios (CC0; Upright Piano by Simon Dalzell of Ivy Audio, with permission). The scores are public-domain
           engravings by musescore.com users, from <a href="https://zenodo.org/records/15571083">PDMX</a>, engraved by
-          <a href="https://opensheetmusicdisplay.org/">OpenSheetMusicDisplay</a>.
+          <a href="https://opensheetmusicdisplay.org/">OpenSheetMusicDisplay</a>. Videos are played from YouTube.
         </p>
       </section>
     </main>
 
     <footer>
-      Violin Hero, the first of the <a href="https://www.crescendu.com/">Crescendu</a> apps.
+      Violin Hero, the first of the <a href="https://www.crescendu.com/">Crescendu</a> apps ·
+      <a href="https://www.crescendu.com/en/privacy">Privacy</a> · <a href="https://www.crescendu.com/en/terms">Terms</a> ·
+      <a href="https://www.crescendu.com/feedback">Feedback</a>
     </footer>
   </body>
 </html>
