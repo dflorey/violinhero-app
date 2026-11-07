@@ -333,14 +333,128 @@
       .shot {
         margin: 0.4rem 0 1.2rem;
       }
-      .shot a {
+      .shot a,
+      .hero a {
         display: block;
+        cursor: zoom-in;
+      }
+
+      /* A screenshot enlarged: a modal <dialog> over the page, closed by a click anywhere or Esc */
+      .lightbox {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        max-width: none;
+        max-height: none;
+        margin: 0;
+        padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+        border: 0;
+        background: transparent;
+        cursor: zoom-out;
+        overflow: hidden;
+      }
+      .lightbox[open] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      .lightbox::backdrop {
+        background: rgba(16, 20, 28, 0.93);
+      }
+      .lightbox img {
+        display: block;
+        min-height: 0;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+      /* Room left for the caption under it */
+      .lightbox:has(p:not(:empty)) img {
+        max-height: calc(100% - 4.5rem);
+      }
+      .lightbox p {
+        flex: none;
+        max-width: 60rem;
+        margin: 0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #e6e9ef;
+        text-align: center;
+      }
+      .lightbox p:empty {
+        display: none;
+      }
+      .lightbox button {
+        position: absolute;
+        top: max(0.8rem, env(safe-area-inset-top));
+        right: max(0.8rem, env(safe-area-inset-right));
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 50%;
+        background: rgba(16, 20, 28, 0.6);
+        color: #fff;
+        cursor: pointer;
+      }
+      .lightbox button:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+      }
+      .lightbox button svg {
+        width: 20px;
+        height: 20px;
+      }
+      .lightbox[open] img {
+        animation: zoom-in 0.22s ease-out;
+      }
+      .lightbox[open]::backdrop {
+        animation: fade-in 0.22s ease-out;
+      }
+      @keyframes zoom-in {
+        from {
+          opacity: 0;
+          transform: scale(0.94);
+        }
+      }
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .lightbox[open] img,
+        .lightbox[open]::backdrop {
+          animation: none;
+        }
+      }
+      /* The page doesn't scroll behind it */
+      html:has(.lightbox[open]) {
+        overflow: hidden;
       }
       .shot img {
         width: 100%;
         border: 1px solid var(--line);
         border-radius: 12px;
         box-shadow: 0 6px 20px rgba(29, 36, 51, 0.1);
+      }
+      /* A card cut out of the app (the score card): its own corners and shadow, on the page */
+      .shot.card a {
+        width: min(100%, 460px);
+        margin: 0 auto;
+      }
+      .shot.card img {
+        border: 0;
+        border-radius: 18px;
+        box-shadow: 0 14px 40px rgba(29, 36, 51, 0.16), 0 1px 3px rgba(29, 36, 51, 0.08);
       }
       .shot figcaption,
       .figure figcaption {
@@ -363,122 +477,13 @@
         margin-top: 0.2rem;
       }
 
-      /* Illustrations: the app's own controls, drawn small */
+      /* Illustrations drawn on the page (the vibrato's staff) */
       .figure {
         margin: 0.4rem 0 1.2rem;
         padding: 1rem;
         background: var(--bg);
         border-radius: 14px;
       }
-      /* Wraps as the app's own row does where it is narrower than the controls */
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        gap: 0.9rem;
-        padding: 0.8rem 1rem;
-        background: var(--surface);
-        border-radius: 12px;
-        box-shadow: 0 1px 2px rgba(29, 36, 51, 0.06);
-      }
-      .field {
-        display: flex;
-        flex-direction: column;
-        gap: 0.35rem;
-      }
-      .label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--muted);
-        white-space: nowrap;
-      }
-      .label b {
-        color: var(--text);
-      }
-      .group {
-        display: flex;
-        gap: 0.4rem;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.35rem;
-        height: 38px;
-        padding: 0 0.75rem;
-        font-size: 0.85rem;
-        font-weight: 600;
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: var(--surface);
-        white-space: nowrap;
-      }
-      .btn svg {
-        width: 16px;
-        height: 16px;
-      }
-      .btn.play {
-        min-width: 6.5rem;
-        justify-content: center;
-        color: #fff;
-        background: var(--accent);
-        border-color: var(--accent);
-      }
-      .btn.rec svg {
-        color: var(--red);
-      }
-      .btn.kept {
-        color: var(--green);
-        background: #ebf8ee;
-        border-color: #b2e2bd;
-      }
-      .btn.on-amber {
-        color: var(--amber);
-        background: #fff4e6;
-        border-color: #ffd8a8;
-      }
-      /* The input: the level (green to red) lighting the slider's track from behind */
-      .gain {
-        position: relative;
-        width: 190px;
-        height: 38px;
-      }
-      .gain .track {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 14px;
-        height: 10px;
-        border-radius: 5px;
-        background: var(--line);
-        overflow: hidden;
-      }
-      .gain .level {
-        height: 100%;
-        width: 100%;
-        background: linear-gradient(90deg, #40c057 0%, #40c057 70%, #fab005 85%, #fa5252 100%);
-        clip-path: inset(0 40% 0 0);
-      }
-      .gain .tint {
-        position: absolute;
-        left: 0;
-        top: 14px;
-        width: 33%;
-        height: 10px;
-        border-radius: 5px 0 0 5px;
-        background: rgba(47, 111, 237, 0.28);
-      }
-      .gain .thumb {
-        position: absolute;
-        left: calc(33% - 10px);
-        top: 9px;
-        width: 20px;
-        height: 20px;
-        border: 2px solid var(--accent);
-        border-radius: 50%;
-        background: var(--surface);
-        box-shadow: 0 1px 3px rgba(29, 36, 51, 0.25);
-      }
-
       /* The line's colours, as a legend */
       .legend {
         display: flex;
@@ -507,6 +512,10 @@
         width: 100%;
         height: auto;
         max-height: 190px;
+      }
+      /* The line as the app draws it: a text marker, the ink showing through */
+      .staff-art .marker {
+        mix-blend-mode: multiply;
       }
       .heart {
         transform-box: fill-box;
@@ -739,7 +748,7 @@
       </div>
 
       <figure class="hero">
-        <img src="img/hero.webp" width="2160" height="1290" alt="Violin Hero's page view of the Ave Maria: the violin part on a page with a recorded take drawn into it, green where in tune, arrows marking notes played sharp or flat, the transport keys at the top." />
+        <a href="img/hero.webp"><img src="img/hero.webp" width="2160" height="1290" alt="Violin Hero's page view of the Ave Maria: the violin part on a page with a recorded take drawn into it, green where in tune, arrows marking notes played sharp or flat, the transport keys at the top." /></a>
       </figure>
 
       <div class="toc">
@@ -807,40 +816,6 @@
           <strong>Genre</strong> and <strong>Piece</strong>. Press <strong>Play</strong>: the piano and violin play
           while the blue line follows the music. Drag the score to move around in it.
         </p>
-        <figure class="figure">
-          <div class="row" aria-hidden="true">
-            <div class="field">
-              <span class="label">Start/Stop</span>
-              <span class="btn play"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10-6.5z" /></svg>Play</span>
-            </div>
-            <div class="field">
-              <span class="label">Navigation</span>
-              <div class="group">
-                <span class="btn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 6h2.2v12H5zM19.5 6v12l-6-6zM13.5 6v12l-6-6z" /></svg>Back</span>
-                <span class="btn"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.8 6H19v12h-2.2zM4.5 6v12l6-6zM10.5 6v12l6-6z" /></svg>Forward</span>
-              </div>
-            </div>
-            <div class="field">
-              <span class="label">Take</span>
-              <div class="group">
-                <span class="btn rec"><svg viewBox="0 0 24 24"><circle fill="currentColor" cx="12" cy="12" r="6" /></svg>Record</span>
-                <span class="btn kept"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 7l10 10M17 7L7 17" /></svg>Clear</span>
-              </div>
-            </div>
-            <div class="field">
-              <span class="label">Section</span>
-              <div class="group">
-                <span class="btn on-amber"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 20V4M7 5h10l-3 4 3 4H7" /></svg>Marker</span>
-                <span class="btn on-amber"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 11a5 5 0 0 1 5-5h8M15 3l3 3-3 3M19 13a5 5 0 0 1-5 5H6M9 21l-3-3 3-3" /></svg>Repeat</span>
-              </div>
-            </div>
-            <div class="field">
-              <span class="label">Input <b>+6 dB</b></span>
-              <div class="gain"><div class="track"><div class="level"></div></div><div class="tint"></div><div class="thumb"></div></div>
-            </div>
-          </div>
-          <figcaption>The transport card: playing, moving, recording, repeating a section, and the microphone's level.</figcaption>
-        </figure>
         <ul>
           <li><strong>Play</strong> starts and pauses; <strong>Back</strong> and <strong>Forward</strong> move one bar (press twice for the start or the end).</li>
           <li><strong>Settings</strong> holds the <strong>Tempo</strong>, a <strong>Click</strong> to play with, the piano's sound, and switches for the <strong>Piano</strong>, its <strong>Staves</strong> and the <strong>Violin</strong>.</li>
@@ -888,8 +863,8 @@
           and, as the levels rise, for dynamics, trills and your sound. It says what went well and gives you one tip for
           next time.
         </p>
-        <figure class="shot">
-          <a href="img/report.webp"><img src="img/report.webp" width="2160" height="1080" loading="lazy" alt="A score card over the score: 375 of 400 points, five stars, “Outstanding!”, bars for intonation, timing, missed and wrong notes, and the piece's top scores." /></a>
+        <figure class="shot card">
+          <a href="img/report.webp"><img src="img/report.webp" width="980" height="764" loading="lazy" alt="The score card: 382 of 400 points, five stars, “Bravo! The audience is on its feet.”, and bars for intonation (91), timing (91), missed notes (100) and right notes (100), with a “What's next” key." /></a>
         </figure>
         <p>
           <strong>Sign in</strong> (the round key at the top right) to keep your takes and progress on every device. A full
@@ -1066,10 +1041,13 @@
               <rect x="197" y="49" width="1.8" height="49" />
             </g>
             <ellipse cx="300" cy="91" rx="11" ry="7" fill="none" stroke="#1d2433" stroke-width="3.2" transform="rotate(-25 300 91)" />
-            <!-- The line: green on the first notes, then the pink vibrato wave -->
-            <path d="M100 106 C130 106 150 105 165 100 S180 98 205 98" fill="none" stroke="#69db7c" stroke-width="7" stroke-linecap="round" opacity="0.85" />
-            <path d="M262 91 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#e64980" stroke-width="12" stroke-linecap="round" opacity="0.22" />
-            <path d="M262 91 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#e64980" stroke-width="5" stroke-linecap="round" />
+            <!-- The line: a green text marker over the first notes (multiplied, so they show through), then the pink vibrato wave from the held note's head on -->
+            <g class="marker">
+              <path d="M104 106 C130 106 150 105 165 100 S180 98 212 98" fill="none" stroke="#69db7c" stroke-width="16" stroke-linecap="butt" opacity="0.6" />
+              <path d="M108 104 C132 104 150 103 166 99 S182 96 208 96" fill="none" stroke="#8ce99a" stroke-width="6" stroke-linecap="butt" opacity="0.45" />
+            </g>
+            <path d="M318 91 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#e64980" stroke-width="12" stroke-linecap="round" opacity="0.22" />
+            <path d="M318 91 q10 -9 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#e64980" stroke-width="5" stroke-linecap="round" />
             <!-- The heart over the note -->
             <path class="heart" d="M300 32 c-6 -8 -20 -6 -20 5 c0 9 12 15 20 22 c8 -7 20 -13 20 -22 c0 -11 -14 -13 -20 -5z" fill="#e64980" />
             <text x="512" y="40" fill="#e64980" font-family="system-ui, sans-serif" font-size="20" font-weight="800" text-anchor="middle">It sings!</text>
@@ -1112,8 +1090,8 @@
           violin plays your marks, and <strong>↺ Edited</strong> takes them all off again.
         </p>
         <figure class="shot">
-          <a href="img/page.webp"><img src="img/page.webp" width="1920" height="1290" loading="lazy" alt="The page view of the Ave Maria: the whole violin part on a page with the recorded take drawn in, and the toolbar for fingerings, bowings, articulations and dynamics under a selected note." /></a>
-          <figcaption>The page view: the whole violin part, your take drawn in, and the toolbar beside the note you picked.</figcaption>
+          <a href="img/page.webp"><img src="img/page.webp" width="2260" height="494" loading="lazy" alt="The first bars of the Ave Maria on an iPad with a half note picked (its head red) and the toolbar under it: fingerings 0 to 4, up- and down-bow, staccato, accent, tenuto, harmonic, the dynamics pp to ff, crescendo and diminuendo, fermata and Revert." /></a>
+          <figcaption>The toolbar under the note you picked: fingerings, bowings, articulations, dynamics and hairpins.</figcaption>
         </figure>
         <ul>
           <li><strong>Page view</strong>: the round key at the top right of the score shows the violin part as a page that scrolls with the music, in three sizes. You can record right there.</li>
@@ -1200,5 +1178,48 @@
       <a href="https://www.crescendu.com/en/privacy">Privacy</a> · <a href="https://www.crescendu.com/en/terms">Terms</a> ·
       <a href="https://www.crescendu.com/feedback">Feedback</a>
     </footer>
+
+    <dialog class="lightbox" aria-label="Enlarged screenshot">
+      <button type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>
+      </button>
+      <img alt="" />
+      <p></p>
+    </dialog>
+    <script>
+      // Screenshots open enlarged over the page. Each stays a link to its full image, so without
+      // this script, or with Ctrl / ⌘ / Shift or the middle button, it opens as the browser would.
+      (() => {
+        const box = document.querySelector('.lightbox');
+        if (!box || typeof box.showModal !== 'function') return;
+        const picture = box.querySelector('img');
+        const caption = box.querySelector('p');
+        let opener = null;
+        document.addEventListener('click', (e) => {
+          const link = e.target.closest('.shot a, .hero a');
+          if (!link || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+          const shown = link.querySelector('img');
+          if (!shown) return;
+          e.preventDefault();
+          opener = link;
+          picture.src = link.href;
+          picture.alt = shown.alt;
+          picture.width = shown.width;
+          picture.height = shown.height;
+          const text = link.closest('figure')?.querySelector('figcaption')?.textContent.trim() ?? '';
+          caption.textContent = text;
+          box.setAttribute('aria-label', text || shown.alt || 'Enlarged screenshot');
+          box.showModal();
+          box.querySelector('button').focus();
+        });
+        // A click anywhere closes it, on the picture too
+        box.addEventListener('click', () => box.close());
+        box.addEventListener('close', () => {
+          picture.removeAttribute('src');
+          opener?.focus({ preventScroll: true });
+          opener = null;
+        });
+      })();
+    </script>
   </body>
 </html>

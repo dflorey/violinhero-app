@@ -1067,14 +1067,6 @@
         </note>
       </measure>
     <measure number="26" width="398.62">
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-40.00" relative-x="3.51" relative-y="-32.04">
-            <f/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="106.67"/>
-        </direction>
       <note default-x="17.59" default-y="-25.00">
         <pitch>
           <step>A</step>
@@ -1108,11 +1100,6 @@
         </note>
       </measure>
     <measure number="27" width="409.11">
-      <direction placement="below">
-        <direction-type>
-          <wedge type="crescendo" number="1" default-y="-72.93"/>
-          </direction-type>
-        </direction>
       <note default-x="16.56" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -1144,11 +1131,6 @@
         <type>eighth</type>
         <stem>down</stem>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="stop" number="1" relative-x="-24.60"/>
-          </direction-type>
-        </direction>
       </measure>
     <measure number="28" width="459.10">
       <print new-system="yes">
@@ -1160,14 +1142,6 @@
           <system-distance>150.00</system-distance>
           </system-layout>
         </print>
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="3.29" default-y="-40.00" relative-y="-40.00">
-            <f/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="106.67"/>
-        </direction>
       <note default-x="70.98" default-y="-15.00">
         <pitch>
           <step>C</step>
@@ -1190,14 +1164,6 @@
         </note>
       </measure>
     <measure number="29" width="400.82">
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-42.83" relative-x="-1.77" relative-y="-31.44">
-            <f/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="106.67"/>
-        </direction>
       <note default-x="12.70" default-y="-45.00">
         <pitch>
           <step>D</step>
@@ -1304,14 +1270,6 @@
           <system-distance>150.00</system-distance>
           </system-layout>
         </print>
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-40.00" relative-x="0.78" relative-y="-31.84">
-            <mf/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="88.89"/>
-        </direction>
       <note default-x="60.47" default-y="-35.00">
         <pitch>
           <step>F</step>
@@ -1341,11 +1299,6 @@
           <tied type="stop"/>
           </notations>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="crescendo" number="1" default-y="-65.46"/>
-          </direction-type>
-        </direction>
       <note default-x="291.14" default-y="-35.00">
         <pitch>
           <step>F</step>
@@ -1379,21 +1332,8 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="stop" number="1" relative-x="179.02"/>
-          </direction-type>
-        </direction>
       </measure>
     <measure number="32" width="383.59">
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="3.29" default-y="-44.48" relative-x="21.80" relative-y="-25.99">
-            <f/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="106.67"/>
-        </direction>
       <note default-x="13.06" default-y="-10.00">
         <pitch>
           <step>D</step>
@@ -1427,14 +1367,6 @@
         </note>
       </measure>
     <measure number="33" width="418.44">
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-40.00" relative-x="11.88" relative-y="-27.77">
-            <mp/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="71.11"/>
-        </direction>
       <note default-x="12.70" default-y="-25.00">
         <pitch>
           <step>A</step>
@@ -1449,11 +1381,6 @@
           <tied type="start"/>
           </notations>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="crescendo" number="1" default-y="-77.08"/>
-          </direction-type>
-        </direction>
       <note default-x="220.60" default-y="-25.00">
         <pitch>
           <step>A</step>
@@ -1502,11 +1429,6 @@
         <stem>down</stem>
         <beam number="1">end</beam>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="stop" number="1"/>
-          </direction-type>
-        </direction>
       </measure>
     <measure number="34" width="451.78">
       <print new-system="yes">
@@ -1518,14 +1440,6 @@
           <system-distance>150.00</system-distance>
           </system-layout>
         </print>
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="3.29" default-y="-40.00" relative-y="-40.00">
-            <f/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="106.67"/>
-        </direction>
       <note default-x="60.47" default-y="-5.00">
         <pitch>
           <step>E</step>
@@ -1654,11 +1568,6 @@
         </note>
       </measure>
     <measure number="36" width="390.80">
-      <direction placement="below">
-        <direction-type>
-          <wedge type="diminuendo" number="1" default-y="-82.31"/>
-          </direction-type>
-        </direction>
       <note default-x="13.06" default-y="-30.00">
         <pitch>
           <step>G</step>
@@ -1736,14 +1645,6 @@
         <stem>up</stem>
         <beam number="1">continue</beam>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-40.00" relative-x="45.38" relative-y="-29.25">
-            <mp/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="71.11"/>
-        </direction>
       <note default-x="342.18" default-y="-65.00">
         <pitch>
           <step>G</step>
@@ -1755,11 +1656,6 @@
         <stem>up</stem>
         <beam number="1">end</beam>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="stop" number="1" relative-x="-61.84"/>
-          </direction-type>
-        </direction>
       </measure>
     <measure number="37" width="438.31">
       <print new-page="yes">
@@ -1798,19 +1694,6 @@
         </note>
       </measure>
     <measure number="39" width="341.53">
-      <direction placement="below">
-        <direction-type>
-          <dynamics default-x="6.58" default-y="-40.00" relative-x="566.05" relative-y="-35.19">
-            <f/>
-            </dynamics>
-          </direction-type>
-        <sound dynamics="106.67"/>
-        </direction>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="crescendo" number="1" default-y="-70.19"/>
-          </direction-type>
-        </direction>
       <note default-x="15.80" default-y="-65.00">
         <pitch>
           <step>G</step>
@@ -1824,11 +1707,6 @@
           <tied type="start"/>
           </notations>
         </note>
-      <direction placement="below">
-        <direction-type>
-          <wedge type="stop" number="1" relative-x="-87.31"/>
-          </direction-type>
-        </direction>
       </measure>
     <measure number="40" width="75.52">
       <note default-x="15.80" default-y="-65.00">
