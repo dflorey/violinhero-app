@@ -539,6 +539,68 @@
         margin-bottom: 0.2rem;
       }
 
+      /* Installing: what it brings, then one card per kind of device */
+      .perks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+      }
+      .perks li {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin: 0;
+        padding: 0.35rem 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        background: var(--accent-soft);
+        border-radius: 14px;
+      }
+      .perks span {
+        color: var(--accent);
+      }
+      .platforms {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+        gap: 0.8rem;
+        margin: 0 0 1rem;
+      }
+      .platforms > div {
+        padding: 0.9rem 1rem 0.2rem;
+        background: var(--bg);
+        border-radius: 12px;
+      }
+      .platforms h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin: 0 0 0.5rem;
+      }
+      .platforms h4 svg {
+        flex: none;
+        width: 22px;
+        height: 22px;
+        color: var(--accent);
+      }
+      .platforms ol {
+        padding-left: 1.2rem;
+        font-size: 0.95rem;
+      }
+      .platforms .small {
+        font-size: 0.86rem;
+        color: var(--muted);
+      }
+      svg.inline {
+        display: inline-block;
+        width: 1.15em;
+        height: 1.15em;
+        vertical-align: -0.2em;
+        color: var(--accent);
+      }
+
       /* Feature tiles: the extras at a glance */
       .tiles {
         display: grid;
@@ -677,7 +739,7 @@
       </div>
 
       <figure class="hero">
-        <img src="img/overview.webp" width="2160" height="1080" alt="Violin Hero with the Ave Maria open: the violin's staff with a recorded take drawn into it in green, arrows marking notes played flat, the controls on the right." />
+        <img src="img/hero.webp" width="2160" height="1290" alt="Violin Hero's page view of the Ave Maria: the violin part on a page with a recorded take drawn into it, green where in tune, arrows marking notes played sharp or flat, the transport keys at the top." />
       </figure>
 
       <div class="toc">
@@ -689,19 +751,20 @@
             <li><a href="#record"><span>3</span> Record yourself</a></li>
             <li><a href="#scorecard"><span>4</span> Your score</a></li>
             <li><a href="#phone"><span>5</span> On a phone</a></li>
+            <li><a href="#install"><span>6</span> Install it as an app</a></li>
           </ol>
         </div>
         <div>
           <strong>Going further</strong>
           <ol>
-            <li><a href="#interpretations"><span>6</span> Real interpretations</a></li>
-            <li><a href="#youtube"><span>7</span> Play along with YouTube</a></li>
-            <li><a href="#vibrato"><span>8</span> Vibrato, slides and trills</a></li>
-            <li><a href="#passages"><span>9</span> Practise a passage</a></li>
-            <li><a href="#markup"><span>10</span> Make the score yours</a></li>
-            <li><a href="#community"><span>11</span> Share and compete</a></li>
-            <li><a href="#packs"><span>12</span> More music</a></li>
-            <li><a href="#keys"><span>13</span> Keys</a></li>
+            <li><a href="#interpretations"><span>7</span> Real interpretations</a></li>
+            <li><a href="#youtube"><span>8</span> Play along with YouTube</a></li>
+            <li><a href="#vibrato"><span>9</span> Vibrato, slides and trills</a></li>
+            <li><a href="#passages"><span>10</span> Practise a passage</a></li>
+            <li><a href="#markup"><span>11</span> Make the score yours</a></li>
+            <li><a href="#community"><span>12</span> Share and compete</a></li>
+            <li><a href="#packs"><span>13</span> More music</a></li>
+            <li><a href="#keys"><span>14</span> Keys</a></li>
           </ol>
         </div>
       </div>
@@ -732,7 +795,7 @@
             </p>
           </div>
           <figure class="shot">
-            <a href="img/tuner.webp"><img src="img/tuner.webp" width="1920" height="1290" loading="lazy" alt="The tuner: a graph of the A string's pitch rising towards the green in-tune band, the strings G, D, A and E below." /></a>
+            <a href="img/tuner.webp"><img src="img/tuner.webp" width="1920" height="1290" loading="lazy" alt="The tuner: the A string's pitch rising from 20 cents flat towards the green in-tune band, “Tune up · 7 ¢ flat”, the strings G, D, A and E below." /></a>
           </figure>
         </div>
       </section>
@@ -848,15 +911,90 @@
               Turn the phone sideways for a wider score, with the controls in a column beside it.
             </p>
             <p>
-              <strong>Install it:</strong> Violin Hero works as an app. On an iPhone or iPad use Safari's Share →
-              <em>Add to Home Screen</em>; on Android or a computer, the install key in the address bar. Installed, it keeps
-              every score and the samples, so it works offline too.
+              Practising on your phone or tablet every day? <a href="#install">Install Violin Hero as an app</a>: it then
+              opens from your home screen, without the browser around it.
             </p>
           </div>
           <figure class="shot">
             <a href="img/phone.webp"><img src="img/phone.webp" width="780" height="1688" loading="lazy" alt="Violin Hero on a phone: the score at the top, the transport keys below, and the tabs Transport, Settings and Repertoire at the bottom." /></a>
           </figure>
         </div>
+      </section>
+
+      <section id="install">
+        <h3><span class="n">06</span> Install it as an app</h3>
+        <p>
+          Violin Hero is a website: open <strong>violinhero.crescendu.com</strong> in a browser and it works, with nothing
+          to download first. But it can also be <strong>installed like an app</strong>, free, without an app store:
+        </p>
+        <ul class="perks">
+          <li><span aria-hidden="true">▣</span> Its own icon on your home screen or desktop</li>
+          <li><span aria-hidden="true">⤢</span> The whole screen for the score, no address bar</li>
+          <li><span aria-hidden="true">✈</span> Works offline: the scores and sounds are kept on the device</li>
+          <li><span aria-hidden="true">↻</span> Always up to date: new versions arrive by themselves</li>
+        </ul>
+        <div class="platforms">
+          <div>
+            <h4>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M10 18.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+              iPhone and iPad
+            </h4>
+            <ol>
+              <li>Open Violin Hero in <strong>Safari</strong>.</li>
+              <li>
+                Tap the <strong>Share</strong> button
+                <svg class="inline" viewBox="0 0 24 24" aria-label="Share"><path d="M12 3v12M8 7l4-4 4 4M6 11H5v10h14V11h-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                (on an iPhone at the bottom, on an iPad at the top right; in newer versions it may sit behind
+                <strong>⋯</strong>).
+              </li>
+              <li>Scroll down and tap <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</li>
+            </ol>
+            <p class="small">
+              Use Safari: in Chrome or another browser on an iPhone or iPad, open the page in Safari first (recent iOS
+              versions also offer Add to Home Screen in Chrome's Share menu). Violin Hero reminds you with a little card at
+              the top.
+            </p>
+          </div>
+          <div>
+            <h4>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><circle cx="12" cy="18" r="1.2" fill="currentColor" /></svg>
+              Android phones and tablets
+            </h4>
+            <ol>
+              <li>Open Violin Hero in <strong>Chrome</strong>.</li>
+              <li>Tap the menu <strong>⋮</strong> at the top right.</li>
+              <li>Tap <strong>Install app</strong> (or <strong>Add to Home screen</strong>), then <strong>Install</strong>.</li>
+            </ol>
+            <p class="small">
+              In Samsung Internet: the menu <strong>☰</strong> at the bottom, then <strong>Add page to</strong> →
+              <strong>Home screen</strong>. Chrome sometimes offers the install by itself at the bottom of the screen.
+            </p>
+          </div>
+          <div>
+            <h4>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M1.5 19.5h21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+              Windows, Mac or Chromebook
+            </h4>
+            <ol>
+              <li>Open Violin Hero in <strong>Chrome</strong> or <strong>Edge</strong>.</li>
+              <li>
+                Click the <strong>install</strong> icon at the right end of the address bar
+                <svg class="inline" viewBox="0 0 24 24" aria-label="Install"><rect x="3" y="4" width="18" height="13" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M12 7.5v6M9.5 11l2.5 2.5 2.5-2.5M8 20.5h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                and then <strong>Install</strong>.
+              </li>
+            </ol>
+            <p class="small">
+              No icon? In Chrome: menu ⋮ → <strong>Cast, save and share</strong> → <strong>Install page as app</strong>; in
+              Edge: menu … → <strong>Apps</strong> → <strong>Install this site as an app</strong>. In Safari on a Mac (macOS
+              Sonoma or later): <strong>File</strong> → <strong>Add to Dock</strong>.
+            </p>
+          </div>
+        </div>
+        <p class="note">
+          After installing, open Violin Hero from its icon. The first time it listens, it asks again for the microphone:
+          allow it, and it remembers. Your account, takes and unlocked pieces are the same in the app and the browser once
+          you are signed in.
+        </p>
       </section>
 
       <!-- ——— Part two ——— -->
@@ -871,7 +1009,7 @@
       </div>
 
       <section id="interpretations" class="advanced-card">
-        <h3><span class="n">06</span> Real interpretations</h3>
+        <h3><span class="n">07</span> Real interpretations</h3>
         <p>
           Great violinists don't play like a metronome. For many pieces, <strong>Interpretation</strong> in Repertoire offers
           recordings by famous performers, from Fritz Kreisler to today's stars. Choose one and Violin Hero lines its own
@@ -889,7 +1027,7 @@
       </section>
 
       <section id="youtube" class="advanced-card">
-        <h3><span class="n">07</span> Play along with YouTube</h3>
+        <h3><span class="n">08</span> Play along with YouTube</h3>
         <p>
           Some interpretations are YouTube videos. Press <strong>▶</strong> and the video opens in a small window while the
           score scrolls along in perfect sync, the blue line following the performer's every rubato. Drag the window
@@ -902,7 +1040,7 @@
       </section>
 
       <section id="vibrato" class="advanced-card">
-        <h3><span class="n">08</span> Vibrato, slides and trills</h3>
+        <h3><span class="n">09</span> Vibrato, slides and trills</h3>
         <p>
           Violin Hero hears more than right and wrong notes. From the Intermediate level on, a little
           <span class="ink-pink">heart</span> pops up over long notes just before they come: the place for a vibrato. When
@@ -957,7 +1095,7 @@
       </section>
 
       <section id="passages" class="advanced-card">
-        <h3><span class="n">09</span> Practise a passage</h3>
+        <h3><span class="n">10</span> Practise a passage</h3>
         <ul>
           <li><strong>Marker</strong>: press it in the first bar of a tricky passage and again in its last. The passage is marked on the score and repeats until you switch <strong>Repeat</strong> off. Drag the marks' ends to change it.</li>
           <li><strong>Record a loop</strong>: with a passage marked, Record plays it round and round and records every pass, so you can hear yourself improve.</li>
@@ -967,7 +1105,7 @@
       </section>
 
       <section id="markup" class="advanced-card">
-        <h3><span class="n">10</span> Make the score yours</h3>
+        <h3><span class="n">11</span> Make the score yours</h3>
         <p>
           Click a note to give it a fingering, a bowing, staccato, an accent or a tenuto; on one note also a dynamic or a
           fermata; select two (Shift-click, or a long press on touch) for a slur, a crescendo, a diminuendo or a rit. The
@@ -985,7 +1123,7 @@
       </section>
 
       <section id="community" class="advanced-card">
-        <h3><span class="n">11</span> Share and compete</h3>
+        <h3><span class="n">12</span> Share and compete</h3>
         <div class="tiles">
           <div>
             <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 12a2.5 2.5 0 1 0 0 .01M18 6a2.5 2.5 0 1 0 0 .01M18 18a2.5 2.5 0 1 0 0 .01M8.2 10.9l7.6-3.8M8.2 13.1l7.6 3.8" /></svg>Share a take</strong>
@@ -1007,7 +1145,7 @@
       </section>
 
       <section id="packs" class="advanced-card">
-        <h3><span class="n">12</span> More music</h3>
+        <h3><span class="n">13</span> More music</h3>
         <p>
           The bag key in the header opens the <a href="../marketplace">Marketplace</a>: content packs of pieces with their
           scores, levels, genres and interpretations. Add a pack and its pieces appear in your Repertoire, all open at once.
@@ -1027,7 +1165,7 @@
       </section>
 
       <section id="keys" class="advanced-card">
-        <h3><span class="n">13</span> Keys</h3>
+        <h3><span class="n">14</span> Keys</h3>
         <dl class="shortcuts">
           <div><dt><kbd>P</kbd></dt><dd>Play / pause</dd></div>
           <div><dt><kbd>R</kbd></dt><dd>Record</dd></div>
