@@ -1,8 +1,8 @@
 {
-  "id": "/violinhero-app/fs-6",
-  "name": "Violin Hero FS-6",
+  "id": "/",
+  "name": "Violin Hero",
   "short_name": "Violin Hero",
-  "description": "A violin game from the FS family.",
+  "description": "Play along. Get better. Have fun.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -21,7 +21,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      // Only this app's old caches: the FS apps share one origin, so its other apps' caches are here too
+      // Only this app's old caches: apps sharing an origin would see each other's caches
       .then((keys) => Promise.all(keys.filter((key) => key.startsWith('violinhero-') && key !== CACHE).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
