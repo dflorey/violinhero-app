@@ -2778,8 +2778,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Bu[n]}</g>
   </g>`}function E0(n){return["app","halloffame","marketplace"].filter(t=>t!==n).map(t=>A`<a class="m-help m-place ${t}" href=${ln(t,n)} title=${ec[t]} aria-label=${ec[t]}>
         ${t==="app"?W`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${zu}</g></svg>`:W`<svg viewBox="0 0 24 24" aria-hidden="true">${Bu[t]}</svg>`}
-      </a>`)}const A0=parseFloat("0.108+")<1;function S0(n){return A`<span class="m-version-line">
-    <span class="m-version" title=${n}>v${"0.108+"}</span>
+      </a>`)}const A0=parseFloat("0.109+")<1;function S0(n){return A`<span class="m-version-line">
+    <span class="m-version" title=${n}>v${"0.109+"}</span>
     ${A0?A`<span class="m-beta">Beta</span>`:""}
   </span>`}const I0=At`
     /*
@@ -2893,7 +2893,7 @@ SPDX-License-Identifier: Apache-2.0
         gap: 0.35rem;
       }
     }
-    /* The name with the build's version ("0.108+") under it, left aligned */
+    /* The name with the build's version ("0.109+") under it, left aligned */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -5485,7 +5485,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Hall of Fame" in the theme colour (a name, in every language) -->
             <span class="m-name" aria-label=${n.name}>Violin Hero <span class="c-creator">Hall of Fame</span></span>
-            ${S0(ie().versionTitle("0.108+","8660ab6"))}
+            ${S0(ie().versionTitle("0.109+","e2bddd6"))}
           </span>
         </a>
         <div class="m-header-end">
@@ -5616,7 +5616,7 @@ SPDX-License-Identifier: Apache-2.0
       @click=${()=>r?this.audio.stop():void this.audio.playTake(n.uid,n.name)}
     >
       ${r?W`<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5" /></svg>`:W`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z" /></svg>`}
-    </button>`}progressLine(n){const e=Ns(n.uid,n.name),t=this.audioState;return t.kind==="failed"&&t.key===e?A`<span class="failed">${ne().takeFailed}</span>`:t.kind!=="playing"||t.key!==e?$:Lw(this.audio,this.audioProgress,ne().seek,"progress")}player(n,e){return this.profiles.has(n)?A`<a class="f-player" href=${`${ln("profile","halloffame")}?user=${encodeURIComponent(n)}`}>${e}</a>`:e}isMe(n){return!!this.user&&this.user.uid===n}};de.styles=[I0,x0,J0,j0];ve([Ge({reflect:!0})],de.prototype,"theme",2);ve([Ge({reflect:!0})],de.prototype,"scheme",2);ve([B()],de.prototype,"user",2);ve([B()],de.prototype,"fame",2);ve([B()],de.prototype,"counted",2);ve([B()],de.prototype,"audioState",2);ve([B()],de.prototype,"audioProgress",2);ve([B()],de.prototype,"live",2);ve([B()],de.prototype,"practice",2);ve([B()],de.prototype,"referrers",2);ve([B()],de.prototype,"invited",2);ve([B()],de.prototype,"profiles",2);de=ve([dr("fame-app")],de);
+    </button>`}progressLine(n){const e=Ns(n.uid,n.name),t=this.audioState;return t.kind==="failed"&&t.key===e?A`<span class="failed">${ne().takeFailed}</span>`:t.kind!=="playing"||t.key!==e?$:Lw(this.audio,this.audioProgress,ne().seek,"progress")}player(n,e){return this.profiles.has(n)?A`<a class="f-player" target="_blank" rel="noopener" href=${`${ln("profile","halloffame")}?user=${encodeURIComponent(n)}`}>${e}</a>`:e}isMe(n){return!!this.user&&this.user.uid===n}};de.styles=[I0,x0,J0,j0];ve([Ge({reflect:!0})],de.prototype,"theme",2);ve([Ge({reflect:!0})],de.prototype,"scheme",2);ve([B()],de.prototype,"user",2);ve([B()],de.prototype,"fame",2);ve([B()],de.prototype,"counted",2);ve([B()],de.prototype,"audioState",2);ve([B()],de.prototype,"audioProgress",2);ve([B()],de.prototype,"live",2);ve([B()],de.prototype,"practice",2);ve([B()],de.prototype,"referrers",2);ve([B()],de.prototype,"invited",2);ve([B()],de.prototype,"profiles",2);de=ve([dr("fame-app")],de);
 </script>
   </head>
   <body>
