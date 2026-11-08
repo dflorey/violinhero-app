@@ -7,10 +7,13 @@
     <script>
       // GitHub Pages serves this for any address it hasn't got. The pages besides the app live at
       // /creator, /marketplace and /halloffame (no trailing slash, vite.config.ts's pageAtRoot()):
-      // an old link to their folder goes on there, its query (?pack=…) and hash kept.
+      // an old link to their folder goes on there, its query (?pack=…) and hash kept. A player's
+      // profile, /profile/<uid>, is the profile page told whose (?user=; it shows /profile/<uid> again).
       (function () {
-        var match = /^(.*\/)(creator|marketplace|halloffame)\/(index\.html)?$/.exec(location.pathname);
-        if (match) location.replace(match[1] + match[2] + location.search + location.hash);
+        var match = /^(.*\/)(creator|marketplace|halloffame|profile)\/(index\.html)?$/.exec(location.pathname);
+        if (match) return location.replace(match[1] + match[2] + location.search + location.hash);
+        var profile = /^(.*\/)profile\/([\w-]+)\/?$/.exec(location.pathname);
+        if (profile) location.replace(profile[1] + 'profile?user=' + profile[2] + (location.search ? '&' + location.search.slice(1) : '') + location.hash);
       })();
     </script>
     <style>
