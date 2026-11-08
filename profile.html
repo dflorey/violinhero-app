@@ -2778,8 +2778,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${_l[t]}</g>
   </g>`}function Gm(t){return["app","halloffame","marketplace"].filter(n=>n!==t).map(n=>v`<a class="m-help m-place ${n}" href=${hn(n,t)} title=${Qa[n]} aria-label=${Qa[n]}>
         ${n==="app"?M`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${kl}</g></svg>`:M`<svg viewBox="0 0 24 24" aria-hidden="true">${_l[n]}</svg>`}
-      </a>`)}const Km=parseFloat("0.112+")<1;function qm(t){return v`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.112+"}</span>
+      </a>`)}const Km=parseFloat("0.113+")<1;function qm(t){return v`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.113+"}</span>
     ${Km?v`<span class="m-beta">Beta</span>`:""}
   </span>`}const Ym=Be`
     /*
@@ -2893,7 +2893,7 @@ SPDX-License-Identifier: Apache-2.0
         gap: 0.35rem;
       }
     }
-    /* The name with the build's version ("0.112+") under it, left aligned */
+    /* The name with the build's version ("0.113+") under it, left aligned */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -5469,7 +5469,7 @@ ${Al[t.icon](n.ink,n.detail)}
           <svg class="m-logo profile" viewBox="0 0 100 100" aria-hidden="true">${Wm("profile")}</svg>
           <span class="m-titles">
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">${t.name.replace("Violin Hero ","")}</span></span>
-            ${qm(ne().versionTitle("0.112+","86394b1"))}
+            ${qm(ne().versionTitle("0.113+","7877802"))}
           </span>
         </a>
         <div class="m-header-end">
@@ -6416,7 +6416,8 @@ ${Al[t.icon](n.ink,n.detail)}
 
       /* The pieces: the score card's rows, the bar the time practised */
       .p-piece {
-        grid-template-columns: 22px minmax(0, 1fr) minmax(40px, 90px) minmax(70px, auto);
+        /* Fixed widths for the bar and the score, so every row's bar (the time practised) lines up whether it has a score or not */
+        grid-template-columns: 22px minmax(0, 1fr) 90px 132px;
       }
       .p-piece .label {
         display: flex;
@@ -6542,7 +6543,7 @@ ${Al[t.icon](n.ink,n.detail)}
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
         .p-piece {
-          grid-template-columns: 22px minmax(0, 1fr) minmax(64px, auto);
+          grid-template-columns: 22px minmax(0, 1fr) 112px;
         }
         .p-piece .bar {
           display: none;
