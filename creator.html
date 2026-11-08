@@ -2809,8 +2809,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${dp[t]}</g>
   </g>`}function mv(t){return["app","halloffame","marketplace"].filter(n=>n!==t).map(n=>x`<a class="m-help m-place ${n}" href=${Xi(n,t)} title=${zl[n]} aria-label=${zl[n]}>
         ${n==="app"?K`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${cp}</g></svg>`:K`<svg viewBox="0 0 24 24" aria-hidden="true">${dp[n]}</svg>`}
-      </a>`)}const gv=["de"];function yv(t){const e=gv.includes(Pe())?`${Pe()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function bv(t,e){return x`<a class="m-help" href=${yv(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const vv=parseFloat("0.118")<1;function wv(t){return x`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.118"}</span>
+      </a>`)}const gv=["de"];function yv(t){const e=gv.includes(Pe())?`${Pe()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function bv(t,e){return x`<a class="m-help" href=${yv(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const vv=parseFloat("0.119")<1;function wv(t){return x`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.119"}</span>
     ${vv?x`<span class="m-beta">Beta</span>`:""}
   </span>`}const kv=An`
     /*
@@ -2932,7 +2932,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.118") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.119") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -4921,7 +4921,7 @@ registerProcessor('violinhero-tab-capture', class extends AudioWorkletProcessor 
           <span class="m-titles">
             <!-- The app's name as it is, "Creator" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Creator</span></span>
-            ${wv(Fe().versionTitle("0.118","7b9c68e"))}
+            ${wv(Fe().versionTitle("0.119","016a901"))}
           </span>
         </a>
         <div class="m-header-end">
@@ -5962,9 +5962,24 @@ registerProcessor('violinhero-tab-capture', class extends AudioWorkletProcessor 
         flex-wrap: nowrap;
       }
       /*
+       * The creator's pack cards share their rows with the cards beside them (a subgrid: picture,
+       * title and chips, keys, footer), so a hint that needs more lines makes every footer in the
+       * row taller and the Edit keys stay level
+       */
+      .c-grid > .c-pack:not(.skeleton) {
+        display: grid;
+        grid-row: span 4;
+        grid-template-rows: subgrid;
+        row-gap: 1rem;
+      }
+      .c-grid > .c-pack > .c-actions,
+      .c-grid > .c-pack > .c-confirm {
+        align-self: end;
+      }
+      /*
        * A pack card's footer, across the card's foot under a light shadow: on the left a hint panel
-       * (whether it can be deleted), on the right how many players have the pack. One height on
-       * every card (the hint at most two lines), so the Edit keys above it are level
+       * (whether it can be deleted), on the right how many players have the pack. The hint is at
+       * least two lines high and grows with its text, never cut
        */
       .c-pack-foot {
         --line: 1.35em;
@@ -5985,7 +6000,7 @@ registerProcessor('violinhero-tab-capture', class extends AudioWorkletProcessor 
         align-items: center;
         gap: 0.5rem;
         box-sizing: content-box;
-        height: calc(2 * var(--line));
+        min-height: calc(2 * var(--line));
         margin: 0;
         padding: 0.45rem 0.65rem;
         border-radius: 10px;
@@ -6001,10 +6016,8 @@ registerProcessor('violinhero-tab-capture', class extends AudioWorkletProcessor 
         color: var(--m-accent);
       }
       .c-pack-hint span {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
+        min-width: 0;
+        overflow-wrap: anywhere;
       }
       /* How many players have it: the number large, the word under it */
       .c-pack-installs {
