@@ -2809,8 +2809,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Nh[t]}</g>
   </g>`}function Sb(t){return["app","halloffame","marketplace"].filter(n=>n!==t).map(n=>w`<a class="m-help m-place ${n}" href=${Li(n,t)} title=${vl[n]} aria-label=${vl[n]}>
         ${n==="app"?j`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Ih}</g></svg>`:j`<svg viewBox="0 0 24 24" aria-hidden="true">${Nh[n]}</svg>`}
-      </a>`)}const Eb=parseFloat("0.109+")<1;function xb(t){return w`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.109+"}</span>
+      </a>`)}const Eb=parseFloat("0.110+")<1;function xb(t){return w`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.110+"}</span>
     ${Eb?w`<span class="m-beta">Beta</span>`:""}
   </span>`}const $b=bn`
     /*
@@ -2924,7 +2924,7 @@ SPDX-License-Identifier: Apache-2.0
         gap: 0.35rem;
       }
     }
-    /* The name with the build's version ("0.109+") under it, left aligned */
+    /* The name with the build's version ("0.110+") under it, left aligned */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -4887,7 +4887,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Creator" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Creator</span></span>
-            ${xb($e().versionTitle("0.109+","e2bddd6"))}
+            ${xb($e().versionTitle("0.110+","3336f0e"))}
           </span>
         </a>
         <div class="m-header-end">
@@ -5087,8 +5087,9 @@ SPDX-License-Identifier: Apache-2.0
                 <button class="c-button danger" ?disabled=${i} @click=${()=>void this.removePack(t.id)}>${i?e.deleting:e.deleteConfirm}</button>
               </div>
             </div>`:w`<div class="c-actions">
-              <button class="c-button" @click=${()=>this.edit(t)}>${ee("edit")} ${e.edit}</button>
+              <!-- Edit last: the row is right-aligned, so every card's Edit lines up at its right edge -->
               ${t.id===on?C:t.installs?w`<span class="c-hint">${e.installedNoDelete}</span>`:w`<button class="c-button ghost danger-text" @click=${()=>this.confirmDelete=t.id}>${ee("trash")} ${e.delete}</button>`}
+              <button class="c-button" @click=${()=>this.edit(t)}>${ee("edit")} ${e.edit}</button>
             </div>`}
       </article>
     `}languageTabs(t){const e=G(),n=t.language??"en",i=Object.keys(Oe).sort((r,s)=>r===n?-1:s===n?1:0);return w`<div class="c-languages" role="tablist" aria-label=${e.textsIn}>
@@ -5904,6 +5905,17 @@ SPDX-License-Identifier: Apache-2.0
         font-weight: 400;
         font-size: 0.8rem;
         color: var(--m-muted);
+      }
+      /* A pack card's hint before its Edit: takes the room left, wrapping there, so Edit stays on the line */
+      .c-pack .c-actions {
+        flex-wrap: nowrap;
+        /* On the card's foot, so Edit is level on cards side by side whatever the hint's lines */
+        align-items: flex-end;
+      }
+      .c-pack .c-actions .c-hint {
+        flex: 1;
+        min-width: 0;
+        text-align: right;
       }
       .c-input {
         box-sizing: border-box;
