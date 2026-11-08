@@ -622,7 +622,7 @@
         border: 1px solid var(--line);
         border-radius: 12px;
       }
-      .tiles strong {
+      .tiles > div > strong {
         display: flex;
         align-items: center;
         gap: 0.45rem;
@@ -772,7 +772,7 @@
             <li><a href="#passages"><span>10</span> Practise a passage</a></li>
             <li><a href="#markup"><span>11</span> Make the score yours</a></li>
             <li><a href="#community"><span>12</span> Share and compete</a></li>
-            <li><a href="#packs"><span>13</span> More music</a></li>
+            <li><a href="#marketplace"><span>13</span> The Marketplace</a></li>
             <li><a href="#keys"><span>14</span> Keys</a></li>
           </ol>
         </div>
@@ -824,7 +824,7 @@
         </ul>
         <p class="muted">
           The first pieces are the starter pack's. More of them open as you practise, and even more come with content
-          packs (see <a href="#packs">More music</a>).
+          packs (see <a href="#marketplace">The Marketplace</a>).
         </p>
       </section>
 
@@ -1125,19 +1125,68 @@
         </div>
       </section>
 
-      <section id="packs" class="advanced-card">
-        <h3><span class="n">13</span> More music</h3>
+      <section id="marketplace" class="advanced-card">
+        <span id="packs" aria-hidden="true"></span>
+        <h3><span class="n">13</span> The Marketplace</h3>
         <p>
-          The bag key in the header opens the <a href="../marketplace">Marketplace</a>: content packs of pieces with their
-          scores, levels, genres and interpretations. Add a pack and its pieces appear in your Repertoire, all open at once.
-          The <strong>Popular violin pieces</strong> pack brings 25 favourites, from the Méditation to Monti's Czardas.
+          More music comes in <strong>content packs</strong>: collections of pieces with their scores, levels, genres and
+          recordings to play along with, put together by teachers, arrangers and performers. You find them in the
+          <a href="../marketplace">Marketplace</a>, the bag key in the header. The <strong>Popular violin pieces</strong>
+          pack brings 25 favourites, from the Méditation to Monti's Czardas.
         </p>
         <figure class="shot">
           <a href="img/marketplace.webp"><img src="img/marketplace.webp" width="1920" height="1350" loading="lazy" alt="The Marketplace page of the Popular violin pieces pack: its cover picture, levels and genres, and its pieces listed below." /></a>
         </figure>
+        <div class="tiles">
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4" /></svg>Look inside</strong>
+            <p>
+              <strong>Explore</strong> opens a pack's page: every piece with its composer, level and genre, a glimpse of
+              the violin part, its recordings and videos to listen to, and its top scores, each playable with the piano.
+            </p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 5v14M5 12h14" /></svg>Add a pack</strong>
+            <p>
+              Sign in and press <strong>Add to Violin Hero</strong>. Its pieces appear in your Repertoire under their level
+              and genre, all open at once, on every device you sign in on.
+            </p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0 1 13.7-5.6L20 9M20 4v5h-5M20 12a8 8 0 0 1-13.7 5.6L4 15M4 20v-5h5" /></svg>New versions</strong>
+            <p>
+              When a creator improves a pack, Violin Hero tells you what's new and asks: <strong>Update</strong>, keep your
+              version, or decide later.
+            </p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 9l9-5 9 5-9 5zM7 11.2V16c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.8M21 9v5" /></svg>From your teacher</strong>
+            <p>
+              If your teacher uses Crescendu, packs made just for their students show up in a section of their own, seen
+              only by you and your classmates.
+            </p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 12.3a3.8 3.8 0 1 0 0-7.6 3.8 3.8 0 0 0 0 7.6zM4.5 20c.8-4 3.8-6 7.5-6s6.7 2 7.5 6" /></svg>Meet the creators</strong>
+            <p>
+              Click a creator's name to see who they are, what they teach or play, and all their packs.
+            </p>
+          </div>
+          <div>
+            <strong><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18" /></svg>Remove a pack</strong>
+            <p>
+              Under <strong>Your content packs</strong>, <strong>Remove</strong> takes a pack out of your Violin Hero again.
+              The starter pack comes with Violin Hero and always stays.
+            </p>
+          </div>
+        </div>
+        <p class="muted">
+          Some packs may have a price: <strong>Buy</strong> opens a secure checkout, the invoice comes by email, and the
+          pack is then yours like any other.
+        </p>
         <p>
-          When a pack gets a new version, Violin Hero asks whether to update or keep yours. Teachers and musicians can make
-          packs of their own on the <a href="../creator">Creator</a> page, for everyone or just for their students.
+          Want to share your own pieces? Teachers and musicians make packs on the <a href="../creator">Creator</a> page, for
+          everyone or just for their students: see the <a href="creator/">Creator's guide</a>.
         </p>
         <p class="muted">
           Also in the header: light or dark and five colour schemes (the sun key), English or German (the flag), and this
