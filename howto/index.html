@@ -96,6 +96,35 @@
         font-weight: 700;
         letter-spacing: -0.01em;
       }
+      /* A numbered step in a tile's heading (the Creator's guide's two ways): white on the theme colour, as in the creator */
+      .step {
+        display: inline-grid;
+        flex: none;
+        place-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+      /* The top bar's right end: the other language's manual, then the page's tag */
+      .top-end {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .lang {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--accent);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .lang:hover {
+        text-decoration: underline;
+      }
       .tag {
         padding: 0.3rem 0.75rem;
         font-size: 0.82rem;
@@ -733,14 +762,17 @@
         </svg>
         <span>Violin Hero</span>
       </a>
-      <span class="tag">How to use</span>
+      <span class="top-end">
+        <a class="lang" href="de/" hreflang="de" lang="de">Deutsch</a>
+        <span class="tag">How to use</span>
+      </span>
     </header>
 
     <main>
-      <h1>Play the violin part.<br />The piano plays the rest.</h1>
+      <h1>Play along. Get better.</h1>
       <p class="lead">
-        Violin Hero plays pieces for violin and piano while the score scrolls past. Listen first, then switch the violin
-        off and play its part yourself: the app listens, draws your playing into the score and tells you how it went.
+        Switch the violin off, play its part with the piano, and Violin Hero draws your playing into the score and tells
+        you how it went.
       </p>
       <div class="actions">
         <a class="button primary" href="../">▶ Open Violin Hero</a>
@@ -1005,8 +1037,8 @@
         <h3><span class="n">08</span> Play along with YouTube</h3>
         <p>
           Some interpretations are YouTube videos. Press <strong>▶</strong> and the video opens in a small window while the
-          score scrolls along in perfect sync, the blue line following the performer's every rubato. Drag the window
-          anywhere; seek in the score or in the video and the other follows.
+          score scrolls along in perfect sync, the blue line following the performer's every rubato. Drag the window by its
+          bar anywhere, and by its corner to make it bigger; seek in the score or in the video and the other follows.
         </p>
         <figure class="shot">
           <a href="img/youtube.webp"><img src="img/youtube.webp" width="2160" height="1290" loading="lazy" alt="Ray Chen and Takafumi Sato playing Monti's Czardas in a YouTube window at the bottom left, the score following above it and the tempo graph beside; on the right the Repertoire panel with their interpretation chosen and its key showing stop." /></a>

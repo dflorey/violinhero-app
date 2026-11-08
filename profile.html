@@ -2778,8 +2778,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${_l[t]}</g>
   </g>`}function Gm(t){return["app","halloffame","marketplace"].filter(n=>n!==t).map(n=>v`<a class="m-help m-place ${n}" href=${hn(n,t)} title=${Qa[n]} aria-label=${Qa[n]}>
         ${n==="app"?M`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${kl}</g></svg>`:M`<svg viewBox="0 0 24 24" aria-hidden="true">${_l[n]}</svg>`}
-      </a>`)}const Km=parseFloat("0.116+")<1;function qm(t){return v`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.116+"}</span>
+      </a>`)}const Km=parseFloat("0.117+")<1;function qm(t){return v`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.117+"}</span>
     ${Km?v`<span class="m-beta">Beta</span>`:""}
   </span>`}const Ym=Be`
     /*
@@ -2889,17 +2889,26 @@ SPDX-License-Identifier: Apache-2.0
     }
     /* A phone held upright: the round keys closer together, so they all fit beside the name */
     @media (max-width: 560px) and (orientation: portrait) {
+      .m-header {
+        gap: 0.5rem;
+        padding-inline: 0.75rem;
+      }
       .m-header-end {
         gap: 0.35rem;
       }
+      .m-header-end .m-help {
+        width: 32px;
+        height: 32px;
+      }
     }
-    /* The name with the build's version ("0.116+") under it, left aligned */
+    /* The name with the build's version ("0.117+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 2px;
       min-width: 0;
+      overflow: hidden;
     }
     .m-name {
       line-height: 1.1;
@@ -5469,7 +5478,7 @@ ${Al[t.icon](n.ink,n.detail)}
           <svg class="m-logo profile" viewBox="0 0 100 100" aria-hidden="true">${Wm("profile")}</svg>
           <span class="m-titles">
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">${t.name.replace("Violin Hero ","")}</span></span>
-            ${qm(ne().versionTitle("0.116+","f17211f"))}
+            ${qm(ne().versionTitle("0.117+","f75c887"))}
           </span>
         </a>
         <div class="m-header-end">
