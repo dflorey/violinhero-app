@@ -2793,8 +2793,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Sd[t]}</g>
   </g>`}function f0(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>f`<a class="m-help m-place ${i}" href=${Bn(i,t,e)} title=${Zo[i]} aria-label=${Zo[i]}>
         ${i==="app"?$`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${$d}</g></svg>`:$`<svg viewBox="0 0 24 24" aria-hidden="true">${Sd[i]}</svg>`}
-      </a>`)}const m0=parseFloat("0.130")<1;function g0(t){return f`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.130"}</span>
+      </a>`)}const m0=parseFloat("0.131")<1;function g0(t){return f`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.131"}</span>
     ${m0?f`<span class="m-beta">Beta</span>`:""}
   </span>`}const y0=ae`
     /*
@@ -2916,7 +2916,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.130") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.131") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -7100,6 +7100,10 @@ ${Nd[t.icon](n.ink,n.detail)}
               ${this.error?f`<p class="error">${this.error}</p>`:x}`}
       </div>
     </dialog>`}};Le.styles=[bi,ae`
+      /* Only a dialog: no box of its own, so the page's column leaves no gap for it */
+      :host {
+        display: contents;
+      }
       dialog {
         width: min(480px, calc(100vw - 32px));
         padding: 0;
@@ -7216,6 +7220,10 @@ ${Nd[t.icon](n.ink,n.detail)}
               </div>`}
       </div>
     </dialog>`}};ge.styles=[bi,ae`
+      /* Only a dialog: no box of its own, so the page's column leaves no gap for it */
+      :host {
+        display: contents;
+      }
       dialog {
         width: min(520px, calc(100vw - 32px));
         padding: 0;
@@ -7354,7 +7362,7 @@ ${Nd[t.icon](n.ink,n.detail)}
           <svg class="m-logo profile" viewBox="0 0 100 100" aria-hidden="true">${p0("profile")}</svg>
           <span class="m-titles">
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">${t.name.replace("Violin Hero ","")}</span></span>
-            ${g0(oe().versionTitle("0.130","2c57e2c"))}
+            ${g0(oe().versionTitle("0.131","c549de1"))}
           </span>
         </a>
         <div class="m-header-end">
