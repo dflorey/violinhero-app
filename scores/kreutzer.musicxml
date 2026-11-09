@@ -2,10 +2,10 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
   <work>
-    <work-title>Title</work-title>
+    <work-title>Kreutzer Sonata, 1st mvt.</work-title>
     </work>
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Ludwig van Beethoven</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -43,16 +43,14 @@
     </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="612" default-y="1555.49" justify="center" valign="top" font-size="24">Violin Sonata No. 9, Op.47 - &quot;Kreutzer&quot;
-</credit-words>
+    <credit-words default-x="612" default-y="1555.49" justify="center" valign="top" font-size="24">Kreutzer Sonata, 1st mvt.</credit-words>
     <credit-words font-size="13">1st Movement - as heard in &quot;Your Lie in April&quot; Ep. 2
 </credit-words>
     <credit-words></credit-words>
     </credit>
   <credit page="1">
     <credit-type>composer</credit-type>
-    <credit-words default-x="1167.31" default-y="1438.58" justify="right" valign="bottom">Ludwig van Beethoven
-</credit-words>
+    <credit-words default-x="1167.31" default-y="1438.58" justify="right" valign="bottom">Ludwig van Beethoven</credit-words>
     <credit-words>Transcribed by alliebaster
 </credit-words>
     <credit-words>Performed by Yuna Shinohara and Eriko Kawachi

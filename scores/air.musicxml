@@ -2,12 +2,10 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
   <work>
-    <work-title>Air on G String
-</work-title>
+    <work-title>Air on the G String</work-title>
     </work>
   <identification>
-    <creator type="composer">Composed by. J.S. Bach
-Arranged by Banuwarsa</creator>
+    <creator type="composer">J. S. Bach</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -38,14 +36,12 @@ Arranged by Banuwarsa</creator>
     </defaults>
   <credit page="1">
     <credit-type>composer</credit-type>
-    <credit-words default-x="1115" default-y="1517" justify="right" valign="bottom" font-size="11.0064">Composed by. J.S. Bach
-</credit-words>
+    <credit-words default-x="1115" default-y="1517" justify="right" valign="bottom" font-size="11.0064">J. S. Bach</credit-words>
     <credit-words>Arranged by Banuwarsa</credit-words>
     </credit>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="599.999" default-y="1612" justify="center" valign="top" font-size="22.0128">Air on G String
-</credit-words>
+    <credit-words default-x="599.999" default-y="1612" justify="center" valign="top" font-size="22.0128">Air on the G String</credit-words>
     <credit-words></credit-words>
     </credit>
   <credit page="1">

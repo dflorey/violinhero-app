@@ -5,7 +5,7 @@
     <work-title>The Happy Farmer</work-title>
     </work>
   <identification>
-    <creator type="composer">Rober Schumann</creator>
+    <creator type="composer">Robert Schumann</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -42,15 +42,14 @@
     </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="612" default-y="1527.31" justify="center" valign="top" font-size="24">The Happy Farmer
-</credit-words>
+    <credit-words default-x="612" default-y="1527.31" justify="center" valign="top" font-size="24">The Happy Farmer</credit-words>
     <credit-words>
 </credit-words>
     <credit-words></credit-words>
     </credit>
   <credit page="1">
     <credit-type>composer</credit-type>
-    <credit-words default-x="1167.31" default-y="1398.01" justify="right" valign="bottom" font-size="12">Rober Schumann</credit-words>
+    <credit-words default-x="1167.31" default-y="1398.01" justify="right" valign="bottom" font-size="12">Robert Schumann</credit-words>
     </credit>
   <credit page="1">
     <credit-type>subtitle</credit-type>

@@ -2,10 +2,10 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
   <work>
-    <work-title>Title</work-title>
+    <work-title>Salut d'Amour</work-title>
     </work>
   <identification>
-    <creator type="composer">Composer</creator>
+    <creator type="composer">Edward Elgar</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -46,7 +46,7 @@
     </credit>
   <credit page="1">
     <credit-type>composer</credit-type>
-    <credit-words default-x="1134.19" default-y="1526.67" justify="right" valign="bottom" font-size="12">arr. Natalia Lee</credit-words>
+    <credit-words default-x="1134.19" default-y="1526.67" justify="right" valign="bottom" font-size="12">Edward Elgar</credit-words>
     </credit>
   <part-list>
     <score-part id="P1">
