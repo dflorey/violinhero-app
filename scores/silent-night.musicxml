@@ -5,6 +5,7 @@
     <work-title>Silent Night</work-title>
     </work>
   <identification>
+    <creator type="composer">F. Gruber</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -42,6 +43,10 @@
   <credit page="1">
     <credit-type>title</credit-type>
     <credit-words default-x="595.44" default-y="1626.67" justify="center" valign="top" font-size="24">Silent Night</credit-words>
+    </credit>
+  <credit page="1">
+    <credit-type>composer</credit-type>
+    <credit-words default-x="1134.19" default-y="1526.67" justify="right" valign="bottom" font-size="12">F. Gruber</credit-words>
     </credit>
   <part-list>
     <score-part id="P2">

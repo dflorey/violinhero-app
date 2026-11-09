@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
+  <work>
+    <work-title>Summer</work-title>
+    </work>
   <identification>
+    <creator type="composer">Vivaldi</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -38,7 +42,7 @@
     </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="595.44" default-y="1626.67" justify="center" valign="top" font-family="Times New Roman" font-size="24">L'Eté</credit-words>
+    <credit-words default-x="595.44" default-y="1626.67" justify="center" valign="top" font-family="Times New Roman" font-size="24">Summer</credit-words>
     </credit>
   <credit page="1">
     <credit-type>subtitle</credit-type>

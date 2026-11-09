@@ -5,6 +5,7 @@
     <work-title>Canon in D</work-title>
     </work>
   <identification>
+    <creator type="composer">Pachelbel</creator>
     <encoding>
       <software>MuseScore 2.1.0</software>
       <encoding-date>2017-11-12</encoding-date>
@@ -42,6 +43,10 @@
     </defaults>
   <credit page="1">
     <credit-words default-x="612" default-y="1527.31" justify="center" valign="top" font-size="24">Canon in D</credit-words>
+    </credit>
+  <credit page="1">
+    <credit-type>composer</credit-type>
+    <credit-words default-x="1167.31" default-y="1427.31" justify="right" valign="bottom" font-size="12">Pachelbel</credit-words>
     </credit>
   <part-list>
     <score-part id="P2">

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise version="3.1">
+  <work>
+    <work-title>Drunken Sailor</work-title>
+    </work>
   <identification>
+    <creator type="composer">Traditional</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -38,8 +42,12 @@
     <lyric-font font-family="FreeSerif" font-size="11"/>
     </defaults>
   <credit page="1">
-    <credit-type>lyricist</credit-type>
-    <credit-words default-x="78.7402" default-y="2159.26" justify="left" valign="bottom" font-size="12">Drunken Sailer piano</credit-words>
+    <credit-type>title</credit-type>
+    <credit-words default-x="827.00" default-y="2259.26" justify="center" valign="top" font-size="24">Drunken Sailor</credit-words>
+    </credit>
+  <credit page="1">
+    <credit-type>composer</credit-type>
+    <credit-words default-x="1575.26" default-y="2159.26" justify="right" valign="bottom" font-size="12">Traditional</credit-words>
     </credit>
   <part-list>
     <score-part id="P1">

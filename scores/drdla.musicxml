@@ -5,6 +5,7 @@
     <work-title>Souvenir</work-title>
     </work>
   <identification>
+    <creator type="composer">Drdla</creator>
     <encoding>
       <software>MuseScore 3.6.2</software>
       <encoding-date>2025-01-14</encoding-date>
@@ -41,16 +42,14 @@
     </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
-    <credit-words default-x="673.269" default-y="1839.3" justify="center" valign="top" font-size="24">Souvenir
-</credit-words>
+    <credit-words default-x="673.269" default-y="1839.3" justify="center" valign="top" font-size="24">Souvenir</credit-words>
     <credit-words>For violin and piano
 </credit-words>
     <credit-words></credit-words>
     </credit>
   <credit page="1">
     <credit-type>composer</credit-type>
-    <credit-words default-x="1282.44" default-y="1640.55" justify="right" valign="bottom" font-size="12">František Alois Drdla
-</credit-words>
+    <credit-words default-x="1282.44" default-y="1640.55" justify="right" valign="bottom" font-size="12">Drdla</credit-words>
     <credit-words>(1869-1944)
 </credit-words>
     <credit-words></credit-words>
