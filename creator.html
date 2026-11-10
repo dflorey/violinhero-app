@@ -2809,8 +2809,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${nf[t]}</g>
   </g>`}function FT(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>$`<a class="m-help m-place ${i}" href=${ir(i,t,e)} title=${Cd[i]} aria-label=${Cd[i]}>
         ${i==="app"?J`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${ef}</g></svg>`:J`<svg viewBox="0 0 24 24" aria-hidden="true">${nf[i]}</svg>`}
-      </a>`)}const UT=["de"];function zT(t){const e=UT.includes(Ne())?`${Ne()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function BT(t,e){return $`<a class="m-help" href=${zT(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const HT=parseFloat("0.147")<1;function GT(t){return $`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.147"}</span>
+      </a>`)}const UT=["de"];function zT(t){const e=UT.includes(Ne())?`${Ne()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function BT(t,e){return $`<a class="m-help" href=${zT(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const HT=parseFloat("0.148")<1;function GT(t){return $`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.148"}</span>
     ${HT?$`<span class="m-beta">Beta</span>`:""}
   </span>`}const WT=an`
     /*
@@ -2932,7 +2932,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.147") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.148") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -5092,7 +5092,7 @@ registerProcessor('violinhero-tab-capture', class extends AudioWorkletProcessor 
           <span class="m-titles">
             <!-- The app's name as it is, "Creator" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Creator</span></span>
-            ${GT(Ve().versionTitle("0.147","d0ff1bb"))}
+            ${GT(Ve().versionTitle("0.148","3da44b3"))}
           </span>
         </a>
         <div class="m-header-end">
