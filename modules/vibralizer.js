@@ -1390,7 +1390,7 @@ const ts = {
   loading: "Wird geladen…",
   loadFailed: "Diese Aufnahme ließ sich nicht laden",
   pitch: "Tonhöhe",
-  level: "Klang",
+  level: "Lautstärke",
   seconds: "s",
   inTune: "Sauber",
   sharp: "zu hoch",
