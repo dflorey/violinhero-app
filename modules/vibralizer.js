@@ -302,8 +302,8 @@ V.elementStyles = [], V.shadowRootOptions = { mode: "open" }, V[G("elementProper
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-const Y = globalThis, Nt = (e) => e, ot = Y.trustedTypes, Ot = ot ? ot.createPolicy("lit-html", { createHTML: (e) => e }) : void 0, re = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, oe = "?" + P, De = `<${oe}>`, F = document, J = () => F.createComment(""), X = (e) => e === null || typeof e != "object" && typeof e != "function", Et = Array.isArray, Ie = (e) => Et(e) || typeof (e == null ? void 0 : e[Symbol.iterator]) == "function", ut = `[ 	
-\f\r]`, q = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, Pt = /-->/g, Lt = />/g, D = RegExp(`>|${ut}(?:([^\\s"'>=/]+)(${ut}*=${ut}*(?:[^ 	
+const Y = globalThis, Nt = (e) => e, ot = Y.trustedTypes, Ot = ot ? ot.createPolicy("lit-html", { createHTML: (e) => e }) : void 0, re = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, oe = "?" + P, De = `<${oe}>`, F = document, J = () => F.createComment(""), X = (e) => e === null || typeof e != "object" && typeof e != "function", Et = Array.isArray, Ie = (e) => Et(e) || typeof (e == null ? void 0 : e[Symbol.iterator]) == "function", pt = `[ 	
+\f\r]`, q = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, Pt = /-->/g, Lt = />/g, D = RegExp(`>|${pt}(?:([^\\s"'>=/]+)(${pt}*=${pt}*(?:[^ 	
 \f\r"'\`<>=]|("|')|))|$)`, "g"), Dt = /'/g, It = /"/g, ae = /^(?:script|style|textarea|title)$/i, le = (e) => (t, ...i) => ({ _$litType$: e, strings: t, values: i }), _ = le(1), z = le(2), B = Symbol.for("lit-noChange"), w = Symbol.for("lit-nothing"), Ht = /* @__PURE__ */ new WeakMap(), I = F.createTreeWalker(F, 129);
 function he(e, t) {
   if (!Et(e) || !e.hasOwnProperty("raw"))
@@ -318,8 +318,8 @@ const He = (e, t) => {
     let h, d, c = -1, f = 0;
     for (; f < l.length && (o.lastIndex = f, d = o.exec(l), d !== null); )
       f = o.lastIndex, o === q ? d[1] === "!--" ? o = Pt : d[1] !== void 0 ? o = Lt : d[2] !== void 0 ? (ae.test(d[2]) && (n = RegExp("</" + d[2], "g")), o = D) : d[3] !== void 0 && (o = D) : o === D ? d[0] === ">" ? (o = n ?? q, c = -1) : d[1] === void 0 ? c = -2 : (c = o.lastIndex - d[2].length, h = d[1], o = d[3] === void 0 ? D : d[3] === '"' ? It : Dt) : o === It || o === Dt ? o = D : o === Pt || o === Lt ? o = q : (o = D, n = void 0);
-    const p = o === D && e[a + 1].startsWith("/>") ? " " : "";
-    r += o === q ? l + De : c >= 0 ? (s.push(h), l.slice(0, c) + re + l.slice(c) + P + p) : l + P + (c === -2 ? a : p);
+    const u = o === D && e[a + 1].startsWith("/>") ? " " : "";
+    r += o === q ? l + De : c >= 0 ? (s.push(h), l.slice(0, c) + re + l.slice(c) + P + u) : l + P + (c === -2 ? a : u);
   }
   return [he(e, r + (e[i] || "<?>") + (t === 2 ? "</svg>" : t === 3 ? "</math>" : "")), s];
 };
@@ -338,16 +338,16 @@ class Q {
         if (n.hasAttributes())
           for (const c of n.getAttributeNames())
             if (c.endsWith(re)) {
-              const f = d[o++], p = n.getAttribute(c).split(P), u = /([.?@])?(.*)/.exec(f);
-              l.push({ type: 1, index: r, name: u[2], strings: p, ctor: u[1] === "." ? Ue : u[1] === "?" ? Ve : u[1] === "@" ? Be : ht }), n.removeAttribute(c);
+              const f = d[o++], u = n.getAttribute(c).split(P), p = /([.?@])?(.*)/.exec(f);
+              l.push({ type: 1, index: r, name: p[2], strings: u, ctor: p[1] === "." ? Ue : p[1] === "?" ? Ve : p[1] === "@" ? Be : ht }), n.removeAttribute(c);
             } else
               c.startsWith(P) && (l.push({ type: 6, index: r }), n.removeAttribute(c));
         if (ae.test(n.tagName)) {
           const c = n.textContent.split(P), f = c.length - 1;
           if (f > 0) {
             n.textContent = ot ? ot.emptyScript : "";
-            for (let p = 0; p < f; p++)
-              n.append(c[p], J()), I.nextNode(), l.push({ type: 2, index: ++r });
+            for (let u = 0; u < f; u++)
+              n.append(c[u], J()), I.nextNode(), l.push({ type: 2, index: ++r });
             n.append(c[f], J());
           }
         }
@@ -538,8 +538,8 @@ class je {
     j(this, t);
   }
 }
-const pt = Y.litHtmlPolyfillSupport;
-pt == null || pt(Q, tt), (Y.litHtmlVersions ?? (Y.litHtmlVersions = [])).push("3.3.3");
+const ut = Y.litHtmlPolyfillSupport;
+ut == null || ut(Q, tt), (Y.litHtmlVersions ?? (Y.litHtmlVersions = [])).push("3.3.3");
 const Ke = (e, t, i) => {
   const s = (i == null ? void 0 : i.renderBefore) ?? t;
   let n = s._$litPart$;
@@ -645,20 +645,20 @@ const de = {
   klezmer: { id: "klezmer", where: "longest", rate: [6.5, 9], width: [15, 45], optional: !0 },
   jazz: { id: "jazz", where: "all", rate: [4.5, 7], width: [20, 70], optional: !1, late: !0 }
 }, Ft = Object.keys(de);
-function Ye(e, t, i, s = ue) {
-  const { rateFit: n, widthFit: r } = pe(e, t, i, s);
+function Ye(e, t, i, s = pe) {
+  const { rateFit: n, widthFit: r } = ue(e, t, i, s);
   return n * r;
 }
-const Ze = 0.35, Je = 0.6, ue = { widen: 0, off: 1 };
-function pe(e, t, i, { widen: s, off: n }) {
+const Ze = 0.35, Je = 0.6, pe = { widen: 0, off: 1 };
+function ue(e, t, i, { widen: s, off: n }) {
   const r = ([o, a]) => [o * (1 - s), a * (1 + s)];
   return {
     rateFit: t > 0 ? Ut(t, r(e.rate), Ze * n) : 1,
     widthFit: Ut(i, r(e.width), Je * n)
   };
 }
-function Xe(e, t, i, s = ue) {
-  const { rateFit: n, widthFit: r } = pe(e, t, i, s), o = 1 - n, a = 1 - r;
+function Xe(e, t, i, s = pe) {
+  const { rateFit: n, widthFit: r } = ue(e, t, i, s), o = 1 - n, a = 1 - r;
   return {
     fast: t > e.rate[1] ? o : 0,
     slow: t > 0 && t < e.rate[0] ? o : 0,
@@ -768,9 +768,9 @@ function me(e, t, i, s, n) {
   }
   if (!n)
     return null;
-  const f = 2 ** (oi / 12), p = Math.max(a, Math.floor(t / (n * f))), u = Math.min(o - 1, Math.ceil(t / n * f));
+  const f = 2 ** (oi / 12), u = Math.max(a, Math.floor(t / (n * f))), p = Math.min(o - 1, Math.ceil(t / n * f));
   let m = -1;
-  for (let v = p; v <= u; v++)
+  for (let v = u; v <= p; v++)
     (m < 0 || h[v] < h[m]) && (m = v);
   return m < 0 || h[m] >= ri ? null : t / Vt(h, m, o);
 }
@@ -780,7 +780,7 @@ function Vt(e, t, i) {
   const [s, n, r] = [e[t - 1], e[t], e[t + 1]], o = s - 2 * n + r;
   return o > 0 ? t + Math.max(-0.5, Math.min(0.5, (s - r) / (2 * o))) : t;
 }
-const ge = 20, ai = 1.2, N = -80, li = 0.1, Bt = 0.5, hi = 10, ci = 0.05, di = 0.25, ui = 0.01, pi = -3, mi = 40, gi = 1e-4, _t = 3.2, jt = [0.012, 0.019], ft = 0.08, fi = 28, vi = 0.8, yi = 0.12, bi = 80, Kt = 0.7;
+const ge = 20, ai = 1.2, N = -80, li = 0.1, Bt = 0.5, hi = 10, ci = 0.05, di = 0.25, pi = 0.01, ui = -3, mi = 40, gi = 1e-4, _t = 3.2, jt = [0.012, 0.019], ft = 0.08, fi = 28, vi = 0.8, yi = 0.12, bi = 80, Kt = 0.7;
 class $i {
   constructor(t, i) {
     this.audio = t, this.microphone = i, this.disposed = !1, this.gainDbValue = 0, this.minHzValue = 60, this.maxHzValue = 3e3, this.level = N, this.buffer = new Float32Array(0), this.tailTimer = 0, this.lastTime = -1, this.lastPitch = { hz: 0, time: -1 / 0 }, this.playStarted = 0, this.recordings = /* @__PURE__ */ new Map(), this.exampleEnded = -1 / 0, this.volumeValue = 1, this.reverbAmount = 0;
@@ -828,10 +828,10 @@ class $i {
       r = Math.max(r, Math.abs(h));
     if (r < gi)
       return null;
-    const o = Math.min(n.length, Math.round(ui * s.clip.sampleRate));
+    const o = Math.min(n.length, Math.round(pi * s.clip.sampleRate));
     for (let h = 0; h < o; h++)
       n[h] *= h / o;
-    const a = Math.min(10 ** (mi / 20), 10 ** (pi / 20) / r);
+    const a = Math.min(10 ** (mi / 20), 10 ** (ui / 20) / r);
     return { clip: s.clip, gain: a, lead: t - s.start };
   }
   /**
@@ -1004,9 +1004,9 @@ class $i {
       return;
     this.lastTime = t.currentTime, this.analyser.getFloatTimeDomainData(this.buffer);
     let i = 0, s = 0;
-    for (let p = 0; p < this.buffer.length; p++) {
-      const u = this.buffer[p];
-      i = Math.max(i, Math.abs(u)), s += u * u;
+    for (let u = 0; u < this.buffer.length; u++) {
+      const p = this.buffer[u];
+      i = Math.max(i, Math.abs(p)), s += p * p;
     }
     const n = i > 0 ? 20 * Math.log10(i) : N;
     this.level = Math.max(n, this.level - ai, N), (c = this.onLevel) == null || c.call(this, this.level);
@@ -1029,8 +1029,8 @@ function xi(e) {
     }
     let a = 0;
     for (let d = o; d < i; d++) {
-      const c = (d - o) / t, f = Math.min(1, c / ft), p = Math.exp(-6.9 * c / _t);
-      a += (0.05 + 0.8 * Math.exp(-c / vi)) * (Math.random() * 2 - 1 - a), r[d] += a * f * p;
+      const c = (d - o) / t, f = Math.min(1, c / ft), u = Math.exp(-6.9 * c / _t);
+      a += (0.05 + 0.8 * Math.exp(-c / vi)) * (Math.random() * 2 - 1 - a), r[d] += a * f * u;
     }
     let l = 0;
     for (let d = 0; d < i; d++)
@@ -1052,10 +1052,10 @@ async function ve(e, t, i, s, n) {
   const h = [];
   let d = null;
   for (let c = 0; c * qt <= a; c++) {
-    const f = c * qt, p = l(f), m = Ei(t, p, s, d ?? o, d === null ? 1.5 : Mi);
+    const f = c * qt, u = l(f), m = Ei(t, u, s, d ?? o, d === null ? 1.5 : Mi);
     d = m;
     const v = s / (m ?? o);
-    h.push({ t: f, midi: m ? 69 + 12 * Math.log2(m / n) : null, db: ki(t, p, v, s) }), c % Gt === Gt - 1 && await new Promise((g) => setTimeout(g));
+    h.push({ t: f, midi: m ? 69 + 12 * Math.log2(m / n) : null, db: ki(t, u, v, s) }), c % Gt === Gt - 1 && await new Promise((g) => setTimeout(g));
   }
   return h.some((c) => c.midi !== null) ? { ...e, points: Si(h), optimized: !0 } : null;
 }
@@ -1080,14 +1080,14 @@ function Ei(e, t, i, s, n) {
     return A ? 2 * $ / A : 0;
   };
   let c = o, f = -1 / 0;
-  const p = /* @__PURE__ */ new Map();
+  const u = /* @__PURE__ */ new Map();
   for (let b = o; b <= a; b++) {
     const $ = d(b);
-    p.set(b, $), $ > f && ([c, f] = [b, $]);
+    u.set(b, $), $ > f && ([c, f] = [b, $]);
   }
   if (f < Ai || c === o || c === a)
     return null;
-  const [u, m, v] = [p.get(c - 1), f, p.get(c + 1)], g = u - 2 * m + v, y = g ? c + (u - v) / (2 * g) : c;
+  const [p, m, v] = [u.get(c - 1), f, u.get(c + 1)], g = p - 2 * m + v, y = g ? c + (p - v) / (2 * g) : c;
   return i / y;
 }
 function ki(e, t, i, s) {
@@ -1209,22 +1209,22 @@ function it(e) {
       R !== null && h(O) && b.push({ t: U, d: R - M / k });
     }), b;
   };
-  let p = null, u = null, m = null;
+  let u = null, p = null, m = null;
   const v = f(o, ji);
   if (v.length > 8) {
     const g = Math.sqrt(v.reduce((b, { d: $ }) => b + $ * $, 0) / v.length), y = 2 * Math.SQRT2 * g;
     if (y >= Ki)
-      if (u = Zi(vt(v)), u) {
-        p = 2 * Zt(vt(f(o, 2 / u)), u);
+      if (p = Zi(vt(v)), p) {
+        u = 2 * Zt(vt(f(o, 2 / p)), p);
         const b = f(
           t.map(($) => $.db),
-          2 / u
+          2 / p
         );
-        b.length > 8 && (m = 2 * Zt(vt(b), u));
+        b.length > 8 && (m = 2 * Zt(vt(b), p));
       } else
-        p = y;
+        u = y;
   }
-  return { target: n, cents: o, mean: c, width: p, rate: u, levelSwing: m, duration: a };
+  return { target: n, cents: o, mean: c, width: u, rate: p, levelSwing: m, duration: a };
 }
 function Yi(e) {
   return e.map((t, i) => {
@@ -1247,20 +1247,20 @@ function Zi({ step: e, values: t }) {
   const i = Math.max(2, Math.floor(1 / (Wi * e))), s = Math.min(Math.ceil(1 / (qi * e)), Math.floor(t.length / 2));
   if (s <= i + 1)
     return null;
-  const n = (u) => {
+  const n = (p) => {
     let [m, v, g] = [0, 0, 0];
-    for (let y = 0; y + u < t.length; y++)
-      m += t[y] * t[y + u], v += t[y] * t[y], g += t[y + u] * t[y + u];
+    for (let y = 0; y + p < t.length; y++)
+      m += t[y] * t[y + p], v += t[y] * t[y], g += t[y + p] * t[y + p];
     return v && g ? m / Math.sqrt(v * g) : 0;
-  }, r = Array.from({ length: s + 2 }, (u, m) => m >= i - 1 ? n(m) : 0), o = [];
-  for (let u = i; u <= s; u++)
-    r[u] >= r[u - 1] && r[u] >= r[u + 1] && o.push(u);
+  }, r = Array.from({ length: s + 2 }, (p, m) => m >= i - 1 ? n(m) : 0), o = [];
+  for (let p = i; p <= s; p++)
+    r[p] >= r[p - 1] && r[p] >= r[p + 1] && o.push(p);
   if (!o.length)
     return null;
-  const a = Math.max(...o.map((u) => r[u]));
+  const a = Math.max(...o.map((p) => r[p]));
   if (a < Gi)
     return null;
-  const l = o.find((u) => r[u] >= a * 0.85), [h, d, c] = [r[l - 1], r[l], r[l + 1]], f = h - 2 * d + c;
+  const l = o.find((p) => r[p] >= a * 0.85), [h, d, c] = [r[l - 1], r[l], r[l + 1]], f = h - 2 * d + c;
   return 1 / ((f ? l + (h - c) / (2 * f) : l) * e);
 }
 function Zt({ step: e, values: t }, i) {
@@ -1284,22 +1284,22 @@ function at(e) {
 const Ji = 0.1, Xi = 0.5, Jt = 50;
 async function Qi(e, t, i, s) {
   const n = e.sampleRate, r = new Float32Array(e.length + Math.round(Xi * n));
-  for (let p = 0; p < e.numberOfChannels; p++) {
-    const u = e.getChannelData(p);
-    for (let m = 0; m < u.length; m++)
-      r[m] += u[m] / e.numberOfChannels;
+  for (let u = 0; u < e.numberOfChannels; u++) {
+    const p = e.getChannelData(u);
+    for (let m = 0; m < p.length; m++)
+      r[m] += p[m] / e.numberOfChannels;
   }
   const o = fe(n, t), a = new be(), l = [];
   let h = { hz: 0, time: -1 / 0 }, d = 0;
-  for (let p = o; p <= r.length; p += Math.round(ge / 1e3 * n), d++) {
-    const u = r.subarray(p - o, p);
+  for (let u = o; u <= r.length; u += Math.round(ge / 1e3 * n), d++) {
+    const p = r.subarray(u - o, u);
     let m = 0;
-    for (const A of u)
+    for (const A of p)
       m += A * A;
-    const v = Math.sqrt(m / o), g = Math.max(N, v > 0 ? 20 * Math.log10(v) : N), y = (p - o / 2) / n, b = y - h.time <= Ji ? h.hz : void 0, $ = me(u, n, t, i, b);
+    const v = Math.sqrt(m / o), g = Math.max(N, v > 0 ? 20 * Math.log10(v) : N), y = (u - o / 2) / n, b = y - h.time <= Ji ? h.hz : void 0, $ = me(p, n, t, i, b);
     $ && (h = { hz: $, time: y }), a.push({ time: y, hz: $, db: g, source: "example" }, s), a.finished && l.push(a.finished), d % Jt === Jt - 1 && await new Promise((A) => setTimeout(A));
   }
-  const c = (p) => p.points[p.points.length - 1].t, f = l.sort((p, u) => c(u) - c(p))[0];
+  const c = (u) => u.points[u.points.length - 1].t, f = l.sort((u, p) => c(p) - c(u))[0];
   return f ? await ve(f, r, 0, n, s) ?? { ...f, optimized: !0 } : null;
 }
 const ts = {
@@ -1447,12 +1447,12 @@ var is = Object.defineProperty, ss = Object.getOwnPropertyDescriptor, E = (e, t,
     (o = e[r]) && (n = (s ? o(t, i, n) : o(n)) || n);
   return s && n && is(t, i, n), n;
 };
-const ns = 180, rs = 3e3, os = 350, Xt = 0.1, as = 0.5, ls = 6, hs = 2, bt = [25, 50, 100, 200], lt = 5, cs = 40, Qt = 36, W = 12, ds = [3, 10], us = [0, 120], st = -12, $t = 24, te = -60, ee = "violinhero-vibralizer", ie = [
+const ns = 180, rs = 3e3, os = 350, Xt = 0.1, as = 0.5, ls = 6, hs = 2, bt = [25, 50, 100, 200], lt = 5, cs = 40, Qt = 36, W = 12, ds = [3, 10], ps = [0, 120], st = -12, $t = 24, te = -60, ee = "violinhero-vibralizer", ie = [
   { id: "heifetz", name: "Jascha Heifetz", file: "heifetz.wav" },
   { id: "oistrakh", name: "David Oistrakh", file: "ostrakh.wav" },
   { id: "hirschhorn", name: "Philippe Hirschhorn", file: "horschhorn.wav" },
   { id: "vengerov", name: "Maxim Vengerov", file: "vengerov.wav" }
-], ps = z`<rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6" />`, ms = z`<path class="fill" d="M8 5.5v13l10.5-6.5z" />`, gs = z`<rect class="fill" x="7" y="7" width="10" height="10" rx="1.5" />`, fs = z`<path d="M6 6l12 12M18 6L6 18" />`, vs = z`<path d="M3 12c1.8-6 4.2-6 6 0s4.2 6 6 0 4.2-6 6 0" />`;
+], us = z`<rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M9 21h6" />`, ms = z`<path class="fill" d="M8 5.5v13l10.5-6.5z" />`, gs = z`<rect class="fill" x="7" y="7" width="10" height="10" rx="1.5" />`, fs = z`<path d="M6 6l12 12M18 6L6 18" />`, vs = z`<path d="M3 12c1.8-6 4.2-6 6 0s4.2 6 6 0 4.2-6 6 0" />`;
 let S = class extends Z {
   constructor() {
     super(...arguments), this.texts = yt("en"), this.running = !1, this.micFailed = !1, this.kept = [], this.gainDb = 0, this.reverb = 0.3, this.styleId = "romantic", this.size = { width: 0, height: 0 }, this.recorder = new be(), this.reference = 440, this.replaying = !1, this.playLead = 0, this.deafUntil = 0, this.masterTakes = /* @__PURE__ */ new Map(), this.sizeObserver = new ResizeObserver(([e]) => {
@@ -1614,7 +1614,7 @@ let S = class extends Z {
         <header class="head">
           <span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true">${vs}</svg></span>
           <span class="titles">
-            <h1>${e.name}</h1>
+            <h1 aria-label=${`Violin Hero ${e.name}`}>Violin Hero <span class="tool-place">${e.name}</span></h1>
             <span class="lead">${e.lead}</span>
           </span>
           <button class="round close" title=${e.close} aria-label=${e.close} @click=${() => this.host.close()}>
@@ -1673,12 +1673,12 @@ let S = class extends Z {
         <strong>${this.failed ? e.loadFailed : this.running ? e.ready : e.off}</strong>
         <span>${this.failed ? "" : this.running ? e.readyLead : e.offLead}</span>
       </div>`;
-    const { points: r } = s, o = r[r.length - 1].t, a = s.live ? Math.max(hs, Math.ceil(o + 0.25)) : Math.max(o, 0.5), l = 44, h = 14, d = 26, c = 10, f = 22, p = Math.max(40, (i - c - f - d) * 0.64), u = c + p + d, m = Math.max(24, i - f - u), v = (x) => l + x / a * (t - l - h), g = n.cents.filter((x) => x !== null).map(Math.abs).sort((x, C) => x - C), y = Math.max(g[Math.floor(g.length * 0.95)] ?? 0, Math.abs(n.mean) + (n.width ?? 0) / 2), b = bt.find((x) => x >= y * 1.1) ?? bt[bt.length - 1], $ = (x) => c + (b - Math.max(-b, Math.min(b, x))) / (2 * b) * p, A = !s.live && s.optimized, M = r.map((x) => x.t), k = bs(M, n.cents), R = [];
+    const { points: r } = s, o = r[r.length - 1].t, a = s.live ? Math.max(hs, Math.ceil(o + 0.25)) : Math.max(o, 0.5), l = 44, h = 14, d = 26, c = 10, f = 22, u = Math.max(40, (i - c - f - d) * 0.64), p = c + u + d, m = Math.max(24, i - f - p), v = (x) => l + x / a * (t - l - h), g = n.cents.filter((x) => x !== null).map(Math.abs).sort((x, C) => x - C), y = Math.max(g[Math.floor(g.length * 0.95)] ?? 0, Math.abs(n.mean) + (n.width ?? 0) / 2), b = bt.find((x) => x >= y * 1.1) ?? bt[bt.length - 1], $ = (x) => c + (b - Math.max(-b, Math.min(b, x))) / (2 * b) * u, A = !s.live && s.optimized, M = r.map((x) => x.t), k = bs(M, n.cents), R = [];
     let O = [];
     k.forEach((x, C) => {
       x === null ? (O.length > 1 && R.push(O), O = []) : O.push([v(M[C]), $(x)]);
     }), O.length > 1 && R.push(O);
-    const U = Yi(r.map((x) => x.db)), $e = Math.max(...U), ct = Math.ceil($e / 6) * 6, xe = ct - Qt, we = (x) => u + (ct - Math.max(xe, Math.min(ct, x))) / Qt * m, kt = U.map((x, C) => [v(M[C]), we(x)]), _e = `${wt(kt)}L${v(M[M.length - 1]).toFixed(1)},${(u + m).toFixed(1)}L${v(M[0]).toFixed(1)},${(u + m).toFixed(1)}Z`, Me = Array.from({ length: Math.floor(a / (a > 3 ? 1 : 0.5)) + 1 }, (x, C) => C * (a > 3 ? 1 : 0.5)).filter((x) => v(x) < t - h - 18), et = n.width && n.width >= W ? n.width : 0, Ae = [b, b / 2, 0, -b / 2, -b], K = this.playhead;
+    const U = Yi(r.map((x) => x.db)), $e = Math.max(...U), ct = Math.ceil($e / 6) * 6, xe = ct - Qt, we = (x) => p + (ct - Math.max(xe, Math.min(ct, x))) / Qt * m, kt = U.map((x, C) => [v(M[C]), we(x)]), _e = `${wt(kt)}L${v(M[M.length - 1]).toFixed(1)},${(p + m).toFixed(1)}L${v(M[0]).toFixed(1)},${(p + m).toFixed(1)}Z`, Me = Array.from({ length: Math.floor(a / (a > 3 ? 1 : 0.5)) + 1 }, (x, C) => C * (a > 3 ? 1 : 0.5)).filter((x) => v(x) < t - h - 18), et = n.width && n.width >= W ? n.width : 0, Ae = [b, b / 2, 0, -b / 2, -b], K = this.playhead;
     return _`<svg class="chart ${A ? "ink" : "live"}" width=${t} height=${i} viewBox="0 0 ${t} ${i}" role="img" aria-label=${e.pitch}>
       <defs>
         <linearGradient id="zone" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1=${$(b)} y2=${$(-b)}>
@@ -1696,13 +1696,13 @@ let S = class extends Z {
       ${et && A ? z`<rect class="swing" x=${l} width=${t - l - h} y=${$(n.mean + et / 2)} height=${Math.max(1, $(n.mean - et / 2) - $(n.mean + et / 2))} />` : w}
       ${R.map((x) => z`<path class="trace" d=${wt(x)} />`)}
       ${s.live ? w : z`<line class="mean" x1=${l} x2=${t - h} y1=${$(n.mean)} y2=${$(n.mean)} />`}
-      <text class="axis-name" x=${l} y=${u - 6}>${e.level}</text>
-      <line class="grid" x1=${l} x2=${t - h} y1=${u + m} y2=${u + m} />
+      <text class="axis-name" x=${l} y=${p - 6}>${e.level}</text>
+      <line class="grid" x1=${l} x2=${t - h} y1=${p + m} y2=${p + m} />
       <path class="level-area" d=${_e} />
       <path class="level" d=${wt(kt)} />
       ${Me.map((x) => z`<text class="tick" x=${v(x)} y=${i - 5} text-anchor="middle">${ys(x)}</text>`)}
       <text class="tick unit" x=${t - h} y=${i - 5} text-anchor="end">${e.seconds}</text>
-      ${K !== void 0 && K >= 0 && K <= o ? z`<line class="playhead" x1=${v(K)} x2=${v(K)} y1=${c} y2=${u + m} />` : w}
+      ${K !== void 0 && K >= 0 && K <= o ? z`<line class="playhead" x1=${v(K)} x2=${v(K)} y1=${c} y2=${p + m} />` : w}
     </svg>`;
   }
   /** The listening key, the input (its level under the gain) and the reverb on playbacks */
@@ -1711,7 +1711,7 @@ let S = class extends Z {
     return _`
       <section class="card controls">
         <button class="listen ${this.running ? "on" : ""}" role="switch" aria-checked=${this.running} title=${e.listenTitle} @click=${() => void this.toggleListening()}>
-          <svg viewBox="0 0 24 24" aria-hidden="true">${ps}</svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">${us}</svg>
           <span>${this.running ? e.listening : e.listen}</span>
         </button>
         <label class="field">
@@ -1775,7 +1775,7 @@ let S = class extends Z {
           </select>
         </div>
         ${this.scale(e.rate, ds, t.rate, s ? i.rate : void 0, e.rateRange(t.rate[0], t.rate[1]))}
-        ${this.scale(e.width, us, t.width, s ? i.width : void 0, e.widthRange(t.width[0], t.width[1]))}
+        ${this.scale(e.width, ps, t.width, s ? i.width : void 0, e.widthRange(t.width[0], t.width[1]))}
         ${s ? _`<p class="verdict ${a}">
               <b>${a === "good" ? e.fitsAll : a === "near" ? e.fitsMostly : e.fitsNot}</b>
               ${o.length && a !== "good" ? _`<span>${e.advice(o)}</span>` : w}
@@ -1880,9 +1880,11 @@ S.styles = ke`
       stroke-width: 2.2;
       stroke-linecap: round;
     }
+    /* As the app's header: the name, 2px, then a line in the version line's type and height (13px) */
     .titles {
       display: flex;
       flex-direction: column;
+      gap: 2px;
       min-width: 0;
       flex: 1;
     }
@@ -1892,10 +1894,18 @@ S.styles = ke`
       font-weight: 700;
       line-height: 1.1;
       letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    /* "Violin Hero", then the tool's name in the theme colour */
+    .tool-place {
+      color: var(--m-accent);
     }
     .lead {
       color: var(--m-muted);
-      font-size: 0.8rem;
+      font: 500 0.68rem/13px ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      height: 13px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -2560,10 +2570,10 @@ function bs(e, t) {
       a++;
     if (a === t.length)
       break;
-    const l = o - 1, h = e[a] - e[l], d = r(l, a), c = Math.min(1, 0.08 / h), f = d + ((n(l - 1) ? r(l - 1, l) : d) - d) * c, p = d + ((n(a + 1) ? r(a, a + 1) : d) - d) * c;
-    for (let u = l + 1; u < a; u++) {
-      const m = (e[u] - e[l]) / h;
-      s[u] = (2 * m ** 3 - 3 * m ** 2 + 1) * t[l] + (m ** 3 - 2 * m ** 2 + m) * h * f + (-2 * m ** 3 + 3 * m ** 2) * t[a] + (m ** 3 - m ** 2) * h * p;
+    const l = o - 1, h = e[a] - e[l], d = r(l, a), c = Math.min(1, 0.08 / h), f = d + ((n(l - 1) ? r(l - 1, l) : d) - d) * c, u = d + ((n(a + 1) ? r(a, a + 1) : d) - d) * c;
+    for (let p = l + 1; p < a; p++) {
+      const m = (e[p] - e[l]) / h;
+      s[p] = (2 * m ** 3 - 3 * m ** 2 + 1) * t[l] + (m ** 3 - 2 * m ** 2 + m) * h * f + (-2 * m ** 3 + 3 * m ** 2) * t[a] + (m ** 3 - m ** 2) * h * u;
     }
     o = a;
   }
