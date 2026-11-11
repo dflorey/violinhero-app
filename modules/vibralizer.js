@@ -81,7 +81,7 @@ const { is: Re, defineProperty: ze, getOwnPropertyDescriptor: Ce, getOwnProperty
   return i;
 } }, St = (e, t) => !Re(e, t), Ct = { attribute: !0, type: String, converter: rt, reflect: !1, useDefault: !1, hasChanged: St };
 Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), L.litPropertyMetadata ?? (L.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
-let B = class extends HTMLElement {
+let V = class extends HTMLElement {
   static addInitializer(t) {
     this._$Ei(), (this.l ?? (this.l = [])).push(t);
   }
@@ -296,7 +296,7 @@ let B = class extends HTMLElement {
   firstUpdated(t) {
   }
 };
-B.elementStyles = [], B.shadowRootOptions = { mode: "open" }, B[G("elementProperties")] = /* @__PURE__ */ new Map(), B[G("finalized")] = /* @__PURE__ */ new Map(), dt == null || dt({ ReactiveElement: B }), (L.reactiveElementVersions ?? (L.reactiveElementVersions = [])).push("2.1.2");
+V.elementStyles = [], V.shadowRootOptions = { mode: "open" }, V[G("elementProperties")] = /* @__PURE__ */ new Map(), V[G("finalized")] = /* @__PURE__ */ new Map(), dt == null || dt({ ReactiveElement: V }), (L.reactiveElementVersions ?? (L.reactiveElementVersions = [])).push("2.1.2");
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -304,7 +304,7 @@ B.elementStyles = [], B.shadowRootOptions = { mode: "open" }, B[G("elementProper
  */
 const Y = globalThis, Nt = (e) => e, ot = Y.trustedTypes, Ot = ot ? ot.createPolicy("lit-html", { createHTML: (e) => e }) : void 0, re = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, oe = "?" + P, De = `<${oe}>`, F = document, J = () => F.createComment(""), X = (e) => e === null || typeof e != "object" && typeof e != "function", Et = Array.isArray, Ie = (e) => Et(e) || typeof (e == null ? void 0 : e[Symbol.iterator]) == "function", ut = `[ 	
 \f\r]`, q = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, Pt = /-->/g, Lt = />/g, D = RegExp(`>|${ut}(?:([^\\s"'>=/]+)(${ut}*=${ut}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`, "g"), Dt = /'/g, It = /"/g, ae = /^(?:script|style|textarea|title)$/i, le = (e) => (t, ...i) => ({ _$litType$: e, strings: t, values: i }), _ = le(1), z = le(2), V = Symbol.for("lit-noChange"), w = Symbol.for("lit-nothing"), Ht = /* @__PURE__ */ new WeakMap(), I = F.createTreeWalker(F, 129);
+\f\r"'\`<>=]|("|')|))|$)`, "g"), Dt = /'/g, It = /"/g, ae = /^(?:script|style|textarea|title)$/i, le = (e) => (t, ...i) => ({ _$litType$: e, strings: t, values: i }), _ = le(1), z = le(2), B = Symbol.for("lit-noChange"), w = Symbol.for("lit-nothing"), Ht = /* @__PURE__ */ new WeakMap(), I = F.createTreeWalker(F, 129);
 function he(e, t) {
   if (!Et(e) || !e.hasOwnProperty("raw"))
     throw Error("invalid template strings array");
@@ -339,7 +339,7 @@ class Q {
           for (const c of n.getAttributeNames())
             if (c.endsWith(re)) {
               const f = d[o++], p = n.getAttribute(c).split(P), u = /([.?@])?(.*)/.exec(f);
-              l.push({ type: 1, index: r, name: u[2], strings: p, ctor: u[1] === "." ? Ue : u[1] === "?" ? Be : u[1] === "@" ? Ve : ht }), n.removeAttribute(c);
+              l.push({ type: 1, index: r, name: u[2], strings: p, ctor: u[1] === "." ? Ue : u[1] === "?" ? Ve : u[1] === "@" ? Be : ht }), n.removeAttribute(c);
             } else
               c.startsWith(P) && (l.push({ type: 6, index: r }), n.removeAttribute(c));
         if (ae.test(n.tagName)) {
@@ -369,7 +369,7 @@ class Q {
 }
 function j(e, t, i = e, s) {
   var o, a;
-  if (t === V)
+  if (t === B)
     return t;
   let n = s !== void 0 ? (o = i._$Co) == null ? void 0 : o[s] : i._$Cl;
   const r = X(t) ? void 0 : t._$litDirective$;
@@ -424,7 +424,7 @@ class tt {
     return this._$AB;
   }
   _$AI(t, i = this) {
-    t = j(this, t, i), X(t) ? t === w || t == null || t === "" ? (this._$AH !== w && this._$AR(), this._$AH = w) : t !== this._$AH && t !== V && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : Ie(t) ? this.k(t) : this._(t);
+    t = j(this, t, i), X(t) ? t === w || t == null || t === "" ? (this._$AH !== w && this._$AR(), this._$AH = w) : t !== this._$AH && t !== B && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : Ie(t) ? this.k(t) : this._(t);
   }
   O(t) {
     return this._$AA.parentNode.insertBefore(t, this._$AB);
@@ -483,12 +483,12 @@ class ht {
     const r = this.strings;
     let o = !1;
     if (r === void 0)
-      t = j(this, t, i, 0), o = !X(t) || t !== this._$AH && t !== V, o && (this._$AH = t);
+      t = j(this, t, i, 0), o = !X(t) || t !== this._$AH && t !== B, o && (this._$AH = t);
     else {
       const a = t;
       let l, h;
       for (t = r[0], l = 0; l < r.length - 1; l++)
-        h = j(this, a[s + l], i, l), h === V && (h = this._$AH[l]), o || (o = !X(h) || h !== this._$AH[l]), h === w ? t = w : t !== w && (t += (h ?? "") + r[l + 1]), this._$AH[l] = h;
+        h = j(this, a[s + l], i, l), h === B && (h = this._$AH[l]), o || (o = !X(h) || h !== this._$AH[l]), h === w ? t = w : t !== w && (t += (h ?? "") + r[l + 1]), this._$AH[l] = h;
     }
     o && !n && this.j(t);
   }
@@ -504,7 +504,7 @@ class Ue extends ht {
     this.element[this.name] = t === w ? void 0 : t;
   }
 }
-class Be extends ht {
+class Ve extends ht {
   constructor() {
     super(...arguments), this.type = 4;
   }
@@ -512,12 +512,12 @@ class Be extends ht {
     this.element.toggleAttribute(this.name, !!t && t !== w);
   }
 }
-class Ve extends ht {
+class Be extends ht {
   constructor(t, i, s, n, r) {
     super(t, i, s, n, r), this.type = 5;
   }
   _$AI(t, i = this) {
-    if ((t = j(this, t, i, 0) ?? w) === V)
+    if ((t = j(this, t, i, 0) ?? w) === B)
       return;
     const s = this._$AH, n = t === w && s !== w || t.capture !== s.capture || t.once !== s.once || t.passive !== s.passive, r = t !== w && (s === w || n);
     n && this.element.removeEventListener(this.name, this, s), r && this.element.addEventListener(this.name, this, t), this._$AH = t;
@@ -555,7 +555,7 @@ const Ke = (e, t, i) => {
  * SPDX-License-Identifier: BSD-3-Clause
  */
 const H = globalThis;
-class Z extends B {
+class Z extends V {
   constructor() {
     super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;
   }
@@ -577,7 +577,7 @@ class Z extends B {
     super.disconnectedCallback(), (t = this._$Do) == null || t.setConnected(!1);
   }
   render() {
-    return V;
+    return B;
   }
 }
 var se;
@@ -764,7 +764,7 @@ function me(e, t, i, s, n) {
   if (c <= o) {
     for (; c + 1 <= o && h[c + 1] < h[c]; )
       c++;
-    return t / Bt(h, c, o);
+    return t / Vt(h, c, o);
   }
   if (!n)
     return null;
@@ -772,15 +772,15 @@ function me(e, t, i, s, n) {
   let m = -1;
   for (let v = p; v <= u; v++)
     (m < 0 || h[v] < h[m]) && (m = v);
-  return m < 0 || h[m] >= ri ? null : t / Bt(h, m, o);
+  return m < 0 || h[m] >= ri ? null : t / Vt(h, m, o);
 }
-function Bt(e, t, i) {
+function Vt(e, t, i) {
   if (t <= 1 || t >= i)
     return t;
   const [s, n, r] = [e[t - 1], e[t], e[t + 1]], o = s - 2 * n + r;
   return o > 0 ? t + Math.max(-0.5, Math.min(0.5, (s - r) / (2 * o))) : t;
 }
-const ge = 20, ai = 1.2, N = -80, li = 0.1, Vt = 0.5, hi = 10, ci = 0.05, di = 0.25, ui = 0.01, pi = -3, mi = 40, gi = 1e-4, _t = 3.2, jt = [0.012, 0.019], ft = 0.08, fi = 28, vi = 0.8, yi = 0.12, bi = 80, Kt = 0.7;
+const ge = 20, ai = 1.2, N = -80, li = 0.1, Bt = 0.5, hi = 10, ci = 0.05, di = 0.25, ui = 0.01, pi = -3, mi = 40, gi = 1e-4, _t = 3.2, jt = [0.012, 0.019], ft = 0.08, fi = 28, vi = 0.8, yi = 0.12, bi = 80, Kt = 0.7;
 class $i {
   constructor(t, i) {
     this.audio = t, this.microphone = i, this.disposed = !1, this.gainDbValue = 0, this.minHzValue = 60, this.maxHzValue = 3e3, this.level = N, this.buffer = new Float32Array(0), this.tailTimer = 0, this.lastTime = -1, this.lastPitch = { hz: 0, time: -1 / 0 }, this.playStarted = 0, this.recordings = /* @__PURE__ */ new Map(), this.exampleEnded = -1 / 0, this.volumeValue = 1, this.reverbAmount = 0;
@@ -929,7 +929,7 @@ class $i {
     const r = s.createGain();
     r.gain.value = i, n.connect(r).connect(this.out), r.connect(this.hall()), n.connect(this.tap), (o = this.mic) == null || o.disconnect(), this.example = n, n.onended = () => {
       var a;
-      this.example === n && (this.example = void 0, this.exampleEnded = s.currentTime, this.mic ? this.mic.connect(this.gain) : this.tailTimer = window.setTimeout(() => !this.example && !this.mic && this.pause(), Vt * 1e3), (a = this.onExampleEnd) == null || a.call(this));
+      this.example === n && (this.example = void 0, this.exampleEnded = s.currentTime, this.mic ? this.mic.connect(this.gain) : this.tailTimer = window.setTimeout(() => !this.example && !this.mic && this.pause(), Bt * 1e3), (a = this.onExampleEnd) == null || a.call(this));
     }, n.start(), this.playStarted = s.currentTime, this.analyse();
   }
   stopExample() {
@@ -1012,7 +1012,7 @@ class $i {
     this.level = Math.max(n, this.level - ai, N), (c = this.onLevel) == null || c.call(this, this.level);
     const r = Math.sqrt(s / this.buffer.length), o = Math.max(N, r > 0 ? 20 * Math.log10(r) : N), a = t.currentTime - this.buffer.length / t.sampleRate / 2, l = a - this.lastPitch.time <= li ? this.lastPitch.hz : void 0, h = me(this.buffer, t.sampleRate, this.minHzValue, this.maxHzValue, l);
     h && (this.lastPitch = { hz: h, time: a });
-    const d = this.example || a < this.exampleEnded + Vt ? "example" : "mic";
+    const d = this.example || a < this.exampleEnded + Bt ? "example" : "mic";
     (f = this.onFrame) == null || f.call(this, { time: a, hz: h, db: o, source: d });
   }
 }
@@ -1102,7 +1102,7 @@ function ye(e) {
   const t = [...e].sort((s, n) => s - n), i = t.length >> 1;
   return t.length % 2 ? t[i] : (t[i - 1] + t[i]) / 2;
 }
-const Ti = -42, Ri = 3, zi = 0.4, Ci = 6, Ni = 1, Oi = -52, Pi = 30, Li = 0.18, Di = 0.3, Ii = 1.5, Hi = 0.35, Fi = 5, Yt = 0.15, Ui = 0.1, Bi = 1.5, Vi = 25, ji = 0.3, Ki = 6, qi = 3, Wi = 10, Gi = 0.3;
+const Ti = -42, Ri = 3, zi = 0.4, Ci = 6, Ni = 1, Oi = -52, Pi = 30, Li = 0.18, Di = 0.3, Ii = 1.5, Hi = 0.35, Fi = 5, Yt = 0.15, Ui = 0.1, Vi = 1.5, Bi = 25, ji = 0.3, Ki = 6, qi = 3, Wi = 10, Gi = 0.3;
 class be {
   constructor() {
     this.pending = [], this.start = 0, this.source = "mic", this.loudest = -1 / 0, this.history = [];
@@ -1186,14 +1186,14 @@ function it(e) {
   const { points: t } = e, i = t.filter((g) => g.midi !== null).map((g) => g.midi);
   if (!i.length)
     return null;
-  const s = at(i), n = Math.round(s), r = t.map((g) => g.midi !== null && Math.abs(g.midi - s) <= Bi ? (g.midi - n) * 100 : null), o = r.map((g, y) => {
+  const s = at(i), n = Math.round(s), r = t.map((g) => g.midi !== null && Math.abs(g.midi - s) <= Vi ? (g.midi - n) * 100 : null), o = r.map((g, y) => {
     if (g === null)
       return null;
     const [b, $] = [r[y - 1] ?? null, r[y + 1] ?? null], M = (b !== null && $ !== null ? [b, g, $] : $ !== null ? [g, $, r[y + 2] ?? null] : [b, r[y - 2] ?? null, g]).filter((R) => R !== null);
     if (M.length < 3)
       return g;
     const k = at(M);
-    return Math.abs(g - k) > Vi ? k : g;
+    return Math.abs(g - k) > Bi ? k : g;
   }), a = t[t.length - 1].t, l = a - Ui, h = (g) => {
     const { t: y } = t[g];
     return l - Yt < 0.2 || y >= Yt && y <= l;
@@ -1842,19 +1842,30 @@ S.styles = ke`
       height: 100%;
       background: var(--m-bg);
     }
+    /*
+     * The header bar over Violin Hero's own, exactly: its height, the mark as big as the app's
+     * logo ring and where it is, the name where the app's name starts, the close key as far from
+     * the right as the app's last key (measured by the app: --vh-*, its measureHeader())
+     */
     .head {
+      --mark: var(--vh-mark, 28.65px);
+      --mark-x: var(--vh-mark-x, 35px);
+      flex: none;
       display: flex;
       align-items: center;
+      height: var(--vh-head-h, 58px);
+      padding: 0 var(--vh-head-end, 1.25rem) 0 0;
       gap: 0.8rem;
-      padding: 0.7rem 1.1rem;
       background: var(--m-surface);
       border-bottom: 1px solid var(--m-line);
     }
     .mark {
       display: grid;
       place-items: center;
-      width: 40px;
-      height: 40px;
+      width: var(--mark);
+      height: var(--mark);
+      margin-left: calc(var(--mark-x) - var(--mark) / 2);
+      margin-right: calc(var(--vh-name-x, 59.6px) - var(--mark-x) - var(--mark) / 2 - 0.8rem);
       flex: none;
       border-radius: 50%;
       color: var(--m-accent);
@@ -1862,8 +1873,8 @@ S.styles = ke`
       border: 2px solid var(--m-accent-edge);
     }
     .mark svg {
-      width: 24px;
-      height: 24px;
+      width: 62%;
+      height: 62%;
       fill: none;
       stroke: currentColor;
       stroke-width: 2.2;
@@ -1877,12 +1888,14 @@ S.styles = ke`
     }
     h1 {
       margin: 0;
-      font-size: 1.15rem;
-      font-weight: 750;
+      font-size: var(--vh-name-size, 1.25rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
     }
     .lead {
       color: var(--m-muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1916,7 +1929,10 @@ S.styles = ke`
       fill: currentColor;
       stroke: none;
     }
+    /* As big as the app's header keys */
     .close {
+      width: 36px;
+      height: 36px;
       color: #fff;
       background: var(--m-accent);
       border-color: var(--m-accent);
@@ -2465,9 +2481,6 @@ S.styles = ke`
       .plot {
         flex: none;
         height: max(260px, 42vh);
-      }
-      .head {
-        padding: 0.55rem 0.7rem;
       }
       .graph-head .note {
         font-size: 1.6rem;
