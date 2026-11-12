@@ -2793,8 +2793,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Dd[t]}</g>
   </g>`}function Ub(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>w`<a class="m-help m-place ${i}" href=${In(i,t,e)} title=${Wc[i]} aria-label=${Wc[i]}>
         ${i==="app"?M`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Cd}</g></svg>`:M`<svg viewBox="0 0 24 24" aria-hidden="true">${Dd[i]}</svg>`}
-      </a>`)}const Fb=["de"];function zb(t){const e=Fb.includes(Ee())?`${Ee()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function Bb(t,e){return w`<a class="m-help" href=${zb(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Hb=parseFloat("0.193")<1;function Wb(t){return w`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.193"}</span>
+      </a>`)}const Fb=["de"];function zb(t){const e=Fb.includes(Ee())?`${Ee()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function Bb(t,e){return w`<a class="m-help" href=${zb(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Hb=parseFloat("0.194")<1;function Wb(t){return w`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.194"}</span>
     ${Hb?w`<span class="m-beta">Beta</span>`:""}
   </span>`}const jb=Se`
     /*
@@ -2935,7 +2935,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.193") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.194") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -6520,7 +6520,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Hall of Fame" in the theme colour (a name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Hall of Fame</span></span>
-            ${Wb(ce().versionTitle("0.193","0a3b538"))}
+            ${Wb(ce().versionTitle("0.194","d521246"))}
           </span>
         </a>
         <div class="m-header-end">
