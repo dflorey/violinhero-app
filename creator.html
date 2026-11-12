@@ -2809,8 +2809,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${bf[t]}</g>
   </g>`}function i_(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>E`<a class="m-help m-place ${i}" href=${dr(i,t,e)} title=${qd[i]} aria-label=${qd[i]}>
         ${i==="app"?X`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${gf}</g></svg>`:X`<svg viewBox="0 0 24 24" aria-hidden="true">${bf[i]}</svg>`}
-      </a>`)}const r_=["de"];function s_(t){const e=r_.includes(De())?`${De()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function o_(t,e){return E`<a class="m-help" href=${s_(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const a_=parseFloat("0.192")<1;function c_(t){return E`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.192"}</span>
+      </a>`)}const r_=["de"];function s_(t){const e=r_.includes(De())?`${De()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function o_(t,e){return E`<a class="m-help" href=${s_(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const a_=parseFloat("0.193")<1;function c_(t){return E`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.193"}</span>
     ${a_?E`<span class="m-beta">Beta</span>`:""}
   </span>`}const l_=fn`
     /*
@@ -2951,7 +2951,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.192") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.193") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -3535,9 +3535,9 @@ SPDX-License-Identifier: Apache-2.0
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      height: 44px;
+      height: var(--m-control, 44px);
       font: 600 0.95rem system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      border-radius: 12px;
+      border-radius: var(--m-radius, 10px);
       cursor: pointer;
     }
     .primary {
@@ -3921,7 +3921,7 @@ SPDX-License-Identifier: Apache-2.0
         min-height: 50px;
         padding: 0 1.6rem;
         font-size: 1.02rem;
-        border-radius: 12px;
+        border-radius: var(--m-radius, 10px);
       }
       .c-button.small {
         min-height: 36px;
@@ -4935,10 +4935,10 @@ SPDX-License-Identifier: Apache-2.0
       margin-top: 6px;
     }
     button {
-      height: 42px;
+      height: var(--m-control, 44px);
       padding: 0 18px;
       font: 700 15px system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      border-radius: 12px;
+      border-radius: var(--m-radius, 10px);
       cursor: pointer;
     }
     button:disabled {
@@ -5250,7 +5250,7 @@ registerProcessor('violinhero-tab-capture', class extends AudioWorkletProcessor 
           <span class="m-titles">
             <!-- The app's name as it is, "Creator" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Creator</span></span>
-            ${c_(Ne().versionTitle("0.192","f748a79"))}
+            ${c_(Ne().versionTitle("0.193","0a3b538"))}
           </span>
         </a>
         <div class="m-header-end">

@@ -2793,8 +2793,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Vd[t]}</g>
   </g>`}function Bb(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>w`<a class="m-help m-place ${i}" href=${Ct(i,t,e)} title=${jc[i]} aria-label=${jc[i]}>
         ${i==="app"?M`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Ld}</g></svg>`:M`<svg viewBox="0 0 24 24" aria-hidden="true">${Vd[i]}</svg>`}
-      </a>`)}const Hb=["de"];function Wb(t){const e=Hb.includes(z())?`${z()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function jb(t,e){return w`<a class="m-help" href=${Wb(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Gb=parseFloat("0.192")<1;function Kb(t){return w`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.192"}</span>
+      </a>`)}const Hb=["de"];function Wb(t){const e=Hb.includes(z())?`${z()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function jb(t,e){return w`<a class="m-help" href=${Wb(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Gb=parseFloat("0.193")<1;function Kb(t){return w`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.193"}</span>
     ${Gb?w`<span class="m-beta">Beta</span>`:""}
   </span>`}const qb=Le`
     /*
@@ -2935,7 +2935,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.192") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.193") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -3519,9 +3519,9 @@ SPDX-License-Identifier: Apache-2.0
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      height: 44px;
+      height: var(--m-control, 44px);
       font: 600 0.95rem system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      border-radius: 12px;
+      border-radius: var(--m-radius, 10px);
       cursor: pointer;
     }
     .primary {
@@ -3905,7 +3905,7 @@ SPDX-License-Identifier: Apache-2.0
         min-height: 50px;
         padding: 0 1.6rem;
         font-size: 1.02rem;
-        border-radius: 12px;
+        border-radius: var(--m-radius, 10px);
       }
       .c-button.small {
         min-height: 36px;
@@ -4960,7 +4960,7 @@ SPDX-License-Identifier: Apache-2.0
     color: #fff;
     background: var(--m-red);
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--m-radius, 10px);
     cursor: pointer;
   }
 `,Hw=w`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5" /></svg>`;Le`
@@ -5209,10 +5209,10 @@ SPDX-License-Identifier: Apache-2.0
       }
       .primary,
       .plain {
-        height: 40px;
+        height: var(--m-control, 44px);
         padding: 0 1rem;
         font: 600 0.95rem system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-        border-radius: 10px;
+        border-radius: var(--m-radius, 10px);
         cursor: pointer;
       }
       .primary {
@@ -5479,7 +5479,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Marketplace" in the theme colour (a product name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Marketplace</span></span>
-            ${Kb(oe().versionTitle("0.192","f748a79"))}
+            ${Kb(oe().versionTitle("0.193","0a3b538"))}
           </span>
         </a>
         <div class="m-header-end">

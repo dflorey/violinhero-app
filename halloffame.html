@@ -2793,8 +2793,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Dd[t]}</g>
   </g>`}function Ub(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>w`<a class="m-help m-place ${i}" href=${In(i,t,e)} title=${Wc[i]} aria-label=${Wc[i]}>
         ${i==="app"?M`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Cd}</g></svg>`:M`<svg viewBox="0 0 24 24" aria-hidden="true">${Dd[i]}</svg>`}
-      </a>`)}const Fb=["de"];function zb(t){const e=Fb.includes(Ee())?`${Ee()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function Bb(t,e){return w`<a class="m-help" href=${zb(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Hb=parseFloat("0.192")<1;function Wb(t){return w`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.192"}</span>
+      </a>`)}const Fb=["de"];function zb(t){const e=Fb.includes(Ee())?`${Ee()}/`:"";return t==="app"?`./howto/${e}`:t==="creator"?`../howto/creator/${e}`:`../howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function Bb(t,e){return w`<a class="m-help" href=${zb(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Hb=parseFloat("0.193")<1;function Wb(t){return w`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.193"}</span>
     ${Hb?w`<span class="m-beta">Beta</span>`:""}
   </span>`}const jb=Se`
     /*
@@ -2935,7 +2935,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.192") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.193") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -3519,9 +3519,9 @@ SPDX-License-Identifier: Apache-2.0
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      height: 44px;
+      height: var(--m-control, 44px);
       font: 600 0.95rem system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      border-radius: 12px;
+      border-radius: var(--m-radius, 10px);
       cursor: pointer;
     }
     .primary {
@@ -4899,7 +4899,7 @@ SPDX-License-Identifier: Apache-2.0
         min-height: 50px;
         padding: 0 1.6rem;
         font-size: 1.02rem;
-        border-radius: 12px;
+        border-radius: var(--m-radius, 10px);
       }
       .c-button.small {
         min-height: 36px;
@@ -5954,7 +5954,7 @@ SPDX-License-Identifier: Apache-2.0
     color: #fff;
     background: var(--m-red);
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--m-radius, 10px);
     cursor: pointer;
   }
 `,Qw=w`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13M10 11v6M14 11v6" /></svg>`,ek=w`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l16-8-6 16-2.5-6.5z" /><path d="M11.5 13.5L20 4" /></svg>`;function tk(t,e,n,i){if(!t)return w``;const r=Ce();return e?w`<span class="confirm" role="group" aria-label=${r.removeQuestion}>
@@ -6520,7 +6520,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Hall of Fame" in the theme colour (a name, in every language) -->
             <span class="m-name" aria-label=${t.name}>Violin Hero <span class="c-creator">Hall of Fame</span></span>
-            ${Wb(ce().versionTitle("0.192","f748a79"))}
+            ${Wb(ce().versionTitle("0.193","0a3b538"))}
           </span>
         </a>
         <div class="m-header-end">
