@@ -2063,7 +2063,7 @@ S.styles = He`
       box-shadow: var(--m-key-shadow, none);
       cursor: pointer;
     }
-    .round:hover {
+    .round:hover:where(:not(:disabled)) {
       background: var(--m-bg);
     }
     .round svg {
@@ -2086,7 +2086,7 @@ S.styles = He`
       background: var(--m-accent);
       border-color: var(--m-accent);
     }
-    .close:hover {
+    .close:hover:where(:not(:disabled)) {
       background: var(--m-accent-hover, var(--m-accent));
     }
     button:focus-visible,
@@ -2335,7 +2335,7 @@ S.styles = He`
       border-radius: var(--m-radius, 10px);
       cursor: pointer;
     }
-    .listen:hover {
+    .listen:hover:where(:not(:disabled)) {
       background: var(--m-bg);
     }
     .listen.on {
