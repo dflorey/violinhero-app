@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Violin Hero</title>
     <script>
-      // GitHub Pages serves this for any address it hasn't got. The hall of fame lives at
-      // /halloffame (no trailing slash, vite.config.ts's pageAtRoot()): an old link to its folder
-      // goes on there. The marketplace, the creator's page and the profiles moved to Crescendu's
-      // site, shared by all the hero apps: old links here (/marketplace?pack=…, /creator,
-      // /profile/<uid>) go on there, for this app's instrument, their query and hash kept.
+      // GitHub Pages serves this for any address it hasn't got. The marketplace, the hall of fame,
+      // the creator's page and the profiles moved to Crescendu, shared by all the hero apps: old
+      // links here (/marketplace?pack=…, /halloffame, /creator, /profile/<uid>) go on there, for
+      // this app's instrument, their query and hash kept.
       (function () {
         var hub = 'https://www.crescendu.com/';
+        // The marketplace and the hall of fame have sites of their own (site.ts's PAGE_SITES)
+        var sites = { marketplace: 'https://marketplace.crescendu.com/', halloffame: 'https://halloffame.crescendu.com/' };
         var more = location.search ? '&' + location.search.slice(1) : '';
         var match = /^(.*\/)(creator|marketplace|halloffame|profile)(\/(index\.html)?)?$/.exec(location.pathname);
-        if (match && match[2] === 'halloffame') return location.replace(match[1] + match[2] + location.search + location.hash);
+        if (match && sites[match[2]]) return location.replace(sites[match[2]] + '?instrument=violin' + more + location.hash);
         if (match) return location.replace(hub + match[2] + '?instrument=violin' + more + location.hash);
         var profile = /^(.*\/)profile\/([\w-]+)\/?$/.exec(location.pathname);
         if (profile) location.replace(hub + 'profile?instrument=violin&user=' + profile[2] + more + location.hash);
