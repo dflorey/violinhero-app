@@ -2700,8 +2700,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${Ic[t]}</g>
   </g>`}function nm(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>P`<a class="m-help m-place ${i}" href=${zn(i,t,e)} title=${_o[i]} aria-label=${_o[i]}>
         ${i==="app"?M`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Sc}</g></svg>`:M`<svg viewBox="0 0 24 24" aria-hidden="true">${Ic[i]}</svg>`}
-      </a>`)}const im=parseFloat("0.203+")<1;function rm(t){return P`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.203+"}</span>
+      </a>`)}const im=parseFloat("0.204+")<1;function rm(t){return P`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.204+"}</span>
     ${im?P`<span class="m-beta">Beta</span>`:""}
   </span>`}const sm=fn`
     /*
@@ -2842,7 +2842,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.203+") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.204+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -2983,7 +2983,7 @@ SPDX-License-Identifier: Apache-2.0
       @close=${()=>this.profileOpen=!1}
       @click=${t=>{var e;return t.target===t.currentTarget&&((e=this.profileDialog)==null?void 0:e.close())}}
     >
-      ${this.profileOpen?P`<iframe src=${Bp(zn("profile",this.place,this.root),"embedded")} title=${K().profile} @load=${t=>Kp(t.target)}></iframe>`:$}
+      ${this.profileOpen?P`<iframe src=${Bp(zn("profile",this.place,this.root),"embedded")} title=${K().profile} allow="clipboard-write" @load=${t=>Kp(t.target)}></iframe>`:$}
     </dialog>`}hintBubble(){const t=K();return P`
       <div class="hint" role="status">
         <button class="hint-text" @click=${this.fromHint}>
@@ -3703,7 +3703,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, the help's in the theme colour -->
             <span class="m-name">${ut().app.name} <span class="accent">${t}</span></span>
-            ${rm(K().versionTitle("0.203+","a20112f · 221fac1"))}
+            ${rm(K().versionTitle("0.204+","ee222e8 · 358fe89"))}
           </span>
         </a>
         <div class="m-header-end">
