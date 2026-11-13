@@ -2820,8 +2820,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${au[t]}</g>
   </g>`}function Pv(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>w`<a class="m-help m-place ${i}" href=${Rn(i,t,e)} title=${ul[i]} aria-label=${ul[i]}>
         ${i==="app"?O`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${ou}</g></svg>`:O`<svg viewBox="0 0 24 24" aria-hidden="true">${au[i]}</svg>`}
-      </a>`)}const Nv=["de"];function Cv(t){const e=Nv.includes(be())?`${be()}/`:"",n=t==="app"?"./":"../";return t==="app"?`${n}howto/${e}`:t==="creator"?`${bt.violin.app.url}howto/creator/${e}`:`${n}howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function Rv(t,e){return w`<a class="m-help" href=${Cv(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Dv=parseFloat("0.200+")<1;function Mv(t){return w`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.200+"}</span>
+      </a>`)}const Nv=["de"];function Cv(t){const e=Nv.includes(be())?`${be()}/`:"",n=t==="app"?"./":"../";return t==="app"?`${n}howto/${e}`:t==="creator"?`${bt.violin.app.url}howto/creator/${e}`:`${n}howto/${e}${t==="marketplace"?"#marketplace":t==="halloffame"?"#community":""}`}function Rv(t,e){return w`<a class="m-help" href=${Cv(t)} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`}const Dv=parseFloat("0.201+")<1;function Mv(t){return w`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.201+"}</span>
     ${Dv?w`<span class="m-beta">Beta</span>`:""}
   </span>`}const Lv=$e`
     /*
@@ -2962,7 +2962,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.200+") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.201+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -6566,7 +6566,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, "Hall of Fame" in the theme colour (a name, in every language) -->
             <span class="m-name" aria-label=${t.name}>${je().app.name} <span class="c-creator">Hall of Fame</span></span>
-            ${Mv(he().versionTitle("0.200+","b3b36fd · b922eda"))}
+            ${Mv(he().versionTitle("0.201+","5708214 · 8409431"))}
           </span>
         </a>
         <div class="m-header-end">
