@@ -2700,8 +2700,8 @@ SPDX-License-Identifier: Apache-2.0
     <g transform="translate(20 20) scale(2.5)" stroke-width="2.1">${$c[t]}</g>
   </g>`}function cm(t,e){return["app","halloffame","marketplace"].filter(i=>i!==t).map(i=>P`<a class="m-help m-place ${i}" href=${zn(i,t,e)} title=${So[i]} aria-label=${So[i]}>
         ${i==="app"&&Co?V`<svg viewBox="16 8 68 76" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${sm}</g></svg>`:i==="app"?V`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Ac}</g></svg>`:V`<svg viewBox="0 0 24 24" aria-hidden="true">${$c[i]}</svg>`}
-      </a>`)}const lm=parseFloat("0.215+")<1;function hm(t){return P`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.215+"}</span>
+      </a>`)}const lm=parseFloat("0.216+")<1;function hm(t){return P`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.216+"}</span>
     ${lm?P`<span class="m-beta">Beta</span>`:""}
   </span>`}const um=fn`
     /*
@@ -2842,7 +2842,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.215+") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.216+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -3703,7 +3703,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, the help's in the theme colour -->
             <span class="m-name">${ut().app.name} <span class="accent">${t}</span></span>
-            ${hm(K().versionTitle("0.215+","588843c · 301ee9b"))}
+            ${hm(K().versionTitle("0.216+","ea23997 · d7c497a"))}
           </span>
         </a>
         <div class="m-header-end">
