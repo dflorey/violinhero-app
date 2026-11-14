@@ -1,0 +1,32 @@
+{
+  "boo": [
+    "boo-1.mp3",
+    "boo-2.mp3",
+    "boo-3.mp3"
+  ],
+  "small": [
+    "small-1.mp3",
+    "small-2.mp3",
+    "small-3.mp3",
+    "small-4.mp3"
+  ],
+  "medium": [
+    "medium-1.mp3",
+    "medium-2.mp3",
+    "medium-3.mp3",
+    "medium-4.mp3"
+  ],
+  "big": [
+    "big-1.mp3",
+    "big-2.mp3",
+    "big-3.mp3",
+    "big-4.mp3"
+  ],
+  "fireworks": [
+    "fireworks-1.mp3",
+    "fireworks-2.mp3",
+    "fireworks-3.mp3",
+    "fireworks-4.mp3",
+    "fireworks-5.mp3"
+  ]
+}
