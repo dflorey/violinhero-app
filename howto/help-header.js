@@ -3649,8 +3649,8 @@ SPDX-License-Identifier: Apache-2.0
           ${H`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11L12 4l8.5 7" /><path d="M5.5 9.5V20h5v-5.5h3V20h5V9.5" /></svg>`}
         </a>`:I,s=[...t!=="app"&&!Oa?["app"]:[],...ky[t]??[]];return E`${r}${s.filter(o=>o!==t).map(o=>E`<a class="m-help m-place ${o}" href=${Ki(o,t,e)} title=${Pa[o]} aria-label=${Pa[o]}>
         ${o==="app"?H`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Fc}</g></svg>`:H`<svg viewBox="0 0 24 24" aria-hidden="true">${Bc[o]}</svg>`}
-      </a>`)}`}const Sy=parseFloat("0.235+")<1;function _y(t){return E`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.235+"}</span>
+      </a>`)}`}const Sy=parseFloat("0.236+")<1;function _y(t){return E`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.236+"}</span>
     ${Sy?E`<span class="m-beta">Beta</span>`:""}
   </span>`}const Ey=Re`
     /*
@@ -3793,7 +3793,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.235+") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.236+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -4570,7 +4570,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, the help's in the theme colour -->
             <span class="m-name">${Nt().app.name} <span class="accent">${t}</span></span>
-            ${_y(Z().versionTitle("0.235+","6dfffbe · 3f7a7bc"))}
+            ${_y(Z().versionTitle("0.236+","aacca61 · 2a703fd"))}
           </span>
         </a>
         <div class="m-header-end">
