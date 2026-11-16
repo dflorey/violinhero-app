@@ -3613,8 +3613,8 @@ SPDX-License-Identifier: Apache-2.0
             ${H`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11L12 4l8.5 7" /><path d="M5.5 9.5V20h5v-5.5h3V20h5V9.5" /></svg>`}
           </a>`:_`<a class="m-help m-place ${s}" href=${$n(s,t,e)} title=${Pa[s]} aria-label=${Pa[s]}>
         ${s==="app"?H`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${zc}</g></svg>`:H`<svg viewBox="0 0 24 24" aria-hidden="true">${Fc[s]}</svg>`}
-      </a>`)}const vy=parseFloat("0.231+")<1;function ky(t){return _`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.231+"}</span>
+      </a>`)}const vy=parseFloat("0.232+")<1;function ky(t){return _`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.232+"}</span>
     ${vy?_`<span class="m-beta">Beta</span>`:""}
   </span>`}const Ty=Ze`
     /*
@@ -3755,7 +3755,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.231+") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.232+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -4607,7 +4607,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, the help's in the theme colour -->
             <span class="m-name">${Nt().app.name} <span class="accent">${t}</span></span>
-            ${ky(Z().versionTitle("0.231+","86e5203 · a064bf6"))}
+            ${ky(Z().versionTitle("0.232+","d18a3eb · 51690f7"))}
           </span>
         </a>
         <div class="m-header-end">
