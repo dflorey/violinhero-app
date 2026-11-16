@@ -3521,7 +3521,7 @@ SPDX-License-Identifier: Apache-2.0
       outline: 2px solid var(--m-accent, var(--accent));
       outline-offset: 2px;
     }
-    ${e} > svg {
+    ${e} > svg:not(.face) {
       width: 20px;
       height: 20px;
       fill: none;
@@ -3530,7 +3530,7 @@ SPDX-License-Identifier: Apache-2.0
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-  `}const Js=zc(".key");var fy=Object.defineProperty,my=Object.getOwnPropertyDescriptor,hn=(t,e,n,i)=>{for(var r=i>1?void 0:i?my(e,n):e,s=t.length-1,o;s>=0;s--)(o=t[s])&&(r=(i?o(e,n,r):o(r))||r);return i&&r&&fy(e,n,r),r};const gy=["--m-accent","--m-accent-soft","--m-surface","--m-text","--m-muted","--m-line","--m-bg"],oi={help:{de:"Hilfe",en:"Help"},online:{de:"Online-Hilfe",en:"Online help"},guides:{de:"Quick Guides",en:"Quick guides"}};let mt=class extends Se{constructor(){super(...arguments),this.page="",this.language="de",this.help="",this.label="",this.open=!1,this.started=t=>{const e=this.mine.find(n=>n.id===t.detail);e&&this.launch(e)},this.outside=t=>{this.open&&!t.composedPath().includes(this)&&(this.open=!1)},this.escape=t=>{this.open&&t.key==="Escape"&&(this.open=!1)}}connectedCallback(){super.connectedCallback(),document.addEventListener("start-guide",this.started),document.addEventListener("click",this.outside,!0),document.addEventListener("keydown",this.escape)}disconnectedCallback(){var t;super.disconnectedCallback(),document.removeEventListener("start-guide",this.started),document.removeEventListener("click",this.outside,!0),document.removeEventListener("keydown",this.escape),(t=this.agent)==null||t.remove()}updated(t){t.has("language")&&this.agent&&(this.agent.language=this.language)}get mine(){return py.filter(t=>t.page===this.page)}async launch(t){var s;this.open=!1;const e=tg(),n=e?await Mc(e).catch(()=>null):null;(s=this.agent)==null||s.remove();const i=document.createElement("cr-guide");i.guide=t,i.language=this.language,i.nickname=n??"",i.person=e??"",i.addEventListener("close",()=>{i.remove(),this.agent===i&&(this.agent=void 0)});for(const o of gy){const a=getComputedStyle(this).getPropertyValue(o);a&&i.style.setProperty(o,a)}const r=te("dialog").filter(o=>o.open&&o.matches(":modal")).at(-1);if((r??document.body).append(i),r){const o=a=>{a.target===r&&(r.removeEventListener("close",o),i.isConnected&&i.dispatchEvent(new Event("close")))};r.addEventListener("close",o)}this.agent=i}toggle(){this.open=!this.open,this.open&&Mg()}render(){const t=i=>Bt(i,this.language),e=this.label||t(oi.help);if(!this.mine.length)return E`<a class="key" href=${this.help} target="_blank" rel="noopener" title=${e} aria-label=${e}>?</a>`;const n=this.open?this.mine.filter(i=>i.available()):[];return E`
+  `}const Js=zc(".key");var fy=Object.defineProperty,my=Object.getOwnPropertyDescriptor,hn=(t,e,n,i)=>{for(var r=i>1?void 0:i?my(e,n):e,s=t.length-1,o;s>=0;s--)(o=t[s])&&(r=(i?o(e,n,r):o(r))||r);return i&&r&&fy(e,n,r),r};const gy=["--m-accent","--m-accent-soft","--m-surface","--m-text","--m-muted","--m-line","--m-bg"],oi={help:{de:"Hilfe",en:"Help"},online:{de:"Online-Hilfe",en:"Online help"},guides:{de:"Quick Guides",en:"Quick guides"}};let mt=class extends Se{constructor(){super(...arguments),this.page="",this.language="de",this.help="",this.label="",this.open=!1,this.started=t=>{const e=this.mine.find(n=>n.id===t.detail);e&&this.launch(e)},this.outside=t=>{this.open&&!t.composedPath().includes(this)&&(this.open=!1)},this.escape=t=>{this.open&&t.key==="Escape"&&(this.open=!1)}}connectedCallback(){super.connectedCallback(),document.addEventListener("start-guide",this.started),document.addEventListener("click",this.outside,!0),document.addEventListener("keydown",this.escape)}disconnectedCallback(){var t;super.disconnectedCallback(),document.removeEventListener("start-guide",this.started),document.removeEventListener("click",this.outside,!0),document.removeEventListener("keydown",this.escape),(t=this.agent)==null||t.remove()}updated(t){t.has("language")&&this.agent&&(this.agent.language=this.language)}get mine(){return py.filter(t=>t.page===this.page)}async launch(t){var s;this.open=!1;const e=tg(),n=e?await Mc(e).catch(()=>null):null;(s=this.agent)==null||s.remove();const i=document.createElement("cr-guide");i.guide=t,i.language=this.language,i.nickname=n??"",i.person=e??"",i.addEventListener("close",()=>{i.remove(),this.agent===i&&(this.agent=void 0)});for(const o of gy){const a=getComputedStyle(this).getPropertyValue(o);a&&i.style.setProperty(o,a)}const r=te("dialog").filter(o=>o.open&&o.matches(":modal")).at(-1);if((r??document.body).append(i),r){const o=a=>{a.target===r&&(r.removeEventListener("close",o),i.isConnected&&i.dispatchEvent(new Event("close")))};r.addEventListener("close",o)}this.agent=i}toggle(){this.open=!this.open,this.open&&Mg()}render(){const t=i=>Bt(i,this.language),e=this.label||t(oi.help),n=this.open?this.mine.filter(i=>i.available()):[];return E`
       <button class="key" title=${e} aria-label=${e} aria-haspopup="menu" aria-expanded=${this.open} @click=${this.toggle}>?</button>
       ${this.open?E`<div class="menu" role="menu">
             <!-- As the account menu's items (account-menu.ts): bordered, an icon in the theme colour -->
@@ -3649,8 +3649,8 @@ SPDX-License-Identifier: Apache-2.0
           ${H`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11L12 4l8.5 7" /><path d="M5.5 9.5V20h5v-5.5h3V20h5V9.5" /></svg>`}
         </a>`:I,s=[...t!=="app"&&!Oa?["app"]:[],...ky[t]??[]];return E`${r}${s.filter(o=>o!==t).map(o=>E`<a class="m-help m-place ${o}" href=${Ki(o,t,e)} title=${Pa[o]} aria-label=${Pa[o]}>
         ${o==="app"?H`<svg viewBox="24 10 52 78" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${Fc}</g></svg>`:H`<svg viewBox="0 0 24 24" aria-hidden="true">${Bc[o]}</svg>`}
-      </a>`)}`}const Sy=parseFloat("0.234+")<1;function _y(t){return E`<span class="m-version-line">
-    <span class="m-version" title=${t}>v${"0.234+"}</span>
+      </a>`)}`}const Sy=parseFloat("0.235+")<1;function _y(t){return E`<span class="m-version-line">
+    <span class="m-version" title=${t}>v${"0.235+"}</span>
     ${Sy?E`<span class="m-beta">Beta</span>`:""}
   </span>`}const Ey=Re`
     /*
@@ -3793,7 +3793,7 @@ SPDX-License-Identifier: Apache-2.0
         height: 32px;
       }
     }
-    /* The name with the build's version ("0.234+") under it, left aligned; cut where the keys need the room */
+    /* The name with the build's version ("0.235+") under it, left aligned; cut where the keys need the room */
     .m-titles {
       display: flex;
       flex-direction: column;
@@ -4570,7 +4570,7 @@ SPDX-License-Identifier: Apache-2.0
           <span class="m-titles">
             <!-- The app's name as it is, the help's in the theme colour -->
             <span class="m-name">${Nt().app.name} <span class="accent">${t}</span></span>
-            ${_y(Z().versionTitle("0.234+","c85089c · 3b972f9"))}
+            ${_y(Z().versionTitle("0.235+","6dfffbe · 3f7a7bc"))}
           </span>
         </a>
         <div class="m-header-end">
