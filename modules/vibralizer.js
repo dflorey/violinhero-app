@@ -19,10 +19,10 @@ const Pe = {
   siteRepo: Oe,
   cacheVersion: 2,
   mark: Pe
-}, K = (e) => `https://${e}.crescendu.com/`, Mt = {
+}, U = (e) => `https://${e}.crescendu.com/`, Mt = {
   violin: {
     id: "violin",
-    app: { id: "violinhero", name: "Violin Hero", url: K("violinhero") },
+    app: { id: "violinhero", name: "Violin Hero", url: U("violinhero") },
     name: { en: "violin", de: "Geige" },
     label: { en: "Violin", de: "Geige" },
     strings: [
@@ -46,7 +46,7 @@ const Pe = {
   },
   viola: {
     id: "viola",
-    app: { id: "violahero", name: "Viola Hero", url: K("violahero") },
+    app: { id: "violahero", name: "Viola Hero", url: U("violahero") },
     name: { en: "viola", de: "Bratsche" },
     label: { en: "Viola", de: "Bratsche" },
     strings: [
@@ -70,7 +70,7 @@ const Pe = {
   },
   cello: {
     id: "cello",
-    app: { id: "cellohero", name: "Cello Hero", url: K("cellohero") },
+    app: { id: "cellohero", name: "Cello Hero", url: U("cellohero") },
     name: { en: "cello", de: "Cello" },
     label: { en: "Cello", de: "Cello" },
     strings: [
@@ -93,7 +93,7 @@ const Pe = {
   },
   recorder: {
     id: "recorder",
-    app: { id: "recorderhero", name: "Recorder Hero", url: K("recorderhero") },
+    app: { id: "recorderhero", name: "Recorder Hero", url: U("recorderhero") },
     name: { en: "recorder", de: "Blockflöte" },
     label: { en: "Recorder", de: "Blockflöte" },
     // A recorder isn't tuned note by note
@@ -114,7 +114,7 @@ const Pe = {
   },
   voice: {
     id: "voice",
-    app: { id: "voicehero", name: "Voice Hero", url: K("voicehero") },
+    app: { id: "voicehero", name: "Voice Hero", url: U("voicehero") },
     name: { en: "voice", de: "Stimme" },
     label: { en: "Voice", de: "Gesang" },
     strings: [],
@@ -125,6 +125,26 @@ const Pe = {
     hz: [70, 1200],
     programs: [53, 54, 55],
     partName: /voice|vocal|voc\b|gesang|stimme|sing|sopran|alto|tenor|bass|canto|chant/i,
+    clef: { sign: "G", line: 2 },
+    middleLine: 71,
+    marks: { fingers: [], bows: !1, harmonics: !1 },
+    bowed: !1,
+    vibrato: !0
+  },
+  choir: {
+    id: "choir",
+    app: { id: "choirhero", name: "Choir Hero", url: U("choirhero") },
+    name: { en: "voice", de: "Stimme" },
+    // Its chip beside the others (the marketplace, the hall of fame, profiles): the choir
+    label: { en: "Choir", de: "Chor" },
+    strings: [],
+    tuneOrder: [],
+    open: [],
+    // A choral score's voices, bass to soprano: the part sung is the one chosen (choir-voices.ts)
+    range: [36, 84],
+    hz: [60, 1200],
+    programs: [53, 54, 55],
+    partName: /voice|vocal|voc\b|gesang|stimme|sing|sopran|alt|tenor|bass|canto|cantus|chant|choir|chor|chorus/i,
     clef: { sign: "G", line: 2 },
     middleLine: 71,
     marks: { fingers: [], bows: !1, harmonics: !1 },
@@ -220,7 +240,7 @@ const { is: Fe, defineProperty: Ue, getOwnPropertyDescriptor: Be, getOwnProperty
   return i;
 } }, kt = (e, t) => !Fe(e, t), Pt = { attribute: !0, type: String, converter: ot, reflect: !1, useDefault: !1, hasChanged: kt };
 Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), L.litPropertyMetadata ?? (L.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
-let U = class extends HTMLElement {
+let B = class extends HTMLElement {
   static addInitializer(t) {
     this._$Ei(), (this.l ?? (this.l = [])).push(t);
   }
@@ -435,7 +455,7 @@ let U = class extends HTMLElement {
   firstUpdated(t) {
   }
 };
-U.elementStyles = [], U.shadowRootOptions = { mode: "open" }, U[Y("elementProperties")] = /* @__PURE__ */ new Map(), U[Y("finalized")] = /* @__PURE__ */ new Map(), pt == null || pt({ ReactiveElement: U }), (L.reactiveElementVersions ?? (L.reactiveElementVersions = [])).push("2.1.2");
+B.elementStyles = [], B.shadowRootOptions = { mode: "open" }, B[Y("elementProperties")] = /* @__PURE__ */ new Map(), B[Y("finalized")] = /* @__PURE__ */ new Map(), pt == null || pt({ ReactiveElement: B }), (L.reactiveElementVersions ?? (L.reactiveElementVersions = [])).push("2.1.2");
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -443,7 +463,7 @@ U.elementStyles = [], U.shadowRootOptions = { mode: "open" }, U[Y("elementProper
  */
 const Z = globalThis, Lt = (e) => e, at = Z.trustedTypes, Dt = at ? at.createPolicy("lit-html", { createHTML: (e) => e }) : void 0, le = "$lit$", P = `lit$${Math.random().toFixed(9).slice(2)}$`, he = "?" + P, We = `<${he}>`, V = document, X = () => V.createComment(""), Q = (e) => e === null || typeof e != "object" && typeof e != "function", Tt = Array.isArray, Ye = (e) => Tt(e) || typeof (e == null ? void 0 : e[Symbol.iterator]) == "function", ut = `[ 	
 \f\r]`, q = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, It = /-->/g, Ht = />/g, D = RegExp(`>|${ut}(?:([^\\s"'>=/]+)(${ut}*=${ut}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`, "g"), Vt = /'/g, Ft = /"/g, ce = /^(?:script|style|textarea|title)$/i, de = (e) => (t, ...i) => ({ _$litType$: e, strings: t, values: i }), _ = de(1), R = de(2), B = Symbol.for("lit-noChange"), w = Symbol.for("lit-nothing"), Ut = /* @__PURE__ */ new WeakMap(), I = V.createTreeWalker(V, 129);
+\f\r"'\`<>=]|("|')|))|$)`, "g"), Vt = /'/g, Ft = /"/g, ce = /^(?:script|style|textarea|title)$/i, de = (e) => (t, ...i) => ({ _$litType$: e, strings: t, values: i }), _ = de(1), R = de(2), G = Symbol.for("lit-noChange"), w = Symbol.for("lit-nothing"), Ut = /* @__PURE__ */ new WeakMap(), I = V.createTreeWalker(V, 129);
 function pe(e, t) {
   if (!Tt(e) || !e.hasOwnProperty("raw"))
     throw Error("invalid template strings array");
@@ -506,13 +526,13 @@ class tt {
     return s.innerHTML = t, s;
   }
 }
-function G(e, t, i = e, s) {
+function j(e, t, i = e, s) {
   var o, a;
-  if (t === B)
+  if (t === G)
     return t;
   let n = s !== void 0 ? (o = i._$Co) == null ? void 0 : o[s] : i._$Cl;
   const r = Q(t) ? void 0 : t._$litDirective$;
-  return (n == null ? void 0 : n.constructor) !== r && ((a = n == null ? void 0 : n._$AO) == null || a.call(n, !1), r === void 0 ? n = void 0 : (n = new r(e), n._$AT(e, i, s)), s !== void 0 ? (i._$Co ?? (i._$Co = []))[s] = n : i._$Cl = n), n !== void 0 && (t = G(e, n._$AS(e, t.values), n, s)), t;
+  return (n == null ? void 0 : n.constructor) !== r && ((a = n == null ? void 0 : n._$AO) == null || a.call(n, !1), r === void 0 ? n = void 0 : (n = new r(e), n._$AT(e, i, s)), s !== void 0 ? (i._$Co ?? (i._$Co = []))[s] = n : i._$Cl = n), n !== void 0 && (t = j(e, n._$AS(e, t.values), n, s)), t;
 }
 class Je {
   constructor(t, i) {
@@ -563,7 +583,7 @@ class et {
     return this._$AB;
   }
   _$AI(t, i = this) {
-    t = G(this, t, i), Q(t) ? t === w || t == null || t === "" ? (this._$AH !== w && this._$AR(), this._$AH = w) : t !== this._$AH && t !== B && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : Ye(t) ? this.k(t) : this._(t);
+    t = j(this, t, i), Q(t) ? t === w || t == null || t === "" ? (this._$AH !== w && this._$AR(), this._$AH = w) : t !== this._$AH && t !== G && this._(t) : t._$litType$ !== void 0 ? this.$(t) : t.nodeType !== void 0 ? this.T(t) : Ye(t) ? this.k(t) : this._(t);
   }
   O(t) {
     return this._$AA.parentNode.insertBefore(t, this._$AB);
@@ -622,12 +642,12 @@ class ct {
     const r = this.strings;
     let o = !1;
     if (r === void 0)
-      t = G(this, t, i, 0), o = !Q(t) || t !== this._$AH && t !== B, o && (this._$AH = t);
+      t = j(this, t, i, 0), o = !Q(t) || t !== this._$AH && t !== G, o && (this._$AH = t);
     else {
       const a = t;
       let l, h;
       for (t = r[0], l = 0; l < r.length - 1; l++)
-        h = G(this, a[s + l], i, l), h === B && (h = this._$AH[l]), o || (o = !Q(h) || h !== this._$AH[l]), h === w ? t = w : t !== w && (t += (h ?? "") + r[l + 1]), this._$AH[l] = h;
+        h = j(this, a[s + l], i, l), h === G && (h = this._$AH[l]), o || (o = !Q(h) || h !== this._$AH[l]), h === w ? t = w : t !== w && (t += (h ?? "") + r[l + 1]), this._$AH[l] = h;
     }
     o && !n && this.j(t);
   }
@@ -656,7 +676,7 @@ class ti extends ct {
     super(t, i, s, n, r), this.type = 5;
   }
   _$AI(t, i = this) {
-    if ((t = G(this, t, i, 0) ?? w) === B)
+    if ((t = j(this, t, i, 0) ?? w) === G)
       return;
     const s = this._$AH, n = t === w && s !== w || t.capture !== s.capture || t.once !== s.once || t.passive !== s.passive, r = t !== w && (s === w || n);
     n && this.element.removeEventListener(this.name, this, s), r && this.element.addEventListener(this.name, this, t), this._$AH = t;
@@ -674,7 +694,7 @@ class ei {
     return this._$AM._$AU;
   }
   _$AI(t) {
-    G(this, t);
+    j(this, t);
   }
 }
 const mt = Z.litHtmlPolyfillSupport;
@@ -694,7 +714,7 @@ const ii = (e, t, i) => {
  * SPDX-License-Identifier: BSD-3-Clause
  */
 const H = globalThis;
-class J extends U {
+class J extends B {
   constructor() {
     super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;
   }
@@ -716,7 +736,7 @@ class J extends U {
     super.disconnectedCallback(), (t = this._$Do) == null || t.setConnected(!1);
   }
   render() {
-    return B;
+    return G;
   }
 }
 var oe;
@@ -1817,7 +1837,7 @@ let S = class extends J {
     k.forEach((x, z) => {
       x === null ? (O.length > 1 && C.push(O), O = []) : O.push([v(M[z]), $(x)]);
     }), O.length > 1 && C.push(O);
-    const F = os(r.map((x) => x.db)), _e = Math.max(...F), dt = Math.ceil(_e / 6) * 6, Me = dt - ie, Ae = (x) => p + (dt - Math.max(Me, Math.min(dt, x))) / ie * m, Ct = F.map((x, z) => [v(M[z]), Ae(x)]), Se = `${_t(Ct)}L${v(M[M.length - 1]).toFixed(1)},${(p + m).toFixed(1)}L${v(M[0]).toFixed(1)},${(p + m).toFixed(1)}Z`, Ee = Array.from({ length: Math.floor(a / (a > 3 ? 1 : 0.5)) + 1 }, (x, z) => z * (a > 3 ? 1 : 0.5)).filter((x) => v(x) < t - h - 18), it = n.width && n.width >= W ? n.width : 0, ke = [y, y / 2, 0, -y / 2, -y], j = this.playhead;
+    const F = os(r.map((x) => x.db)), _e = Math.max(...F), dt = Math.ceil(_e / 6) * 6, Me = dt - ie, Ae = (x) => p + (dt - Math.max(Me, Math.min(dt, x))) / ie * m, Ct = F.map((x, z) => [v(M[z]), Ae(x)]), Se = `${_t(Ct)}L${v(M[M.length - 1]).toFixed(1)},${(p + m).toFixed(1)}L${v(M[0]).toFixed(1)},${(p + m).toFixed(1)}Z`, Ee = Array.from({ length: Math.floor(a / (a > 3 ? 1 : 0.5)) + 1 }, (x, z) => z * (a > 3 ? 1 : 0.5)).filter((x) => v(x) < t - h - 18), it = n.width && n.width >= W ? n.width : 0, ke = [y, y / 2, 0, -y / 2, -y], K = this.playhead;
     return _`<svg class="chart ${A ? "ink" : "live"}" width=${t} height=${i} viewBox="0 0 ${t} ${i}" role="img" aria-label=${e.pitch}>
       <defs>
         <linearGradient id="zone" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1=${$(y)} y2=${$(-y)}>
@@ -1841,7 +1861,7 @@ let S = class extends J {
       <path class="level" d=${_t(Ct)} />
       ${Ee.map((x) => R`<text class="tick" x=${v(x)} y=${i - 5} text-anchor="middle">${Ts(x)}</text>`)}
       <text class="tick unit" x=${t - h} y=${i - 5} text-anchor="end">${e.seconds}</text>
-      ${j !== void 0 && j >= 0 && j <= o ? R`<line class="playhead" x1=${v(j)} x2=${v(j)} y1=${c} y2=${p + m} />` : w}
+      ${K !== void 0 && K >= 0 && K <= o ? R`<line class="playhead" x1=${v(K)} x2=${v(K)} y1=${c} y2=${p + m} />` : w}
     </svg>`;
   }
   /** The listening key, the input (its level under the gain) and the reverb on playbacks */
