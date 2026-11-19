@@ -40,7 +40,7 @@ const Pe = {
     partName: /viol|vln|^vn\b|geige/i,
     clef: { sign: "G", line: 2 },
     middleLine: 71,
-    marks: { fingers: [0, 1, 2, 3, 4], bows: !0, harmonics: !0, breaths: !1 },
+    marks: { fingers: [0, 1, 2, 3, 4], bows: !0, harmonics: !0, breaths: !1, consonants: !1 },
     bowed: !0,
     vibrato: !0
   },
@@ -64,7 +64,7 @@ const Pe = {
     partName: /viola|bratsche|^vla\b|alto/i,
     clef: { sign: "C", line: 3 },
     middleLine: 60,
-    marks: { fingers: [0, 1, 2, 3, 4], bows: !0, harmonics: !0, breaths: !1 },
+    marks: { fingers: [0, 1, 2, 3, 4], bows: !0, harmonics: !0, breaths: !1, consonants: !1 },
     bowed: !0,
     vibrato: !0
   },
@@ -87,7 +87,7 @@ const Pe = {
     partName: /cello|vc\b|vlc/i,
     clef: { sign: "F", line: 4 },
     middleLine: 50,
-    marks: { fingers: [0, 1, 2, 3, 4], bows: !0, harmonics: !0, breaths: !1 },
+    marks: { fingers: [0, 1, 2, 3, 4], bows: !0, harmonics: !0, breaths: !1, consonants: !1 },
     bowed: !0,
     vibrato: !0
   },
@@ -108,7 +108,7 @@ const Pe = {
     // Treble clef with a small 8 above: written as recorder players read it, sounding an octave higher
     clef: { sign: "G", line: 2, octave: 1 },
     middleLine: 83,
-    marks: { fingers: [], bows: !1, harmonics: !1, breaths: !0 },
+    marks: { fingers: [], bows: !1, harmonics: !1, breaths: !0, consonants: !1 },
     bowed: !1,
     vibrato: !1
   },
@@ -127,7 +127,7 @@ const Pe = {
     partName: /voice|vocal|voc\b|gesang|stimme|sing|sopran|alto|tenor|bass|canto|chant/i,
     clef: { sign: "G", line: 2 },
     middleLine: 71,
-    marks: { fingers: [], bows: !1, harmonics: !1, breaths: !0 },
+    marks: { fingers: [], bows: !1, harmonics: !1, breaths: !0, consonants: !0 },
     bowed: !1,
     vibrato: !0
   },
@@ -147,7 +147,7 @@ const Pe = {
     partName: /voice|vocal|voc\b|gesang|stimme|sing|sopran|alt|tenor|bass|canto|cantus|chant|choir|chor|chorus/i,
     clef: { sign: "G", line: 2 },
     middleLine: 71,
-    marks: { fingers: [], bows: !1, harmonics: !1, breaths: !0 },
+    marks: { fingers: [], bows: !1, harmonics: !1, breaths: !0, consonants: !0 },
     bowed: !1,
     vibrato: !0
   }
